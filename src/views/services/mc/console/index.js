@@ -21,16 +21,27 @@ module.exports = {
             constrain_width: true,
             alignment: 'right'
         });
-        this.runConsole();
-        window.consoleInterval = setInterval(this.runConsole, 1500);
+        this.startIntervalLog();
     },
     methods: {
-        runConsole: function ()
+        runLog: function ()
         {
             this.$http.get(window.baseurl + "/api/v1/services/mc/" + this.id + "/log", function (data) {
+                jQuery("#log").empty();
+                data.forEach(function (d) {
+                    //console.log(d);
+                    jQuery("#log").append(d + '<br>');
+                });
+                var objDiv = document.getElementById("log");
+                objDiv.scrollTop = objDiv.scrollHeight;
+            });
+        },
+        runConsole: function ()
+        {
+            this.$http.get(window.baseurl + "/api/v1/services/mc/" + this.id + "/console", function (data) {
                 jQuery("#console").empty();
                 data.forEach(function (d) {
-                    console.log(d);
+                    //console.log(d);
                     jQuery("#console").append(d + '<br>');
                 });
                 var objDiv = document.getElementById("console");
@@ -40,7 +51,7 @@ module.exports = {
         sendCommand: function (e) {
             this.$http.post(window.baseurl + "/api/v1/services/mc/" + this.id + "/cmd", {cmd: this.command}, function (data) {
                 this.command = '';
-                this.runConsole();
+                this.runLog();
             });
         },
         startServer: function () {
@@ -57,9 +68,22 @@ module.exports = {
             this.$http.get(window.baseurl + "/api/v1/services/mc/" + this.id + "/restart", function (data) {
                 Materialize.toast('Zadanie dodano do kolejki', 3500);
             });
+        },
+        startIntervalLog: function () {
+            this.runLog();
+            clearInterval(window.logInterval);
+            window.logInterval = setInterval(this.runLog, 1700);
+            clearInterval(window.consoleInterval);
+        },
+        startIntervalConsole: function () {
+            this.runConsole();
+            clearInterval(window.consoleInterval);
+            window.consoleInterval = setInterval(this.runConsole, 4000);
+            clearInterval(window.logInterval);
         }
     },
     beforeDestroy: function () {
+        clearInterval(window.logInterval);
         clearInterval(window.consoleInterval);
     }
 };

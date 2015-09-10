@@ -1,8 +1,8 @@
-#consoleContainer
+#logContainer,#consoleContainer
 {
     padding-top:5px
 }
-#console
+#log,#console
 {
     padding:10px;
     padding-left:0px;
@@ -12,11 +12,11 @@
     font-size: 12px;
     margin-bottom:0px;
 }
-#consoleInputContainer
+#logInputcontainer,#consoleInputContainer
 {
     margin-top:0px
 }
-#consoleInputField
+#logInputField,#consoleInputField
 {
     margin-top: 0px;
 }
