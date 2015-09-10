@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pl">
+    <head>
+        <meta charset="utf-8">
+        <title>{{title}}</title>
+        <link href="assets/materialize/css/materialize.min.css" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+    </head>
+    <body class="light-green">
+        <header>
+            <nav class="light-green" role="navigation">
+                <div class="nav-wrapper container">
+                    <!--<a id="logo-container" href="#" class="brand-logo thin-text">{{title}}</a>-->
+                    <a id="logo-container" class="brand-logo thin-text">{{title}}</a>
+                    <ul class="right">
+                        <li v-if="logged && routeContains('mc') && !routeContains('mc/list')">
+                            <a class="dropdown-button hide-on-small-only" data-activates="user-dropdown"><span>Menu serwera</span><i class="mdi-navigation-more-vert right"></i></a>
+                            <a class="dropdown-button hide-on-med-and-up" data-activates="user-dropdown"><i class="mdi-navigation-more-vert"></i></a>
+                            <ul id="user-dropdown" class="dropdown-content">
+                                <li><a href="#/mc/{{route.params.id}}/console">Konsola</a></li>
+                                <li><a href="#/mc/{{route.params.id}}/files">Pliki</a></li>
+                                <li><a href="#/mc/{{route.params.id}}/stats">Statystyki</a></li>
+                                <!--<li class="divider"></li>-->
+                            </ul>
+                        </li>
+                    </ul>
+                    <ul id="slide-out" class="side-nav fixed">
+                        <li style="padding-bottom:20px"><a href="#"><img style="width:100%;padding-top:25px" src="assets/logo.png"></a></li>
+                        <sidebar-menu></sidebar-menu>
+                    </ul>
+                    <a href="#" data-activates="slide-out" class="button-collapse"><i class="mdi-navigation-menu"></i></a>
+                </div>
+            </nav>
+        </header>
+        <main class="light-green">
+            <div class="container">
+                <div class="row">
+                    <router-view></router-view>
+                </div>
+            </div>
+        </main>
+        <footer class="page-footer light-green">
+            <div class="footer-copyright" style="">
+                <div class="container">
+                    ©Copyright 2015 LVL UP
+                </div>
+            </div>
+        </footer>
+        <script src="https://autobahn.s3.amazonaws.com/autobahnjs/latest/autobahn.min.jgz"></script>
+	<script src="build/build.js"></script>
+    </body>
+</html>
