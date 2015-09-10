@@ -34,7 +34,7 @@
     "webpack-dev-server" : "^1.10.1"
   },
   "scripts": {
-    "dev": "sed -i 's/context.minimize = true;/context.minimize = false;/' node_modules/webpack/lib/optimize/UglifyJsPlugin.js && webpack-dev-server --content-base . --hot --progress --watch --colors",
+    "dev": "sed -i 's/context.minimize = true;/context.minimize = false;/' node_modules/webpack/lib/optimize/UglifyJsPlugin.js && webpack-dev-server --host 0.0.0.0 --port 9000 --content-base . --hot --progress --watch --colors",
     "build": "webpack --progress --optimize-minimize --optimize-occurence-order"
   },
   "author": "Michał Frąckiewicz",
