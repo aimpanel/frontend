@@ -43,17 +43,17 @@ module.exports = {
                 this.runConsole();
             });
         },
-        serverStart: function () {
+        startServer: function () {
             this.$http.get(window.baseurl + "/api/v1/services/mc/" + this.id + "/start", function (data) {
                 Materialize.toast('Zadanie dodano do kolejki', 3500);
             });
         },
-        serverStop: function () {
+        stopServer: function () {
             this.$http.get(window.baseurl + "/api/v1/services/mc/" + this.id + "/stop", function (data) {
                 Materialize.toast('Zadanie dodano do kolejki', 3500);
             });
         },
-        serverRestart: function () {
+        restartServer: function () {
             this.$http.get(window.baseurl + "/api/v1/services/mc/" + this.id + "/restart", function (data) {
                 Materialize.toast('Zadanie dodano do kolejki', 3500);
             });
