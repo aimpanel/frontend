@@ -16,6 +16,7 @@
                             <td>{{state}}</td>
                             <td>
                                 <a href="#/mc/{{id}}/console" class="btn btn-pad black"><i class="fa fa-terminal"></i></a>
+                                <div v-on="click: deleteServerModal(id)" class="btn btn-pad red"><i class="fa fa-remove"></i></div>
                             </td>
                         </tr>
                         <tr v-show="empty">
@@ -53,5 +54,18 @@
     </div>
     <div class="modal-footer">
         <div v-on="click: addServer" class="modal-action waves-effect waves-green btn-flat">Dodaj</div>
+    </div>
+</div>
+
+<div id="deleteServer" class="modal">
+    <div class="modal-content">
+        <h4>Usuń serwer</h4>
+        <p>
+            Czy jesteś pewien że chcesz usunąć serwer?<br>
+            Jest to nieodwracalne usunięcie wszystkich plików serwera!
+        </p>
+    </div>
+    <div class="modal-footer">
+        <div v-on="click: deleteServer" class="red white-text modal-action btn-flat">Tak, niszcz</div>
     </div>
 </div>

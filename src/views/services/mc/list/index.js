@@ -4,7 +4,8 @@ module.exports = {
     replace: true,
     data: function () {
         return {
-            servers: []
+            servers: [],
+            serverToDelete: false
         }
     },
     ready: function () {
@@ -41,6 +42,18 @@ module.exports = {
                 jQuery('#newServerId').removeClass('valid');
                 jQuery('#newServerId').addClass('invalid');
                 jQuery('#newServerValidator').attr("data-error", data.error_msg);
+            });
+        },
+        deleteServerModal: function (id) {
+            this.serverToDelete = id;
+            jQuery('#deleteServer').openModal();
+        },
+        deleteServer: function () {
+            this.$http.delete(window.baseurl + '/api/v1/services/mc/'+this.serverToDelete,
+            function (data, status) {
+                this.getServers();
+                jQuery('#deleteServer').closeModal();
+                Materialize.toast('Serwer usunięto', 2500);
             });
         }
     },
