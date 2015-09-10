@@ -18,7 +18,7 @@ module.exports = {
         this.$root.$set('title', 'Lista serwerów MC');
         jQuery('.button-collapse').sideNav('hide');
 
-        this.getServers()
+        this.getServers();
         window.interval = setInterval(this.getServers, 5000);
     },
     methods: {
@@ -49,11 +49,29 @@ module.exports = {
             jQuery('#deleteServer').openModal();
         },
         deleteServer: function () {
-            this.$http.delete(window.baseurl + '/api/v1/services/mc/'+this.serverToDelete,
-            function (data, status) {
+            this.$http.delete(window.baseurl + '/api/v1/services/mc/' + this.serverToDelete,
+                    function (data, status) {
+                        this.getServers();
+                        jQuery('#deleteServer').closeModal();
+                        Materialize.toast('Serwer usunięto', 2500);
+                    });
+        },
+        startServer: function (id) {
+            this.$http.get(window.baseurl + "/api/v1/services/mc/" + id + "/start", function (data) {
+                Materialize.toast('Zadanie dodano do kolejki', 3500);
                 this.getServers();
-                jQuery('#deleteServer').closeModal();
-                Materialize.toast('Serwer usunięto', 2500);
+            });
+        },
+        stopServer: function (id) {
+            this.$http.get(window.baseurl + "/api/v1/services/mc/" + id + "/stop", function (data) {
+                Materialize.toast('Zadanie dodano do kolejki', 3500);
+                this.getServers();
+            });
+        },
+        restartServer: function (id) {
+            this.$http.get(window.baseurl + "/api/v1/services/mc/" + id + "/restart", function (data) {
+                Materialize.toast('Zadanie dodano do kolejki', 3500);
+                this.getServers();
             });
         }
     },
