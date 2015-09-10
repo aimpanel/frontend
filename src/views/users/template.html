@@ -1,0 +1,111 @@
+<div class="col s12">
+    <div class="row">
+        <div class="col s12 center">
+            <div class="card-panel white z-depth-2">
+                <table class="white hoverable responsive-table">
+                    <thead>
+                    <tr>
+                        <th data-field="username">Nazwa użytkownika</th>
+                        <th data-field="actions">Akcje</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr v-repeat="users">
+                        <td>{{username}}</td>
+                        <td>
+                            <!--<a href="#mc/{{id}}/console" class="btn btn-pad black"><i class="fa fa-terminal"></i></a>-->
+                            <button v-on="click: deleteUser(id)" v-if="id != 1" class="btn btn-pad red"><i class="material-icons">delete</i>
+                            </button>
+                        </td>
+                    </tr>
+                    <tr v-show="empty">
+                        <td>Brak użytkowników</td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    <div class="fixed-action-btn" style="bottom: 45px; right: 24px;">
+        <a class="btn-floating btn-large red modal-trigger" v-on="click: addUser1">
+            <i class="large material-icons">add</i>
+        </a>
+    </div>
+    <div id="addUser1" class="modal">
+        <div class="modal-content">
+            <h4>Dodaj nowego użytkownika</h4>
+
+            <div class="input-field col s12">
+                <i class="mdi-action-account-circle prefix"></i>
+                <input type="text" name="username" id="username" v-model="user.username" maxlength="30" required>
+                <label for="username">Nazwa użytkownika</label>
+            </div>
+            <div class="input-field col s12">
+                <i class="mdi-communication-vpn-key prefix"></i>
+                <input type="password" name="password" id="password" v-model="user.password" maxlength="30" required>
+                <label for="password">Hasło</label>
+            </div>
+            <div class="modal-footer">
+                <button class="waves-effect waves-green btn-flat green white-text" v-on="click: addUser2">Dalej</button>
+            </div>
+        </div>
+    </div>
+    <div id="addUser2" class="modal modal-fixed-footer">
+        <div class="modal-content">
+            <h4>Wybierz uprawnienia</h4>
+
+            <ul class="collapsible" data-collapsible="expandable">
+                <li>
+                    <div class="collapsible-header active">Ogólne</div>
+                    <div class="collapsible-body">
+                        <ul class="collection">
+                            <li class="collection-item">
+                                <p v-repeat="checkbox.general" style="padding: 0">
+                                    <input type="checkbox" id="{{name}}" v-on="change: toggleCheckbox(this, $event)" />
+                                    <label for="{{name}}" class="black-text">{{name}}</label>
+                                </p>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+<!--                <li>
+                    <div class="collapsible-header"><i class="fa fa-server"></i>Hosty</div>
+                    <div class="collapsible-body">
+                        <ul class="collection">
+                            <li class="collection-item" v-repeat="host: checkbox.hosts">
+                                <span v-repeat="host">
+                                    <span class="title"><b>{{$key}}</b></span>
+                                    <p v-repeat="$value" style="padding: 0">
+                                        <input type="checkbox" id="{{host_id}}_{{name}}" v-on="change: toggleCheckbox(this, $event)" />
+                                        <label for="{{host_id}}_{{name}}" class="black-text">{{name}}</label>
+                                    </p>
+                                </span>
+                            </li>
+                        </ul>
+                    </div>
+                </li> -->
+                <li>
+                    <div class="collapsible-header"><i class="fa fa-diamond"></i>Minecraft</div>
+                    <div class="collapsible-body">
+                        <ul class="collection">
+                            <li class="collection-item" v-repeat="mc: checkbox.minecraft">
+                                <span v-repeat="mc">
+                                    <span class="title"><b>{{$key}}</b></span>
+                                    <p v-repeat="$value" style="padding: 0">
+                                        <input type="checkbox" id="{{name}}_{{mc_slug}}" v-on="change: toggleCheckbox(this, $event)" />
+                                        <label for="{{name}}_{{mc_slug}}" class="black-text">{{name}}</label>
+                                    </p>
+                                </span>
+                            </li>
+                        </ul>
+
+                    </div>
+                </li>
+            </ul>
+        </div>
+        <div class="modal-footer">
+            <button v-on="click: addUser()" class="waves-effect waves-green btn-flat green white-text">Dodaj</button>
+            <button v-on="click: addUser1()" class="modal-action modal-close waves-effect waves-green btn-flat ">Wstecz</button>
+        </div>
+    </div>
+</div>

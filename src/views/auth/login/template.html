@@ -1,0 +1,33 @@
+<div class="col s12">
+
+    <div class="row">
+        <div class="col s12">
+            <h4 class="white-text thin-text">Zaloguj się do istniejącego konta</h4>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col s12 center">
+            <div class="z-depth-2 col s12 l8 white">
+                <div class="input-field col s12">
+                    <i class="mdi-action-account-circle prefix"></i>
+                    <input v-on="keyup:doAuth | key 'enter'" type="text" name="login" id="login" v-model="login" maxlength="30" required>
+                    <label for="login">Twoja nazwa użytkownika</label>
+                </div>
+                <div class="input-field col s12">
+                    <i class="mdi-communication-vpn-key prefix"></i>
+                    <input v-on="keyup:doAuth | key 'enter'" type="password" name="pasword" id="password" v-model="password" maxlength="30" required>
+                    <label for="password">Twoje hasło</label>
+                </div>
+                <br>
+                <br>
+                <br>
+                <div class="center-btn">
+                    <button v-on="click: doAuth" type="submit" class="waves-effect waves-light btn green" id="registrovatse"><i class="mdi-action-done left"></i>Zaloguj się</button>
+                </div>
+                <br>
+            </div>
+        </div>
+    </div>
+
+</div>

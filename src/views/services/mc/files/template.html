@@ -1,0 +1,51 @@
+<div class="col s12">
+    <div class="row">
+        <div class="col s12">
+            <div class="card-panel white z-depth-2" style="padding: 10px;">
+                <ul class="collection">
+                    <li v-if="!list.base" class="collection-item">
+                        <button v-on="click: backDir()" class="btn btn-pad blue" style="width: 100%"><i class="material-icons">arrow_back</i></button>
+                    </li>
+                    <li v-repeat="list.files | orderBy 'is_dir' -1" class="collection-item avatar">
+                        <i v-show="is_dir" class="fa fa-folder fa-4x circle green"></i>
+                        <i v-show="!is_dir" class="fa fa-file-o fa-4x circle green"></i>
+                        <span class="title">{{name}}</span>
+                        <p>Data modyfikacji: {{mod_time | formatDate}}<br/>
+                            Rozmiar: {{size | formatSize}}</p>
+                        <span v-show="!is_dir" class="secondary-content">
+                            <button v-on="click: showFile(name)" class="btn btn-pad green"><i class="material-icons">edit</i></button>
+                            <button v-on="click: deleteDialog(name)" class="btn btn-pad red"><i class="material-icons">delete</i></button>
+                        </span>
+                        <span v-show="is_dir" class="secondary-content">
+                            <button v-on="click: openDir(name)" class="btn btn-pad blue"><i class="material-icons">arrow_forward</i></button>
+                            <button v-on="click: deleteDialog(name)" class="btn btn-pad red"><i class="material-icons">delete</i></button>
+                        </span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="file" class="modal modal-fixed-footer">
+    <div id="fileContent" class="modal-content">
+        <h5>{{file.name}}</h5>
+        <div id="editor"></div>
+    </div>
+    <div class="modal-footer">
+        <button class="modal-action modal-close waves-effect waves-red btn-flat">Zamknij</button>
+        <button v-on="click: saveFile(file.name)" class="modal-action modal-close waves-effect waves-green btn-flat">Zapisz</button>
+    </div>
+</div>
+
+
+<div id="deleteDialog" class="modal modal-fixed-footer">
+    <div class="modal-content">
+        <h4>Czy na pewno chcesz usunąć ten plik?</h4>
+        <p>Kliknij przycisk USUŃ jeśli jesteś pewny tego że chcesz usunąć ten plik</p>
+    </div>
+    <div class="modal-footer">
+        <button class="modal-action modal-close waves-effect waves-red btn-flat">Zamknij</button>
+        <button v-on="click: deleteFile(fileToDelete)" class="modal-action modal-close waves-effect waves-green btn-flat red white-text">USUŃ</button>
+    </div>
+</div>

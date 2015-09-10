@@ -1,0 +1,16 @@
+.btn-pad {
+    padding: 0px 1rem;
+}
+
+#editor {
+    /** Setting height is also important, otherwise editor wont showup**/
+    height: 300px;
+}
+
+.modal {
+    max-height: 80%
+}
+
+.modal.modal-fixed-footer {
+    height: 100%
+}

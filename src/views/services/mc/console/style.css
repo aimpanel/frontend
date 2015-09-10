@@ -1,0 +1,26 @@
+#consoleContainer
+{
+    padding-top:5px
+}
+#console
+{
+    padding:10px;
+    padding-left:0px;
+    height:450px;
+    overflow-y: scroll;
+    line-height: 14px;
+    font-size: 12px;
+    margin-bottom:0px;
+}
+#consoleInputContainer
+{
+    margin-top:0px
+}
+#consoleInputField
+{
+    margin-top: 0px;
+}
+.fixed-action-btn
+{
+    bottom: 45px; right: 24px;   
+}

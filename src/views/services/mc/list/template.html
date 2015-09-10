@@ -1,0 +1,55 @@
+<div class="col s12">
+    <div class="row">
+        <div class="col s12 center">
+            <div class="card-panel white z-depth-2">
+                <table class="white hoverable responsive-table">
+                    <thead>
+                        <tr>
+                            <th data-field="id">ID</th>
+                            <th>Stan</th>
+                            <th data-field="actions">Akcje</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr v-repeat="servers">
+                            <td>{{id}}</td>
+                            <td>{{state}}</td>
+                            <td>
+                                <a href="#/mc/{{id}}/console" class="btn btn-pad black"><i class="fa fa-terminal"></i></a>
+                            </td>
+                        </tr>
+                        <tr v-show="empty">
+                            <td>Brak serwerów MC</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="fixed-action-btn" style="bottom: 45px; right: 24px;">
+    <a v-on="click: addServerModal" class="btn-floating btn-large red">
+        <i class="large material-icons">add</i>
+    </a>
+</div>
+
+<div id="addServer" class="modal">
+    <div class="modal-content">
+        <h4>Dodaj serwer</h4>
+        <p>A bunch of text</p>
+    </div>
+    <div class="modal-footer">
+        <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">Dodaj</a>
+    </div>
+</div>
+<!--<div class="fixed-action-btn">
+    <a class="btn-floating btn-large red">
+        <i class="large mdi-navigation-apps"></i>
+    </a>
+    <ul>
+        <li><a v-on="click: serverStop" class="btn-floating red"><i class="large fa fa-2x fa-power-off"></i></a></li>
+        <li><a v-on="click: serverStart" class="btn-floating green"><i class="large fa fa-2x fa-play"></i></a></li>
+        <li><a v-on="click: serverRestart" class="btn-floating yellow darken-3"><i class="fa-2x fa fa-refresh"></i></a></li>
+    </ul>
+</div>-->
