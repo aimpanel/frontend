@@ -8,6 +8,12 @@ module.exports = {
         require(['./views/auth/login'], resolve)
     },
     /* Services */
+    'ts3_list': function (resolve) {
+        require(['./views/services/ts3/list'], resolve)
+    },
+    'ts3_console': function (resolve) {
+        require(['./views/services/ts3/console'], resolve)
+    },
     'mc_list': function (resolve) {
         require(['./views/services/mc/list'], resolve)
     },

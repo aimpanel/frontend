@@ -1,0 +1,81 @@
+<div class="col s12">
+    <div class="row">
+        <div class="col s12 center">
+            <div class="card-panel white z-depth-2">
+                <table class="white hoverable responsive-table">
+                    <thead>
+                        <tr>
+                            <th data-field="id">ID</th>
+                            <th>Stan</th>
+                            <th>Konsola</th>
+                            <th data-field="actions">Akcje</th>
+                            <th>Usuń</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr v-repeat="servers">
+                            <td>{{id}}</td>
+                            <td v-if="state=='RUNNING'" class="green-text">Włączony</td>
+                            <td v-if="state=='STOPPED'" class="red-text">Wyłączony</td>
+                            <td>
+                                <a href="#/ts3/{{id}}/console" class="btn btn-pad black"><i class="fa fa-terminal"></i></a>
+                            </td>
+                            <td>
+                                <div v-on="click: startServer(id)" v-if="state=='STOPPED'" class="btn btn-pad green"><i class="fa fa-play"></i></div>
+                                <div v-on="click: restartServer(id)" v-if="state=='RUNNING'" class="btn btn-pad yellow darken-3"><i class="fa fa-refresh"></i></div>
+                                <div v-on="click: stopServer(id)" v-if="state=='RUNNING'" class="btn btn-pad red"><i class="fa fa-stop"></i></div>
+                            </td>
+                            <td>
+                                <div v-on="click: deleteServerModal(id)" class="btn btn-pad red"><i class="fa fa-remove"></i></div>
+                            </td>
+                        </tr>
+                        <tr v-show="empty">
+                            <td>Brak serwerów MC</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="fixed-action-btn" style="bottom: 45px; right: 24px;">
+    <a v-on="click: addServerModal" class="btn-floating btn-large red">
+        <i class="large material-icons">add</i>
+    </a>
+</div>
+
+<div id="addServer" class="modal">
+    <div class="modal-content">
+        <h4>Dodaj serwer</h4>
+        <div>
+            <div class="row">
+                <form class="col s12">
+                    <div class="row">
+                        <div class="input-field col s6">
+                            <i class="material-icons prefix">info_outline</i>
+                            <input id="newServerId" type="text" class="validate">
+                            <label id="newServerValidator" for="newServerId">Identyfikator serwera np. 1</label>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <div v-on="click: addServer" class="modal-action waves-effect waves-green btn-flat">Dodaj</div>
+    </div>
+</div>
+
+<div id="deleteServer" class="modal">
+    <div class="modal-content">
+        <h4>Usuń serwer</h4>
+        <p>
+            Czy jesteś pewien że chcesz usunąć serwer?<br>
+            Jest to nieodwracalne usunięcie wszystkich plików serwera!
+        </p>
+    </div>
+    <div class="modal-footer">
+        <div v-on="click: deleteServer" class="red white-text modal-action btn-flat">Tak, zniszcz</div>
+    </div>
+</div>

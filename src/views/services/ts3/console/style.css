@@ -1,0 +1,26 @@
+#logContainer,#consoleContainer
+{
+    padding-top:5px
+}
+#log,#console
+{
+    padding:10px;
+    padding-left:0px;
+    height:450px;
+    overflow-y: scroll;
+    line-height: 14px;
+    font-size: 12px;
+    margin-bottom:0px;
+}
+#logInputcontainer,#consoleInputContainer
+{
+    margin-top:0px
+}
+#logInputField,#consoleInputField
+{
+    margin-top: 0px;
+}
+.fixed-action-btn
+{
+    bottom: 45px; right: 24px;   
+}
