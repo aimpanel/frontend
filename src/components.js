@@ -6,6 +6,9 @@ module.exports = {
     'license': function (resolve) {
         require(['./views/license'], resolve)
     },
+    'about': function (resolve) {
+        require(['./views/about'], resolve)
+    },
     /* Auth */
     'login': function (resolve) {
         require(['./views/auth/login'], resolve)

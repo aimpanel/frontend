@@ -44,6 +44,7 @@ var root = Vue.extend({
                 {"name": "Serwery MC", "href": "mc", perm: "", enabled: true},
                 {"name": "Serwery TS3", "href": "ts3", perm: "", enabled: true},
                 {"name": "Licencja", "href": "license", perm: "", enabled: true},
+                {"name": "Informacje", "href": "about", perm: "", enabled: true},
                 //{"name": "Strona główna", href: "", perm: "", enabled: true},
                 //{"name": "Hosty", "href": "hosts", perm: "HOSTS", enabled: false},
                 //{"name": "Serwery MC", "href": "hosts/mc/list", perm: "", enabled: false},
