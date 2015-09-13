@@ -9,14 +9,9 @@ module.exports = {
         }
     },
     ready: function () {
-        this.hostId = this.route.params.hostId;
-        this.serverSlug = this.route.params.serverSlug;
-
-        //this.$root.checkPerm('HOSTS_MC_LIST');
-        //this.$root.checkPerm('');
-
         this.$root.$set('title', 'Lista serwerów TS3');
         jQuery('.button-collapse').sideNav('hide');
+        jQuery('.tooltipped').tooltip({delay: 50});
 
         this.getServers();
         window.interval = setInterval(this.getServers, 5000);
