@@ -6,6 +6,9 @@ module.exports = {
     '/license': {
         component: 'license'
     },
+    '/about': {
+        component: 'about'
+    },
     /* TeamSpeak 3 service */
     '/ts3/': {
         component: 'ts3_list'
