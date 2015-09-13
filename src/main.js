@@ -16,11 +16,12 @@ setTimeout(function () {
 var ua = navigator.userAgent;
 var is_native_android = ((ua.indexOf('Mozilla/5.0') > -1 && ua.indexOf('Android ') > -1 && ua.indexOf('AppleWebKit') > -1) && (ua.indexOf('Version') > -1));
 if(is_native_android) {
-    alert('Ta przeglądarka jest niewspierana :(')
+    alert('Twoja przeglądarka jest przestarzała, niektóre elementy mogą nie działać poprawnie')
 }
 
 //=== VUE ===
 var Vue = require('vue');
+Vue.config.debug = true;
 
 var Router = require('vue-router');
 Vue.use(Router);
