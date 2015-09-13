@@ -43,6 +43,7 @@ var root = Vue.extend({
             menu: [
                 {"name": "Serwery MC", "href": "mc", perm: "", enabled: true},
                 {"name": "Serwery TS3", "href": "ts3", perm: "", enabled: true},
+                {"name": "Licencja", "href": "license", perm: "", enabled: true},
                 //{"name": "Strona główna", href: "", perm: "", enabled: true},
                 //{"name": "Hosty", "href": "hosts", perm: "HOSTS", enabled: false},
                 //{"name": "Serwery MC", "href": "hosts/mc/list", perm: "", enabled: false},
@@ -102,15 +103,15 @@ var root = Vue.extend({
             this.$http.headers.common["Authorization"] = "Bearer " + window.localStorage.token;
 
             //get permissions
-            this.$http.get('/api/users/info', function (data) {
-                var permissions = window.permissions;
-                var perms = data.data.permissions;
-                perms.forEach(function (item) {
-                    permissions.push(item.perm);
-                });
-
-                this.updateMenu(permissions);
-            });
+//            this.$http.get('/api/users/info', function (data) {
+//                var permissions = window.permissions;
+//                var perms = data.data.permissions;
+//                perms.forEach(function (item) {
+//                    permissions.push(item.perm);
+//                });
+//
+//                this.updateMenu(permissions);
+//            });
         }
 
         if (window.localStorage.email != null) {
