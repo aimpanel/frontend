@@ -22,7 +22,8 @@ module.exports = {
             constrain_width: true,
             alignment: 'right'
         });
-        this.startIntervalLog();
+        //this.startIntervalLog();
+        this.startIntervalConsole();
     },
     methods: {
         runLog: function ()
