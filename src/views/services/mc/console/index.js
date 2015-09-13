@@ -4,17 +4,12 @@ module.exports = {
     replace: true,
     data: function () {
         return {
-            hostId: '',
-            serverSlug: '',
-            consoleKey: ''
         }
     },
     ready: function () {
         this.id = this.route.params.id;
-        //this.$root.checkPerm('HOST_' + this.hostId + '_MC_' + this.serverSlug + '_CONSOLE');
-        this.$root.$set('title', 'Konsola')
+        this.$root.$set('title', 'Konsola');
         jQuery('ul.tabs').tabs();
-        jQuery('.button-collapse').sideNav('hide');
         jQuery(".dropdown-button").dropdown({
             hover: false,
             belowOrigin: true,
@@ -29,7 +24,6 @@ module.exports = {
             this.$http.get(window.baseurl + "/api/v1/services/mc/" + this.id + "/log", function (data) {
                 jQuery("#log").empty();
                 data.forEach(function (d) {
-                    //console.log(d);
                     jQuery("#log").append(d + '<br>');
                 });
                 var objDiv = document.getElementById("log");
@@ -41,7 +35,6 @@ module.exports = {
             this.$http.get(window.baseurl + "/api/v1/services/mc/" + this.id + "/console", function (data) {
                 jQuery("#console").empty();
                 data.forEach(function (d) {
-                    //console.log(d);
                     jQuery("#console").append(d + '<br>');
                 });
                 var objDiv = document.getElementById("console");

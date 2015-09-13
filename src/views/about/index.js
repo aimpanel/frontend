@@ -4,7 +4,6 @@ module.exports = {
     replace: true,
     ready: function () {
         this.$root.$set('title', 'O panelu');
-        jQuery('.button-collapse').sideNav('hide');
     },
     methods: {
         show: function (lic) {

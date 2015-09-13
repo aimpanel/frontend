@@ -48,5 +48,8 @@ module.exports = {
     },
     'sidebar-menu': function (resolve) {
         require(['./views/sidebar-menu'], resolve)
+    },
+    'right-menu': function (resolve) {
+        require(['./views/right-menu'], resolve)
     }
 }

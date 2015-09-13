@@ -8,6 +8,5 @@ module.exports = {
     },
     ready: function () {
         this.$root.$set('title', 'Strona główna');
-        jQuery('.button-collapse').sideNav('hide');
     }
 };

@@ -9,7 +9,6 @@ module.exports = {
     },
     ready: function () {
         this.$root.$set('title', 'Informacje o licencji');
-        jQuery('.button-collapse').sideNav('hide');
         this.getLicense();
     },
     methods: {

@@ -29,7 +29,6 @@ module.exports = {
         this.$root.checkPerm('USERS');
 
         this.$root.$set('title', 'Lista użytkowników');
-        jQuery('.button-collapse').sideNav('hide');
 
         setTimeout(function () {
             jQuery('.collapsible').collapsible();

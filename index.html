@@ -11,20 +11,8 @@
         <header>
             <nav class="light-green" role="navigation">
                 <div class="nav-wrapper container">
-                    <!--<a id="logo-container" href="#" class="brand-logo thin-text">{{title}}</a>-->
                     <a id="logo-container" class="brand-logo thin-text">{{title}}</a>
-                    <ul class="right">
-                        <li v-if="logged && routeContains('mc') && !routeContains('mc/list')">
-                            <a class="dropdown-button hide-on-small-only" data-activates="user-dropdown"><span>Menu serwera</span><i class="mdi-navigation-more-vert right"></i></a>
-                            <a class="dropdown-button hide-on-med-and-up" data-activates="user-dropdown"><i class="mdi-navigation-more-vert"></i></a>
-                            <ul id="user-dropdown" class="dropdown-content">
-                                <li><a href="#/mc/{{route.params.id}}/console">Konsola</a></li>
-                                <li><a href="#/mc/{{route.params.id}}/files">Pliki</a></li>
-                                <li><a href="#/mc/{{route.params.id}}/stats">Statystyki</a></li>
-                                <!--<li class="divider"></li>-->
-                            </ul>
-                        </li>
-                    </ul>
+                    <right-menu></right-menu>
                     <ul id="slide-out" class="side-nav fixed">
                         <li style="padding-bottom:20px"><a href="#"><img style="width:100%;padding-top:25px" src="assets/logo.png"></a></li>
                         <sidebar-menu></sidebar-menu>
@@ -48,6 +36,6 @@
             </div>
         </footer>
         <script src="https://autobahn.s3.amazonaws.com/autobahnjs/latest/autobahn.min.jgz"></script>
-	<script src="build/build.js"></script>
+        <script src="build/build.js"></script>
     </body>
 </html>
