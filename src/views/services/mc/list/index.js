@@ -10,7 +10,6 @@ module.exports = {
     },
     ready: function () {
         this.$root.$set('title', 'Lista serwerów MC');
-        jQuery('.button-collapse').sideNav('hide');
         jQuery('.tooltipped').tooltip({delay: 50});
 
         this.getServers();

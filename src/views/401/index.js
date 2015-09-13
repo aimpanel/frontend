@@ -3,6 +3,5 @@ module.exports = {
     replace: true,
     ready: function () {
         this.$root.$set('title', '401');
-        jQuery('.button-collapse').sideNav('hide');
     }
 }

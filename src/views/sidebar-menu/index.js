@@ -3,7 +3,6 @@ setTimeout(function () {
     jQuery('.collapsible').collapsible();
 }, 1);
 
-//sideNav doesn't need hack
 jQuery('.button-collapse').sideNav();
 
 module.exports = {

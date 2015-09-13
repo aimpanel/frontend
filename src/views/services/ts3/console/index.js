@@ -15,7 +15,6 @@ module.exports = {
         //this.$root.checkPerm('HOST_' + this.hostId + '_MC_' + this.serverSlug + '_CONSOLE');
         this.$root.$set('title', 'Konsola')
         jQuery('ul.tabs').tabs();
-        jQuery('.button-collapse').sideNav('hide');
         jQuery(".dropdown-button").dropdown({
             hover: false,
             belowOrigin: true,

@@ -15,7 +15,7 @@ setTimeout(function () {
 //detect if browser is native android browser
 var ua = navigator.userAgent;
 var is_native_android = ((ua.indexOf('Mozilla/5.0') > -1 && ua.indexOf('Android ') > -1 && ua.indexOf('AppleWebKit') > -1) && (ua.indexOf('Version') > -1));
-if(is_native_android) {
+if (is_native_android) {
     alert('Twoja przeglądarka jest przestarzała, niektóre elementy mogą nie działać poprawnie')
 }
 
@@ -75,10 +75,10 @@ var root = Vue.extend({
             }
             return false;
         },
-        updateMenu: function(perms) {
+        updateMenu: function (perms) {
             var menu = this.menu;
 
-            menu.forEach(function(item) {
+            menu.forEach(function (item) {
                 if (perms.indexOf(item.perm) != -1 || item.perm == '' || perms.indexOf('ADMIN') != -1) {
                     item.enabled = true;
                 } else {
@@ -86,10 +86,10 @@ var root = Vue.extend({
                 }
             });
         },
-        checkPerm: function(perm) {
+        checkPerm: function (perm) {
             var permissions = window.permissions;
 
-            if(permissions.indexOf(perm) > -1 || permissions.indexOf('ADMIN') > -1) {
+            if (permissions.indexOf(perm) > -1 || permissions.indexOf('ADMIN') > -1) {
                 return false
             }
             //
@@ -142,7 +142,21 @@ router.beforeEach(function (from, to) {
             //router.replace('/auth/login');
         }
     }
+
+    //hack for dropdown
+    setTimeout(function () {
+        jQuery(".dropdown-button").dropdown({hover: false, belowOrigin: true, constrain_width: false, alignment: 'right'});
+    }, 1);
+    //hack for working menu collapsible
+    setTimeout(function () {
+        jQuery('.collapsible').collapsible();
+    }, 1);
+
+    //sideNav doesn't need hack
+    jQuery('.button-collapse').sideNav('hide');
 });
+
+jQuery('.button-collapse').sideNav
 
 router.map(require('./routes'));
 router.start(root, 'html');

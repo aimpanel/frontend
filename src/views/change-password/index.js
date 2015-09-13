@@ -27,6 +27,5 @@ module.exports = {
     },
     ready: function () {
         this.$root.$set('title', 'Zmiana hasła');
-        jQuery('.button-collapse').sideNav('hide');
     }
 }
