@@ -2,16 +2,16 @@
     <div class="row">
         <div class="col s12 center">
             <div class="card-panel white z-depth-2">
-                <table v-show="users.length > 0" class="white hoverable responsive-table">
+                <table v-show="groups.length > 0" class="white hoverable responsive-table">
                     <thead>
                         <tr>
-                            <th data-field="username">Nazwa użytkownika</th>
-                            <th data-field="actions">Akcje</th>
+                            <th>Nazwa grupy</th>
+                            <th>Akcje</th>
                         </tr>
                     </thead>
                     <tbody>
-                        <tr v-repeat="users">
-                            <td>{{username}}</td>
+                        <tr v-repeat="groups">
+                            <td>{{name}}</td>
                             <td>
                                 <!--<a href="#mc/{{id}}/console" class="btn btn-pad black"><i class="fa fa-terminal"></i></a>-->
                                 <button v-on="click: deleteUser(id)" v-if="id != 1" class="btn btn-pad red"><i class="material-icons">delete</i>
@@ -20,8 +20,8 @@
                         </tr>
                     </tbody>
                 </table>
-                <div v-show="users.length == 0" class="tooltipped" data-position="bottom" data-delay="50" data-tooltip="Protip: w prawym dolnym rogu znajduje się plusik">
-                    Brak użytkowników. Może warto dodać nowego? :)
+                <div v-show="groups.length == 0" class="tooltipped" data-position="bottom" data-delay="50" data-tooltip="Protip: w prawym dolnym rogu znajduje się plusik">
+                    Brak grup. Może warto dodać nową? :)
                 </div>
             </div>
         </div>

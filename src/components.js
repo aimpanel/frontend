@@ -36,6 +36,9 @@ module.exports = {
     'users': function (resolve) {
         require(['./views/users'], resolve)
     },
+    'groups': function (resolve) {
+        require(['./views/groups'], resolve)
+    },
     'change_password': function (resolve) {
         require(['./views/change-password'], resolve)
     },
