@@ -20,6 +20,8 @@ module.exports = {
             var self = this;
             this.$http.get(window.baseurl + '/api/v1/services/ts3', function (data, status) {
                 self.$set("servers", data);
+            }).error(function (data, status) {
+                this.$root.checkSession(data, status);
             });
         },
         addServerModal: function () {
