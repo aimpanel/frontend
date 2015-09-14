@@ -4,7 +4,6 @@ require('./main.css');
 require("font-awesome-webpack");
 //require("../node_modules/materialize-css/dist/css/materialize.css")
 require("../node_modules/materialize-css/dist/js/materialize.js")
-
 require("../assets/date.format.js")
 
 //customize right top dropdown
@@ -30,7 +29,7 @@ var Resource = require('vue-resource');
 Vue.use(Resource);
 
 window.permissions = [];
-window.baseurl = "http://192.168.33.33:3131"
+window.baseurl = "http://192.168.33.33:3131";
 
 //main vm(viewmodel)
 var root = Vue.extend({
@@ -42,15 +41,11 @@ var root = Vue.extend({
             email: '',
             title: 'Panel',
             menu: [
+                {"name": "Aktualności", "href": "", perm: "", enabled: true},
                 {"name": "Serwery MC", "href": "mc", perm: "", enabled: true},
                 {"name": "Serwery TS3", "href": "ts3", perm: "", enabled: true},
                 {"name": "Licencja", "href": "license", perm: "", enabled: true},
-                {"name": "Informacje", "href": "about", perm: "", enabled: true},
-                //{"name": "Strona główna", href: "", perm: "", enabled: true},
-                //{"name": "Hosty", "href": "hosts", perm: "HOSTS", enabled: false},
-                //{"name": "Serwery MC", "href": "hosts/mc/list", perm: "", enabled: false},
-                //{"name": "Użytkownicy", "href": "users", perm: "USERS", enabled: false},
-                //{"name": "Zmiana hasła", "href": "change-password", perm: "", enabled: true}
+                {"name": "Informacje", "href": "about", perm: "", enabled: true}
             ]
         }
     },
@@ -66,7 +61,7 @@ var root = Vue.extend({
                 jQuery('.collapsible').collapsible();
             }, 1);
 
-            router.go('/');
+            router.go('/auth/login');
         },
         routeContains: function (name) {
             var path = this.route.path;
@@ -103,17 +98,6 @@ var root = Vue.extend({
         if (window.localStorage.token != null) {
             this.logged = true;
             this.$http.headers.common["Authorization"] = "Bearer " + window.localStorage.token;
-
-            //get permissions
-//            this.$http.get('/api/users/info', function (data) {
-//                var permissions = window.permissions;
-//                var perms = data.data.permissions;
-//                perms.forEach(function (item) {
-//                    permissions.push(item.perm);
-//                });
-//
-//                this.updateMenu(permissions);
-//            });
         }
 
         if (window.localStorage.email != null) {
@@ -132,7 +116,7 @@ router.beforeEach(function (from, to) {
     //if logged
     if (window.localStorage.token != null) {
         if (to.path.indexOf('auth') != -1) {
-            return false
+            return false;
         }
     }
 
@@ -156,7 +140,7 @@ router.beforeEach(function (from, to) {
     jQuery('.button-collapse').sideNav('hide');
 });
 
-jQuery('.button-collapse').sideNav
+jQuery('.button-collapse').sideNav();
 
 router.map(require('./routes'));
 router.start(root, 'html');
