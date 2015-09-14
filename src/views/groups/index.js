@@ -4,7 +4,7 @@ module.exports = {
     replace: true,
     data: function () {
         return {
-            users: [],
+            groups: [],
             usersRes: this.$resource('/api/users/:id'),
             user: {
                 username: '',
@@ -34,9 +34,7 @@ module.exports = {
             jQuery('.collapsible').collapsible();
         }, 1);
 
-        //get all hosts
-        this.getUsers();
-        this.getHosts();
+        this.getGroups();
 
         //init tooltips
         jQuery('.tooltipped').tooltip({delay: 50});
@@ -50,10 +48,10 @@ module.exports = {
             jQuery('#addUser1').closeModal();
             jQuery('#addUser2').openModal();
         },
-        getUsers: function () {
+        getGroups: function () {
             var self = this;
-            this.$http.get(window.baseurl + '/api/v1/user', function (data, status) {
-                self.$set("users", data);
+            this.$http.get(window.baseurl + '/api/v1/group', function (data, status) {
+                self.$set("groups", data);
             }).error(function (data, status) {
                 this.$root.checkSession(data, status);
             });

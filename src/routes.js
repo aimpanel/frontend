@@ -37,6 +37,9 @@ module.exports = {
     'users': {
         component: 'users'
     },
+    'groups': {
+        component: 'groups'
+    },
     'change-password': {
         component: 'change_password'
     },
