@@ -63,6 +63,13 @@ var root = Vue.extend({
 
             router.go('/auth/login');
         },
+        checkSession: function (data,status) {
+            if (status == 401)
+            {
+                Materialize.toast('Sesja przedawniona, należy zalogować się ponownie', 4000);
+                this.doLogout();
+            }
+        },
         routeContains: function (name) {
             var path = this.route.path;
             if (path.indexOf(name) != -1) {
@@ -144,3 +151,4 @@ jQuery('.button-collapse').sideNav();
 
 router.map(require('./routes'));
 router.start(root, 'html');
+router.go('/auth/login');
