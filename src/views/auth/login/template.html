@@ -9,21 +9,31 @@
     <div class="row">
         <div class="col s12 center">
             <div class="z-depth-2 col s12 l8 white">
-                <div class="input-field col s12">
-                    <i class="mdi-action-account-circle prefix"></i>
-                    <input v-on="keyup:doAuth | key 'enter'" type="text" name="login" id="login" v-model="login" maxlength="30" required>
-                    <label for="login">Twoja nazwa użytkownika</label>
+                <div v-if="checkingAuth">
+                    <br><br> <br>
+                    Logowanie...
+                    <div class="progress">
+                        <div class="indeterminate"></div>
+                    </div>
+                    <br><br>
                 </div>
-                <div class="input-field col s12">
-                    <i class="mdi-communication-vpn-key prefix"></i>
-                    <input v-on="keyup:doAuth | key 'enter'" type="password" name="pasword" id="password" v-model="password" maxlength="30" required>
-                    <label for="password">Twoje hasło</label>
-                </div>
-                <br>
-                <br>
-                <br>
-                <div class="center-btn">
-                    <button v-on="click: doAuth" type="submit" class="waves-effect waves-light btn green" id="registrovatse"><i class="mdi-action-done left"></i>Zaloguj się</button>
+                <div v-if="!checkingAuth">
+                    <div class="input-field col s12">
+                        <i class="mdi-action-account-circle prefix"></i>
+                        <input v-on="keyup:doAuth | key 'enter'" type="text" name="login" id="login" v-model="login" maxlength="30" required>
+                        <label v-class="active: afterCheckingAuth" for="login">Twoja nazwa użytkownika</label>
+                    </div>
+                    <div class="input-field col s12">
+                        <i class="mdi-communication-vpn-key prefix"></i>
+                        <input v-on="keyup:doAuth | key 'enter'" type="password" name="pasword" id="password" v-model="password" maxlength="30" required>
+                        <label v-class="active: afterCheckingAuth" for="password">Twoje hasło</label>
+                    </div>
+                    <br>
+                    <br>
+                    <br>
+                    <div class="center-btn">
+                        <button v-on="click: doAuth" type="submit" class="waves-effect waves-light btn green" id="registrovatse"><i class="mdi-action-done left"></i>Zaloguj się</button>
+                    </div>
                 </div>
                 <br>
             </div>
