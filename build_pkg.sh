@@ -17,6 +17,12 @@ cp -r assets deb/usr/local/aimpanel/app/public/panel/
 cp -r build deb/usr/local/aimpanel/app/public/panel/
 cp index.html deb/usr/local/aimpanel/app/public/panel/
 
+cat > deb/afterinstall << 'EOF'
+#!/bin/bash
+chmod -R 750 /usr/local/aimpanel/app/public/
+chown -R aimpanel:aimpanel /usr/local/aimpanel/app/public/
+EOF
+
 #make package
 cd deb
 fpm -s dir -t deb \
@@ -27,6 +33,8 @@ fpm -s dir -t deb \
  --vendor "LVL UP" \
  -m "Michał Frąckiewicz <michal@lvlup.pro>" \
  --license "All rights reserved" \
+ --after-install afterinstall \
+ -d aimpanel-nginx \
  usr
 #sign that package
 dpkg-sig --sign builder *.deb
