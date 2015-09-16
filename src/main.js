@@ -1,3 +1,4 @@
+require('./config.js');
 require('./main.css');
 
 //for hiding sidenav after click
@@ -29,7 +30,6 @@ var Resource = require('vue-resource');
 Vue.use(Resource);
 
 window.permissions = [];
-window.baseurl = "http://192.168.33.33:3131";
 
 //main vm(viewmodel)
 var root = Vue.extend({
