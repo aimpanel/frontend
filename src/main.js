@@ -29,6 +29,19 @@ Vue.use(Router);
 var Resource = require('vue-resource');
 Vue.use(Resource);
 
+Vue.directive('modal', {
+    bind: function (namez)
+    {
+        this.handler = function (name) {
+            jQuery('#' + this.expression).openModal();
+        }.bind(this);
+        this.el.addEventListener('click', this.handler);
+    },
+    unbind: function () {
+        this.el.removeEventListener('click', this.handler);
+    }
+});
+
 window.permissions = [];
 
 //main vm(viewmodel)
