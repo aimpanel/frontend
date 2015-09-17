@@ -36,6 +36,7 @@ var root = Vue.extend({
     components: require('./components'),
     data: function () {
         return {
+            url: false,
             logged: false,
             router: router,
             email: '',
@@ -51,7 +52,16 @@ var root = Vue.extend({
             ]
         }
     },
+    ready: function () {
+        this.getUrl();
+    },
     methods: {
+        getUrl: function ()
+        {
+            var arr = window.location.href.split("/");
+            this.url = arr[0] + "//" + arr[2];
+            return this.url;
+        },
         doLogout: function () {
             delete window.localStorage.token;
             delete window.localStorage.username;
@@ -65,7 +75,7 @@ var root = Vue.extend({
 
             router.go('/auth/login');
         },
-        checkSession: function (data,status) {
+        checkSession: function (data, status) {
             if (status == 401)
             {
                 Materialize.toast('Sesja przedawniona, należy zalogować się ponownie', 4000);

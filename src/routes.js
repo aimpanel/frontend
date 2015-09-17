@@ -23,6 +23,9 @@ module.exports = {
     'mc/:id/console': {
         component: 'mc_console'
     },
+    'mc/:id/sftp': {
+        component: 'mc_sftp'
+    },
     'mc/:id/files': {
         component: 'mc_files'
     },
