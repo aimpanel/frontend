@@ -32,6 +32,9 @@ module.exports = {
     'mc_stats': function (resolve) {
         require(['./views/services/mc/stats'], resolve)
     },
+    'mc_sftp': function (resolve) {
+        require(['./views/services/mc/sftp'], resolve)
+    },
     /* Users */
     'users': function (resolve) {
         require(['./views/users'], resolve)
