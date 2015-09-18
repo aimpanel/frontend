@@ -20,6 +20,9 @@ module.exports = {
     'ts3_console': function (resolve) {
         require(['./views/services/ts3/console'], resolve)
     },
+    'ts3_sftp': function (resolve) {
+        require(['./views/services/ts3/sftp'], resolve)
+    },
     'mc_list': function (resolve) {
         require(['./views/services/mc/list'], resolve)
     },

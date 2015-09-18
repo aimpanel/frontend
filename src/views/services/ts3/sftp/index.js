@@ -30,7 +30,7 @@ module.exports = {
         },
         randomPassword: function () {
             jQuery('#newRandomPasswordContainer').hide();
-            this.$http.get(window.baseurl + '/api/v1/services/mc/' + this.id + '/password/random', function (data, status) {
+            this.$http.get(window.baseurl + '/api/v1/services/ts3/' + this.id + '/password/random', function (data, status) {
                 jQuery('#newRandomPassword').val(data.new_password);
                 jQuery('#newRandomPasswordContainer').show();
             }).error(function (data)
