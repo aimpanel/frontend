@@ -13,6 +13,9 @@ module.exports = {
     ':service/:id/sftp': {
         component: 'shared_sftp'
     },
+    ':service/:id/autorestart': {
+        component: 'shared_autorestart'
+    },
     /* TeamSpeak 3 service */
     '/ts3/': {
         component: 'ts3_list'
