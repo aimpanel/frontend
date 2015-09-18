@@ -5,11 +5,21 @@ module.exports = {
     data: function () {
         return {
             id: false,
-            servers: [],
+            service: false,
+            sftpPrefix: false,
+            servers: []
         }
     },
     ready: function () {
         this.$root.$set('title', 'SFTP');
+        this.service = this.route.params.service;
+        if (this.service === "ts3")
+        {
+            this.sftpPrefix = "ts";
+        } else
+        {
+            this.sftpPrefix = this.service;
+        }
         this.id = this.route.params.id;
         jQuery('.tooltipped').tooltip({delay: 50});
         jQuery(".dropdown-button").dropdown({
@@ -30,7 +40,7 @@ module.exports = {
         },
         randomPassword: function () {
             jQuery('#newRandomPasswordContainer').hide();
-            this.$http.get(window.baseurl + '/api/v1/services/mc/' + this.id + '/password/random', function (data, status) {
+            this.$http.get(window.baseurl + '/api/v1/services/' + this.service + '/' + this.id + '/password/random', function (data, status) {
                 jQuery('#newRandomPassword').val(data.new_password);
                 jQuery('#newRandomPasswordContainer').show();
             }).error(function (data)
