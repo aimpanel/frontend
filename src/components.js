@@ -17,6 +17,9 @@ module.exports = {
     'shared_sftp': function (resolve) {
         require(['./views/services/shared/sftp'], resolve)
     },
+    'shared_autorestart': function (resolve) {
+        require(['./views/services/shared/autorestart'], resolve)
+    },
     /* Services */
     'ts3_list': function (resolve) {
         require(['./views/services/ts3/list'], resolve)
