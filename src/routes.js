@@ -16,6 +16,9 @@ module.exports = {
     'ts3/:id/console': {
         component: 'ts3_console'
     },
+    'ts3/:id/sftp': {
+        component: 'ts3_sftp'
+    },
     /* Minecraft service */
     '/mc/': {
         component: 'mc_list'
