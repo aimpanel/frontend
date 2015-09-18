@@ -9,6 +9,10 @@ module.exports = {
     '/about': {
         component: 'about'
     },
+    /* Shared */
+    ':service/:id/sftp': {
+        component: 'shared_sftp'
+    },
     /* TeamSpeak 3 service */
     '/ts3/': {
         component: 'ts3_list'
@@ -16,18 +20,12 @@ module.exports = {
     'ts3/:id/console': {
         component: 'ts3_console'
     },
-    'ts3/:id/sftp': {
-        component: 'ts3_sftp'
-    },
     /* Minecraft service */
     '/mc/': {
         component: 'mc_list'
     },
     'mc/:id/console': {
         component: 'mc_console'
-    },
-    'mc/:id/sftp': {
-        component: 'mc_sftp'
     },
     'mc/:id/files': {
         component: 'mc_files'

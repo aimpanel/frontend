@@ -13,15 +13,16 @@ module.exports = {
     'login': function (resolve) {
         require(['./views/auth/login'], resolve)
     },
+    /* Shared */
+    'shared_sftp': function (resolve) {
+        require(['./views/services/shared/sftp'], resolve)
+    },
     /* Services */
     'ts3_list': function (resolve) {
         require(['./views/services/ts3/list'], resolve)
     },
     'ts3_console': function (resolve) {
         require(['./views/services/ts3/console'], resolve)
-    },
-    'ts3_sftp': function (resolve) {
-        require(['./views/services/ts3/sftp'], resolve)
     },
     'mc_list': function (resolve) {
         require(['./views/services/mc/list'], resolve)
@@ -34,9 +35,6 @@ module.exports = {
     },
     'mc_stats': function (resolve) {
         require(['./views/services/mc/stats'], resolve)
-    },
-    'mc_sftp': function (resolve) {
-        require(['./views/services/mc/sftp'], resolve)
     },
     /* Users */
     'users': function (resolve) {
