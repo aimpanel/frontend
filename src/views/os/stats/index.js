@@ -3,6 +3,7 @@ var Chart = require("chart.js");
 //Chart.defaults.global = {
 //    responsive: false
 //};
+//var sparkline = require('jquery-sparkline');
 module.exports = {
     template: require('./template.html'),
     replace: true,
@@ -14,6 +15,17 @@ module.exports = {
                 Buffers: 1,
                 Cached: 1
             },
+            cpu: {
+                usr: 1,
+                nice: 1,
+                sys: 1,
+                iowait: 1,
+                irq: 1,
+                soft: 1,
+                steal: 1,
+                guest: 1,
+                idle: 1
+            },
             ramChartInstance: false,
             cpuChartInstance: false
         }
@@ -22,6 +34,11 @@ module.exports = {
         this.$root.$set('title', 'Statystyki systemu');
         this.getRam();
         window.refreshCharts = setInterval(this.getRam, 5000);
+//        var myvalues = [10, 8, 5, 7, 4, 4, 1];
+//        $('#cpuSpark').sparkline(myvalues, {
+//            width: "100%"
+//        });
+        //jQuery("#cpuSpark").sparkline([1, 5, 22, 7, 9]);
     },
     methods: {
         getRam: function () {
@@ -31,7 +48,6 @@ module.exports = {
                 self.$set("cpu", data.cpuinfo);
                 if (!self.ramChartInstance)
                 {
-                    console.log("creating ram instance");
                     this.ramChart();
                 }
                 this.ramChartInstance.segments[0].value = Math.round(this.ram.MemTotal / 1024);
@@ -42,11 +58,17 @@ module.exports = {
 
                 if (!self.cpuChartInstance)
                 {
-                    console.log("creating cpu instance");
                     this.cpuChart();
                 }
-                this.cpuChartInstance.segments[0].value = this.cpu.idle;
-                this.cpuChartInstance.segments[1].value = this.cpu.usr;
+                this.cpuChartInstance.segments[0].value = this.cpu.usr;
+                this.cpuChartInstance.segments[1].value = this.cpu.nice;
+                this.cpuChartInstance.segments[2].value = this.cpu.sys;
+                this.cpuChartInstance.segments[3].value = this.cpu.iowait;
+                this.cpuChartInstance.segments[4].value = this.cpu.irq;
+                this.cpuChartInstance.segments[5].value = this.cpu.soft;
+                this.cpuChartInstance.segments[6].value = this.cpu.steal;
+                this.cpuChartInstance.segments[7].value = this.cpu.guest;
+                this.cpuChartInstance.segments[8].value = this.cpu.idle;
                 this.cpuChartInstance.update();
             });
         },
@@ -56,31 +78,31 @@ module.exports = {
                 {
                     value: 1,
                     color: "#60BD68",
-                    highlight: "#7AD782",
+                    highlight: "#6DCA75",
                     label: "Nieużywane"
                 },
                 {
                     value: 1,
                     color: "#5DA5DA",
-                    highlight: "#77BFF4",
+                    highlight: "#6AB2E7",
                     label: "Bufory"
                 },
                 {
                     value: 1,
-                    color: "#F8E959",
-                    highlight: "#FFFF72",
+                    color: "#DECF3F",
+                    highlight: "#EBDC4C",
                     label: "Cache"
                 },
                 {
                     value: 1,
                     color: "#F15854",
-                    highlight: "#FF726E",
+                    highlight: "#FE6561",
                     label: "Aplikacje"
                 }
             ];
             var options = {
-                animationSteps: 40,
-                animation: false
+                animationSteps: 35,
+                animation: true
             };
             var ctx = document.getElementById("ram").getContext("2d");
             this.ramChartInstance = new Chart(ctx).Pie(data, options);
@@ -92,19 +114,62 @@ module.exports = {
             var data = [
                 {
                     value: 1,
-                    color: "#60BD68",
-                    highlight: "#7AD782",
-                    label: "Idle"
+                    color: "#5DA5DA",
+                    highlight: "#6AB2E7",
+                    label: "usr"
                 },
                 {
                     value: 1,
-                    color: "#5DA5DA",
-                    highlight: "#77BFF4",
-                    label: "Usr"
+                    color: "#4D4D4D",
+                    highlight: "#5A5A5A",
+                    label: "nice"
+                },
+                {
+                    value: 1,
+                    color: "#DECF3F",
+                    highlight: "#EBDC4C",
+                    label: "sys"
+                },
+                {
+                    value: 1,
+                    color: "#F15854",
+                    highlight: "#FE6561",
+                    label: "iowait"
+                },
+                {
+                    value: 1,
+                    color: "#B276B2",
+                    highlight: "#BF83BF",
+                    label: "irq"
+                },
+                {
+                    value: 1,
+                    color: "#F17CB0",
+                    highlight: "#FE89BD",
+                    label: "soft"
+                },
+                {
+                    value: 1,
+                    color: "#FAA43A",
+                    highlight: "#FFB147",
+                    label: "steal"
+                },
+                {
+                    value: 1,
+                    color: "#B2912F",
+                    highlight: "#BF9E3C",
+                    label: "guest"
+                },
+                {
+                    value: 1,
+                    color: "#60BD68",
+                    highlight: "#6DCA75",
+                    label: "idle"
                 }
             ];
             var options = {
-                animation: false
+                animationSteps: 35,
+                animation: true
             };
             var ctx = document.getElementById("cpu").getContext("2d");
             this.cpuChartInstance = new Chart(ctx).Pie(data, options);

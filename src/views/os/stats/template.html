@@ -6,6 +6,7 @@
                     <div class="col s12 l6 center">
                         <h5>RAM w MB</h5>
                         <canvas id="ram"></canvas>
+                        <div id="cpuSpark"></div>
                         <p>Odświeżanie wykresu co 5sek</p>
                     </div>
                     <div class="col s12 l6">
@@ -32,10 +33,17 @@
                         <p>Odświeżanie wykresu co 5sek</p>
                     </div>
                     <div class="col s12 l6">
-                        <h5>Jak rozumieć zużycie CPU?</h5>
+                        <h5>Co zużywa czas procesora?</h5>
                         <p>
-                            <strong>Usr</strong> - czas procesora użyty dla aplikacji w systemie np. serwery gier
-                            <br><br>
+                            <strong>usr</strong> - aplikacje w systemie np. serwery gier<br>
+                            <strong>idle</strong> - nieużywany<br>
+                            <strong>sys</strong> - jądro systemu<br>
+                            <strong>nice</strong> - mało ważne zadania w systemie<br>
+                            <strong>iowait</strong> - oczekiwanie zapisu na dysk<br>
+                            <strong>irq</strong> - sterowniki urządzeń<br>
+                            <strong>soft</strong> - sterowniki urządzeń c.d.<br>
+                            <strong>steal</strong> - inne VPSy na maszynie lub przekraczanie twojego przydziału CPU<br>
+                            <strong>guest</strong> - tworzenie wirtualnych procesorów<br>
                         </p>
                     </div>
                 </div>
