@@ -5,6 +5,7 @@
   "main": "src/main.js",
   "dependencies": {
     "brace": "~0.5.1",
+    "chart.js": "^1.0.2",
     "file-loader": "^0.8.4",
     "font-awesome": "^4.3.0",
     "font-awesome-webpack": "0.0.3",

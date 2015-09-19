@@ -1,0 +1,45 @@
+<div class="col s12">
+    <div class="row">
+        <div class="col s12">
+            <div class="card-panel white z-depth-2">
+                <div class="row">
+                    <div class="col s12 l6 center">
+                        <h5>RAM w MB</h5>
+                        <canvas id="ram"></canvas>
+                        <p>Odświeżanie wykresu co 5sek</p>
+                    </div>
+                    <div class="col s12 l6">
+                        <h5>Jak rozumieć zużycie RAMu?</h5>
+                        <p>
+                            <strong>Aplikacje</strong> - pamięć zużyta przez aplikacje aby te mogły działać, jest to główny powód dla posiadania RAMu :)
+                            <br><br>
+                            <strong>Cache</strong> - często odczytywane dane z dysku są przechowywane w pamięci aby system mógł je szybciej odczytywać.
+                            <br><br>
+                            <strong>Bufory</strong> - obszar do którego zbierane są dane do zapisu na dysk, może być duży jeśli dysk jest zbyt wolny.
+                            <br><br>
+                            <strong>Nieużywane</strong> - pamięć całkowicie nieużywana i gotowa do "zasiedlenia", według jądra Linux jest to zmarnowany RAM, lepiej gdy jest przeznaczony na cache.
+                            <br><br>
+                            System operacyjny sam dba o odpowiednie wartości pamięci cache oraz buforów. Nie jest wymagana interwencja użytkownika.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="card-panel white z-depth-2">
+                <div class="row">
+                    <div class="col s12 l6 center">
+                        <h5>CPU w %</h5>
+                        <canvas id="cpu"></canvas>
+                        <p>Odświeżanie wykresu co 5sek</p>
+                    </div>
+                    <div class="col s12 l6">
+                        <h5>Jak rozumieć zużycie CPU?</h5>
+                        <p>
+                            <strong>Usr</strong> - czas procesora użyty dla aplikacji w systemie np. serwery gier
+                            <br><br>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
