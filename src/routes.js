@@ -9,6 +9,9 @@ module.exports = {
     '/about': {
         component: 'about'
     },
+     '/os/stats': {
+        component: 'os_stats'
+    },
     /* Shared */
     ':service/:id/sftp': {
         component: 'shared_sftp'

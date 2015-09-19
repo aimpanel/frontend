@@ -13,6 +13,10 @@ module.exports = {
     'login': function (resolve) {
         require(['./views/auth/login'], resolve)
     },
+    /* OS*/
+    'os_stats': function (resolve) {
+        require(['./views/os/stats'], resolve)
+    },
     /* Shared */
     'shared_sftp': function (resolve) {
         require(['./views/services/shared/sftp'], resolve)
