@@ -50,7 +50,7 @@ module.exports = {
                 {
                     this.ramChart();
                 }
-                this.ramChartInstance.segments[0].value = Math.round(this.ram.MemTotal / 1024);
+                this.ramChartInstance.segments[0].value = Math.round(this.ram.MemFree / 1024);
                 this.ramChartInstance.segments[1].value = Math.round(this.ram.Buffers / 1024);
                 this.ramChartInstance.segments[2].value = Math.round(this.ram.Cached / 1024);
                 this.ramChartInstance.segments[3].value = Math.round((this.ram.MemTotal - this.ram.MemFree - this.ram.Buffers - this.ram.Cached) / 1024);
@@ -79,7 +79,7 @@ module.exports = {
                     value: 1,
                     color: "#60BD68",
                     highlight: "#6DCA75",
-                    label: "Nieużywane"
+                    label: "Wolne"
                 },
                 {
                     value: 1,
@@ -106,7 +106,7 @@ module.exports = {
             };
             var ctx = document.getElementById("ram").getContext("2d");
             this.ramChartInstance = new Chart(ctx).Pie(data, options);
-            //jQuery("#ramLegend").html(ramChart.generateLegend());
+            //jQuery("#ramLegend").html(this.ramChartInstance.generateLegend());
             //ramChart.reDraw();
         },
         cpuChart: function ()
@@ -173,6 +173,7 @@ module.exports = {
             };
             var ctx = document.getElementById("cpu").getContext("2d");
             this.cpuChartInstance = new Chart(ctx).Pie(data, options);
+            //jQuery("#cpuLegend").html(this.cpuChartInstance.generateLegend());
         }
     },
     beforeDestroy: function () {

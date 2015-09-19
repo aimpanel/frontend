@@ -6,20 +6,26 @@
                     <div class="col s12 l6 center">
                         <h5>RAM w MB</h5>
                         <canvas id="ram"></canvas>
-                        <div id="cpuSpark"></div>
+                        <!--<div id="cpuSpark"></div>-->
                         <p>Odświeżanie wykresu co 5sek</p>
                     </div>
                     <div class="col s12 l6">
                         <h5>Jak rozumieć zużycie RAMu?</h5>
-                        <p>
+                        <p class="legend">
+                            <span style="background-color:#F15854"></span>
                             <strong>Aplikacje</strong> - pamięć zużyta przez aplikacje aby te mogły działać, jest to główny powód dla posiadania RAMu :)
                             <br><br>
+                            <span style="background-color:#DECF3F"></span>
                             <strong>Cache</strong> - często odczytywane dane z dysku są przechowywane w pamięci aby system mógł je szybciej odczytywać.
                             <br><br>
+                            <span style="background-color:#5DA5DA"></span>
                             <strong>Bufory</strong> - obszar do którego zbierane są dane do zapisu na dysk, może być duży jeśli dysk jest zbyt wolny.
                             <br><br>
-                            <strong>Nieużywane</strong> - pamięć całkowicie nieużywana i gotowa do "zasiedlenia", według jądra Linux jest to zmarnowany RAM, lepiej gdy jest przeznaczony na cache.
+                            <span style="background-color:#60BD68"></span>
+                            <strong>Wolne</strong> - pamięć całkowicie nieużywana i gotowa do "zasiedlenia", według jądra Linux jest to zmarnowany RAM, lepiej gdy jest przeznaczony na cache.
                             <br><br>
+                            Cache i bufory mogą być zwolnione aby zrobić miejsce dla aplikacji. 
+                            <br>
                             System operacyjny sam dba o odpowiednie wartości pamięci cache oraz buforów. Nie jest wymagana interwencja użytkownika.
                         </p>
                     </div>
@@ -34,16 +40,33 @@
                     </div>
                     <div class="col s12 l6">
                         <h5>Co zużywa czas procesora?</h5>
-                        <p>
-                            <strong>usr</strong> - aplikacje w systemie np. serwery gier<br>
-                            <strong>idle</strong> - nieużywany<br>
-                            <strong>sys</strong> - jądro systemu<br>
-                            <strong>nice</strong> - mało ważne zadania w systemie<br>
-                            <strong>iowait</strong> - oczekiwanie zapisu na dysk<br>
-                            <strong>irq</strong> - sterowniki urządzeń<br>
-                            <strong>soft</strong> - sterowniki urządzeń c.d.<br>
-                            <strong>steal</strong> - inne VPSy na maszynie lub przekraczanie twojego przydziału CPU<br>
-                            <strong>guest</strong> - tworzenie wirtualnych procesorów<br>
+                        <p class="legend">
+                            <span style="background-color:#5DA5DA"></span>
+                            <strong>usr</strong> - aplikacje w systemie np. serwery gier
+                            <br>
+                            <span style="background-color:#60BD68"></span>
+                            <strong>idle</strong> - nieużywany
+                            <br>
+                            <span style="background-color:#DECF3F"></span>
+                            <strong>sys</strong> - jądro systemu
+                            <br>
+                            <span style="background-color:#4D4D4D"></span>
+                            <strong>nice</strong> - mało ważne zadania w systemie
+                            <br>
+                            <span style="background-color:#F15854"></span>
+                            <strong>iowait</strong> - oczekiwanie zapisu na dysk
+                            <br>
+                            <span style="background-color:#B276B2"></span>
+                            <strong>irq</strong> - sterowniki urządzeń
+                            <br>
+                            <span style="background-color:#F17CB0"></span>
+                            <strong>soft</strong> - sterowniki urządzeń c.d.
+                            <br>
+                            <span style="background-color:#FAA43A"></span>
+                            <strong>steal</strong> - inne VPSy na maszynie lub przekraczanie twojego przydziału CPU
+                            <br>
+                            <span style="background-color:#B2912F"></span>
+                            <strong>guest</strong> - tworzenie wirtualnych procesorów
                         </p>
                     </div>
                 </div>
