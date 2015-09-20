@@ -16,6 +16,10 @@
                         <td>Do</td>
                         <td>{{license_valid}}</td>
                     </tr>
+                    <tr v-if="license.notes">
+                        <td>Opis</td>
+                        <td>{{license.notes}}</td>
+                    </tr>
                 </table>
             </div>
         </div>
