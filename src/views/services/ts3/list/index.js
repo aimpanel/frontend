@@ -56,6 +56,9 @@ module.exports = {
             this.$http.get(window.baseurl + "/api/v1/services/ts3/" + id + "/start", function (data) {
                 Materialize.toast('Zadanie dodano do kolejki', 3500);
                 this.getServers();
+            }).error(function (data)
+            {
+                Materialize.toast('<a class="red-text">' + data.error_msg + '</a>', 6000);
             });
         },
         stopServer: function (id) {
@@ -68,6 +71,9 @@ module.exports = {
             this.$http.get(window.baseurl + "/api/v1/services/ts3/" + id + "/restart", function (data) {
                 Materialize.toast('Zadanie dodano do kolejki', 3500);
                 this.getServers();
+            }).error(function (data)
+            {
+                Materialize.toast('<a class="red-text">' + data.error_msg + '</a>', 6000);
             });
         }
     },
