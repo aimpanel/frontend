@@ -7,6 +7,8 @@ require("font-awesome-webpack");
 require("../node_modules/materialize-css/dist/js/materialize.js")
 require("../assets/date.format.js")
 
+window.version = 0.7;
+
 //customize right top dropdown
 setTimeout(function () {
     jQuery(".dropdown-button").dropdown({hover: false, belowOrigin: true, constrain_width: false, alignment: 'right'});
@@ -49,6 +51,7 @@ var root = Vue.extend({
     components: require('./components'),
     data: function () {
         return {
+            version: 0.7,
             url: false,
             logged: false,
             router: router,
@@ -59,8 +62,8 @@ var root = Vue.extend({
                 {"name": "Statystyki", "href": "os/stats", perm: "", enabled: true},
                 {"name": "Serwery MC", "href": "mc", perm: "", enabled: true},
                 {"name": "Serwery TS3", "href": "ts3", perm: "", enabled: true},
-                {"name": "Użytkownicy", "href": "users", perm: "", enabled: true},
-                {"name": "Grupy", "href": "groups", perm: "", enabled: true},
+                //{"name": "Użytkownicy", "href": "users", perm: "", enabled: true},
+                //{"name": "Grupy", "href": "groups", perm: "", enabled: true},
                 {"name": "Licencja", "href": "license", perm: "", enabled: true},
                 {"name": "Informacje", "href": "about", perm: "", enabled: true}
             ]
