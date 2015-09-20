@@ -5,7 +5,8 @@ module.exports = {
     data: function () {
         return {
             servers: [],
-            serverToDelete: false
+            serverToDelete: false,
+            serverInstalling: false
         }
     },
     ready: function () {
@@ -28,13 +29,16 @@ module.exports = {
             jQuery('#addServer').openModal();
         },
         addServer: function () {
+            this.serverInstalling = true;
             this.$http.post(window.baseurl + '/api/v1/services/ts3', {"id": jQuery('#newServerId').val()},
             function (data, status) {
+                this.serverInstalling = false;
                 this.getServers();
                 jQuery('#addServer').closeModal();
                 Materialize.toast('Serwer dodano', 2500);
             }).error(function (data)
             {
+                this.serverInstalling = false;
                 jQuery('#newServerId').removeClass('valid');
                 jQuery('#newServerId').addClass('invalid');
                 jQuery('#newServerValidator').attr("data-error", data.error_msg);

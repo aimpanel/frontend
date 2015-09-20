@@ -66,7 +66,8 @@
         </div>
     </div>
     <div class="modal-footer">
-        <div v-on="click: addServer" class="modal-action waves-effect waves-green btn-flat">Dodaj</div>
+        <div v-if="!serverInstalling" v-on="click: addServer" class="white-text modal-action green waves-effect waves-green btn-flat">Dodaj</div>
+        <div v-if="serverInstalling" class="modal-action waves-effect waves-green btn-flat">Pracuję...</div>
     </div>
 </div>
 
