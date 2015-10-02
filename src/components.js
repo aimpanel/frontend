@@ -31,11 +31,15 @@ module.exports = {
     'ts3_console': function (resolve) {
         require(['./views/services/ts3/console'], resolve)
     },
+    //
     'mc_list': function (resolve) {
         require(['./views/services/mc/list'], resolve)
     },
     'mc_console': function (resolve) {
         require(['./views/services/mc/console'], resolve)
+    },
+    'mc_java': function (resolve) {
+        require(['./views/services/mc/java'], resolve)
     },
     'mc_files': function (resolve) {
         require(['./views/services/mc/files'], resolve)
