@@ -9,7 +9,7 @@ module.exports = {
     '/about': {
         component: 'about'
     },
-     '/os/stats': {
+    '/os/stats': {
         component: 'os_stats'
     },
     /* Shared */
@@ -32,6 +32,9 @@ module.exports = {
     },
     'mc/:id/console': {
         component: 'mc_console'
+    },
+    'mc/:id/java': {
+        component: 'mc_java'
     },
     'mc/:id/files': {
         component: 'mc_files'
