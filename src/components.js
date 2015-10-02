@@ -38,6 +38,9 @@ module.exports = {
     'mc_console': function (resolve) {
         require(['./views/services/mc/console'], resolve)
     },
+    'mc_info': function (resolve) {
+        require(['./views/services/mc/info'], resolve)
+    },
     'mc_java': function (resolve) {
         require(['./views/services/mc/java'], resolve)
     },

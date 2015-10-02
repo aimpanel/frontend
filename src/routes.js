@@ -33,6 +33,9 @@ module.exports = {
     'mc/:id/console': {
         component: 'mc_console'
     },
+    'mc/:id/info': {
+        component: 'mc_info'
+    },
     'mc/:id/java': {
         component: 'mc_java'
     },

@@ -1,0 +1,32 @@
+<div class="col s12">
+    <div class="row">
+        <div class="card-panel col s12 l6 z-depth-2 white">
+            <table v-if="serverProperties">
+                <tr>
+                    <td>Port gry (TCP)</td>
+                    <td>{{serverProperties["server-port"]}}</td>
+                </tr>
+                <tr>
+                    <td>Port query (UDP)</td>
+                    <td>{{serverProperties["query.port"]}}</td>
+                </tr>
+                <tr>
+                    <td>Port RCON (TCP)</td>
+                    <td>{{serverProperties["rcon.port"]}}</td>
+                </tr>
+                <tr>
+                    <td>Hasło RCON</td>
+                    <td>{{serverProperties["rcon.password"]}}</td>
+                </tr>
+                <tr>
+                    <td>Tryb online</td>
+                    <td class="green-text" v-if="serverProperties['online-mode']">Włączony</td>
+                    <td class="red-text" v-if="!serverProperties['online-mode']">Wyłączony</td>
+                </tr>
+            </table>
+            <p v-if="!serverProperties">
+                Nie znaleziono pliku server.properties
+            </p>
+        </div>
+    </div>
+</div>
