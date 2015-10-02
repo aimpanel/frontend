@@ -7,7 +7,7 @@ require("font-awesome-webpack");
 require("../node_modules/materialize-css/dist/js/materialize.js")
 require("../assets/date.format.js")
 
-window.version = 0.70;
+window.version = "0.70";
 
 //customize right top dropdown
 setTimeout(function () {
@@ -51,7 +51,7 @@ var root = Vue.extend({
     components: require('./components'),
     data: function () {
         return {
-            version: 0.7,
+            version: window.version,
             url: false,
             logged: false,
             router: router,
