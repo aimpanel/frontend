@@ -13,7 +13,7 @@ module.exports = {
     ready: function () {
         this.id = this.route.params.id;
         //this.$root.checkPerm('HOST_' + this.hostId + '_MC_' + this.serverSlug + '_CONSOLE');
-        this.$root.$set('title', 'Konsola')
+        this.$root.$set('title', 'Konsola #' + this.id);
         jQuery('ul.tabs').tabs();
         jQuery(".dropdown-button").dropdown({
             hover: false,
