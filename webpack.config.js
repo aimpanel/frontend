@@ -6,10 +6,15 @@ module.exports = {
         path: "./build",
         publicPath: "build/",
         filename: "build.js",
-	chunkFilename: "[id].build.js?v=[hash]"
+        chunkFilename: "[id].build.js?v=[hash]"
     },
     module: {
         loaders: [
+//            {
+//                test: /[\/\\]node_modules[\/\\]some-module[\/\\]index\.js$/,
+//                loader: "imports?this=>window"
+//            },
+            {test: /jquery\/src\/selector\.js$/, loader: 'amd-define-factory-patcher-loader'},
             {test: /\.styl$/, loader: "style!css!stylus"},
             {test: /\.css$/, loader: "style!css"},
             {test: /\.html$/, loader: "html"},
@@ -24,6 +29,11 @@ module.exports = {
 //            }
         ]
     },
+//    resolve: {
+//        alias: {
+//            jquery: "jquery/src/jquery"
+//        }
+//    },
     plugins: [
         new webpack.ProvidePlugin({
             $: "jquery",
@@ -32,16 +42,16 @@ module.exports = {
             "root.jQuery": "jquery",
             "Hammer": "hammerjs"
             //jquery-hammerjs
-        }),
-        //new webpack.optimize.UglifyJsPlugin({
-        //    //say no to yellow terminal after minify
-        //    compress: {
-        //        warnings: false//true
-        //    },
-        //    //makes spaghetti from codes/variables except for core variables
-        //    mangle: {
-        //        except: ['$super', '$', 'jQuery', 'exports', 'require']
-        //    }
-        //})
+        })
+                //new webpack.optimize.UglifyJsPlugin({
+                //    //say no to yellow terminal after minify
+                //    compress: {
+                //        warnings: false//true
+                //    },
+                //    //makes spaghetti from codes/variables except for core variables
+                //    mangle: {
+                //        except: ['$super', '$', 'jQuery', 'exports', 'require']
+                //    }
+                //})
     ]
 }
