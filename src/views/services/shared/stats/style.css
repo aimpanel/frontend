@@ -1,0 +1,5 @@
+#cpuChart svg,#ramChart svg 
+{
+    height: 400px;
+    width:100%;
+}

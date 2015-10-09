@@ -24,6 +24,9 @@ module.exports = {
     'shared_autorestart': function (resolve) {
         require(['./views/services/shared/autorestart'], resolve)
     },
+    'shared_stats': function (resolve) {
+        require(['./views/services/shared/stats'], resolve)
+    },
     /* Services */
     'ts3_list': function (resolve) {
         require(['./views/services/ts3/list'], resolve)
@@ -46,9 +49,6 @@ module.exports = {
     },
     'mc_files': function (resolve) {
         require(['./views/services/mc/files'], resolve)
-    },
-    'mc_stats': function (resolve) {
-        require(['./views/services/mc/stats'], resolve)
     },
     /* Users */
     'users': function (resolve) {

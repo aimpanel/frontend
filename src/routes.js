@@ -19,6 +19,9 @@ module.exports = {
     ':service/:id/autorestart': {
         component: 'shared_autorestart'
     },
+    ':service/:id/stats': {
+        component: 'shared_stats'
+    },
     /* TeamSpeak 3 service */
     '/ts3/': {
         component: 'ts3_list'
@@ -41,9 +44,6 @@ module.exports = {
     },
     'mc/:id/files': {
         component: 'mc_files'
-    },
-    'mc/:id/stats': {
-        component: 'mc_stats'
     },
     /* Auth */
     '/auth/login': {
