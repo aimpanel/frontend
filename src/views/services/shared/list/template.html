@@ -2,11 +2,13 @@
     <div class="row">
         <div class="col s12 center">
             <div class="card-panel white z-depth-2">
-                <div>
-                    <table  class="white hoverable responsive-table"><!--v-show="servers.length > 0"-->
+                <div v-if="isLoading">
+                    <preloader></preloader>
+                </div>
+                <div v-if="!isLoading"> 
+                    <table v-show="services.length > 0" class="white hoverable responsive-table">
                         <thead>
                             <tr>
-                                <th>Typ</th>
                                 <th data-field="id">ID</th>
                                 <th>Stan</th>
                                 <th>Konsola</th>
@@ -14,14 +16,13 @@
                                 <th>Usuń</th>
                             </tr>
                         </thead>
-                        <tbody v-repeat="service in services">
-                            <tr v-repeat="service">
-                                <td>{{service.serv}}</td>
-                                <td>{{id}}</td>
+                        <tbody>
+                            <tr v-repeat="services">
+                                <td>{{serv.toUpperCase()}} {{id}}</td>
                                 <td v-if="state=='RUNNING'" class="green-text">Włączony</td>
                                 <td v-if="state=='STOPPED'" class="red-text">Wyłączony</td>
                                 <td>
-                                    <a href="#/mc/{{id}}/console" class="btn btn-pad black"><i class="fa fa-terminal"></i></a>
+                                    <a href="#/{{serv}}/{{id}}/console" class="btn btn-pad black"><i class="fa fa-terminal"></i></a>
                                 </td>
                                 <td>
                                     <div v-on="click: startServer(id)" v-if="state=='STOPPED'" class="btn btn-pad green"><i class="fa fa-play"></i></div>
@@ -38,7 +39,7 @@
                         </tbody>
                     </table>
                 </div>
-                <div v-show="servers.length == 0" class="tooltipped" data-position="bottom" data-delay="50" data-tooltip="Protip: w prawym dolnym rogu znajduje się plusik">
+                <div v-show="services.length == 0 && !isLoading" class="tooltipped" data-position="bottom" data-delay="50" data-tooltip="Protip: w prawym dolnym rogu znajduje się plusik">
                     Brak serwerów. Może warto dodać nowy? :)
                 </div>
             </div>

@@ -4,6 +4,7 @@ module.exports = {
     replace: true,
     data: function () {
         return {
+            isLoading: true,
             mc: [],
             servers: false,
             services: [],
@@ -24,14 +25,15 @@ module.exports = {
             var self = this;
             var servicez = [];
             var serviceList = ["mc", "ts3", "ts3mb"];
-
             var configs = {};
 
             async.forEachOf(serviceList, function (service, key, callback) {
                 self.$http.get(window.baseurl + '/api/v1/services/' + service, function (data, status) {
                     data.serv = service;
-                    console.log(data);
-                    servicez.push(data);
+                    data.forEach(function (dataz) {
+                        dataz.serv = service;
+                        servicez.push(dataz);
+                    });
                     callback();
                 }).error(function (data, status) {
                     self.$root.checkSession(data, status);
@@ -43,15 +45,7 @@ module.exports = {
                     console.error(err.message);
                 }
                 self.$set('services', servicez);
-//                servicez.forEach(function (serv) {
-//                    //console.log(serv);
-//                    //self.services.push(serv);
-//                    //self.$set('services', servicez);
-//                });
-
-                //console.log(self.services);
-                // configs is now a map of JSON data
-                //doSomethingWith(configs);
+                self.isLoading = false;
             })
         },
         addServerModal: function () {

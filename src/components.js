@@ -18,6 +18,9 @@ module.exports = {
         require(['./views/os/stats'], resolve)
     },
     /* Shared */
+    'server_list': function (resolve) {
+        require(['./views/services/shared/list'], resolve)
+    },
     'shared_sftp': function (resolve) {
         require(['./views/services/shared/sftp'], resolve)
     },
@@ -72,5 +75,8 @@ module.exports = {
     },
     'right-menu': function (resolve) {
         require(['./views/right-menu'], resolve)
+    },
+    'preloader': function (resolve) {
+        require(['./widgets/preloader'], resolve)
     }
 }
