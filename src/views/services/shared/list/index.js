@@ -15,11 +15,21 @@ module.exports = {
     ready: function () {
         this.$root.$set('title', 'Lista serwerów');
         jQuery('.tooltipped').tooltip({delay: 50});
-
         this.getServers();
-        window.interval = setInterval(this.getServers, 60000);
+        window.interval = setInterval(this.getServers, 5000);
     },
     methods: {
+        ifWorking: function (id, service)
+        {
+            //console.log("ifWorking " + id + " " + service + ": " + this[id + service + "working"]);
+            // if (this.$get(id + service + "working"))
+            return this[id + service + "working"];
+        },
+        resetInterval: function ()
+        {
+            clearInterval(window.interval);
+            window.interval = setInterval(this.getServers, 5000);
+        },
         getServers: function () {
             var async = require("async");
             var self = this;
@@ -44,7 +54,11 @@ module.exports = {
                 {
                     console.error(err.message);
                 }
-                self.$set('services', servicez);
+                self.$set('services', servicez.sort(function (a, b) {
+                    var dateA = new Date(Date.parse(a.created_at));
+                    var dateB = new Date(Date.parse(b.created_at));
+                    return dateA - dateB;
+                }));
                 self.isLoading = false;
             })
         },
@@ -79,28 +93,54 @@ module.exports = {
                         Materialize.toast('Serwer usunięto', 2500);
                     });
         },
-        startServer: function (id) {
-            this.$http.get(window.baseurl + "/api/v1/services/mc/" + id + "/start", function (data) {
-                Materialize.toast('Zadanie dodano do kolejki', 3500);
-                this.getServers();
-            }).error(function (data)
-            {
-                Materialize.toast('<a class="red-text">' + data.error_msg + '</a>', 6000);
+        startServer: function (id, service) {
+            this[id + service + "working"] = true;
+            this.getServers();
+            this.resetInterval();
+            var api = require('../../../../api/services.js');
+            api.action(this, id, service, "start", function (data, err, thi) {
+                thi[id + service + "working"] = false;
+                if (!err)
+                {
+                    Materialize.toast('Zadanie dodano do kolejki', 3500);
+                } else
+                {
+                    Materialize.toast('<a class="red-text">' + data.error_msg + '</a>', 6000);
+                }
             });
         },
-        stopServer: function (id) {
-            this.$http.get(window.baseurl + "/api/v1/services/mc/" + id + "/stop", function (data) {
-                Materialize.toast('Zadanie dodano do kolejki', 3500);
-                this.getServers();
+        stopServer: function (id, service) {
+            this[id + service + "working"] = true;
+            this.getServers();
+            this.resetInterval();
+            var api = require('../../../../api/services.js');
+            api.action(this, id, service, "stop", function (data, err, thi) {
+                thi[id + service + "working"] = false;
+                if (!err)
+                {
+                    Materialize.toast('Zadanie dodano do kolejki', 3500);
+                } else
+                {
+                    Materialize.toast('<a class="red-text">' + data.error_msg + '</a>', 6000);
+                }
+
             });
         },
-        restartServer: function (id) {
-            this.$http.get(window.baseurl + "/api/v1/services/mc/" + id + "/restart", function (data) {
-                Materialize.toast('Zadanie dodano do kolejki', 3500);
-                this.getServers();
-            }).error(function (data)
-            {
-                Materialize.toast('<a class="red-text">' + data.error_msg + '</a>', 6000);
+        restartServer: function (id, service) {
+            this[id + service + "working"] = true;
+            this.getServers();
+            this.resetInterval();
+            var api = require('../../../../api/services.js');
+            api.action(this, id, service, "restart", function (data, err, thi) {
+                thi[id + service + "working"] = false;
+                if (!err)
+                {
+                    Materialize.toast('Zadanie dodano do kolejki', 3500);
+                } else
+                {
+                    Materialize.toast('<a class="red-text">' + data.error_msg + '</a>', 6000);
+                }
+
             });
         }
     },

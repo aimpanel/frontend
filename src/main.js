@@ -60,6 +60,7 @@ var root = Vue.extend({
             menu: [
                 {"name": "Aktualności", "href": "", perm: "", enabled: true},
                 {"name": "Statystyki", "href": "os/stats", perm: "", enabled: true},
+                {"name": "Serwery", "href": "servers", perm: "", enabled: true},
                 {"name": "Serwery MC", "href": "mc", perm: "", enabled: true},
                 {"name": "Serwery TS3", "href": "ts3", perm: "", enabled: true},
                 //{"name": "Użytkownicy", "href": "users", perm: "", enabled: true},
