@@ -12,6 +12,9 @@ module.exports = {
     '/os/stats': {
         component: 'os_stats'
     },
+    '/servers/': {
+        component: 'server_list'
+    },
     /* Shared */
     ':service/:id/sftp': {
         component: 'shared_sftp'

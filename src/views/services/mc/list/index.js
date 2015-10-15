@@ -21,6 +21,7 @@ module.exports = {
             var self = this;
             this.$http.get(window.baseurl + '/api/v1/services/mc', function (data, status) {
                 self.$set("servers", data);
+                console.log(self.servers);
             }).error(function (data, status) {
                 this.$root.checkSession(data, status);
             });

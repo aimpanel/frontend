@@ -4,6 +4,7 @@
   "description": "Frontend for Aimpanel",
   "main": "src/main.js",
   "dependencies": {
+    "async": "^1.4.2",
     "brace": "~0.5.1",
     "chart.js": "^1.0.2",
     "d3": "^3.5.6",
