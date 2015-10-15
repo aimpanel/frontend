@@ -25,9 +25,10 @@
                                     <a href="#/{{serv}}/{{id}}/console" class="btn btn-pad black"><i class="fa fa-terminal"></i></a>
                                 </td>
                                 <td>
-                                    <div v-on="click: startServer(id)" v-if="state=='STOPPED'" class="btn btn-pad green"><i class="fa fa-play"></i></div>
-                                    <div v-on="click: restartServer(id)" v-if="state=='RUNNING'" class="btn btn-pad yellow darken-3"><i class="fa fa-refresh"></i></div>
-                                    <div v-on="click: stopServer(id)" v-if="state=='RUNNING'" class="btn btn-pad red"><i class="fa fa-stop"></i></div>
+                                    <div v-show="ifWorking(id,serv)" class="btn grey"><i class="fa fa-cogs"></i></div>
+                                    <div v-show="!ifWorking(id,serv)" v-on="click: startServer(id,serv)" v-if="state=='STOPPED'" class="btn btn-pad green"><i class="fa fa-play"></i></div>
+                                    <div v-show="!ifWorking(id,serv)" v-on="click: restartServer(id,serv)" v-if="state=='RUNNING'" class="btn btn-pad yellow darken-3"><i class="fa fa-refresh"></i></div>
+                                    <div v-show="!ifWorking(id,serv)" v-on="click: stopServer(id,serv)" v-if="state=='RUNNING'" class="btn btn-pad red"><i class="fa fa-stop"></i></div>
                                 </td>
                                 <td>
                                     <div v-on="click: deleteServerModal(id)" class="btn btn-pad red"><i class="fa fa-remove"></i></div>

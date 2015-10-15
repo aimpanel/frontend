@@ -78,5 +78,8 @@ module.exports = {
     },
     'preloader': function (resolve) {
         require(['./widgets/preloader'], resolve)
+    },
+    'api': function (resolve) {
+        require(['./api/services.js']);
     }
 }
