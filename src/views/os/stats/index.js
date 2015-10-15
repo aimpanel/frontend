@@ -9,6 +9,7 @@ module.exports = {
     replace: true,
     data: function () {
         return {
+            isLoading: true,
             ram: {
                 MemTotal: 1,
                 MemFree: 1,
@@ -44,6 +45,7 @@ module.exports = {
         getRam: function () {
             var self = this;
             this.$http.get(window.baseurl + '/api/v1/os/stats', function (data, status) {
+                self.isLoading = false;
                 self.$set("ram", data.meminfo);
                 self.$set("cpu", data.cpuinfo);
                 if (!self.ramChartInstance)
