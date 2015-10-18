@@ -2,39 +2,44 @@
     <div class="row">
         <div class="col s12 l6">
             <div class="card-panel white z-depth-2">
-                <table>
-                    <tr>
-                        <td>Aktywna</td>
-                        <td v-if="license.valid" class="green-text">Tak</td>
-                        <td v-if="!license.valid" class="red-text">Nie</td>
-                    </tr>
-                    <tr v-if="license.name">
-                        <td>Dla</td>
-                        <td>{{license.name}}</td>
-                    </tr>
-                    <tr v-if="license.name">
-                        <td>Do</td>
-                        <td>{{license_valid}}</td>
-                    </tr>
-                    <tr v-if="license.notes">
-                        <td>Opis</td>
-                        <td>{{license.notes}}</td>
-                    </tr>
-                </table>
-                <div v-if="!license.valid">
-                    <h5>Jak zaktualizować licencję?</h5>
-                    Potrzebujesz klucza produktu który jest podobny jest w formacie:
-                    <br>
-                    XXXX-XXXX-XXXX-XXXX
-                    <br><br>
-                    Następnie wykonaj komendę spod konta root przez SSH:
-                    <blockquote class="copypaste">
-                        aimpanel key set twoj_klucz
-                    </blockquote>
-                    przykład:
-                    <blockquote>
-                        aimpanel key set 46FP-1WHD-EX45-NZPE
-                    </blockquote>
+                <div v-if="isLoading">
+                    <preloader></preloader>
+                </div>
+                <div v-if="!isLoading">
+                    <table>
+                        <tr>
+                            <td>Aktywna</td>
+                            <td v-if="license.valid" class="green-text">Tak</td>
+                            <td v-if="!license.valid" class="red-text">Nie</td>
+                        </tr>
+                        <tr v-if="license.name">
+                            <td>Dla</td>
+                            <td>{{license.name}}</td>
+                        </tr>
+                        <tr v-if="license.name">
+                            <td>Do</td>
+                            <td>{{license_valid}}</td>
+                        </tr>
+                        <tr v-if="license.notes">
+                            <td>Opis</td>
+                            <td>{{license.notes}}</td>
+                        </tr>
+                    </table>
+                    <div v-if="!license.valid">
+                        <h5>Jak zaktualizować licencję?</h5>
+                        Potrzebujesz klucza produktu który jest podobny jest w formacie:
+                        <br>
+                        XXXX-XXXX-XXXX-XXXX
+                        <br><br>
+                        Następnie wykonaj komendę spod konta root przez SSH:
+                        <blockquote class="copypaste">
+                            aimpanel key set twoj_klucz
+                        </blockquote>
+                        przykład:
+                        <blockquote>
+                            aimpanel key set 46FP-1WHD-EX45-NZPE
+                        </blockquote>
+                    </div>
                 </div>
             </div>
         </div>
