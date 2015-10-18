@@ -56,9 +56,10 @@ Vue.use(i18n, {
     lang: pickLanguage,
     locales: window.locale
 });
-//force lang
-Vue.config.lang = 'en'; //force language
-
+//get lang from local storage settings
+if (localStorage.getItem("lang") !== null) {
+    Vue.config.lang = localStorage.getItem("lang");
+}
 //main vm(viewmodel)
 var root = Vue.extend({
     components: require('./components'),
