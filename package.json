@@ -1,6 +1,6 @@
 {
-  "name": "aimpanel-fronted",
-  "version": "0.0.1",
+  "name": "aimpanel-frontend",
+  "version": "0.90.0",
   "description": "Frontend for Aimpanel",
   "main": "src/main.js",
   "dependencies": {
@@ -50,5 +50,5 @@
   },
   "author": "Michał Frąckiewicz",
   "license": "All rights reserved",
-  "homepage": "https://lvlup.pro"
+  "homepage": "http://aimpanel.pro"
 }
