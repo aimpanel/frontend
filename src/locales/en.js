@@ -2,7 +2,8 @@ window.locale.en = {
     general: {
         notfound: 'Error 404 - Page not found',
         notfoundNote: 'Instead have a cat gif',
-        close: 'Close'
+        close: 'Close',
+        loading: 'Loading'
     },
     home: {
         'news': 'News'

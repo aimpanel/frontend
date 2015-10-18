@@ -2,7 +2,8 @@ window.locale.pl = {
     general: {
         notfound: 'Błąd 404 - Nie znaleziono strony',
         notfoundNote: 'Dajemy Ci za to gifa z kotem',
-        close: 'Zamknij'
+        close: 'Zamknij',
+        loading: 'Ładowanie'
     },
     home: {
         'news': 'Aktualności'
