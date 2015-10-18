@@ -7,7 +7,7 @@ require("font-awesome-webpack");
 require("../node_modules/materialize-css/dist/js/materialize.js")
 require("../assets/date.format.js")
 
-window.version = "0.85";
+window.version = "0.90";
 
 //customize right top dropdown
 setTimeout(function () {
@@ -45,6 +45,19 @@ Vue.directive('modal', {
 });
 
 window.permissions = [];
+var i18n = require('vue-i18n');
+window.locale = {en: {}, pl: {}};
+require('./locales/en.js');
+require('./locales/pl.js');
+
+var browserLanguage = require('in-browser-language');
+var pickLanguage = browserLanguage.pick(['en', 'pl'], 'en');
+Vue.use(i18n, {
+    lang: pickLanguage,
+    locales: window.locale
+});
+//force lang
+Vue.config.lang = 'en'; //force language
 
 //main vm(viewmodel)
 var root = Vue.extend({
@@ -58,15 +71,14 @@ var root = Vue.extend({
             email: '',
             title: 'Panel',
             menu: [
+                //{"name": this.$t("home.news"), "href": "", perm: "", enabled: true},
                 {"name": "Aktualności", "href": "", perm: "", enabled: true},
                 {"name": "Statystyki", "href": "os/stats", perm: "", enabled: true},
                 {"name": "Serwery", "href": "servers", perm: "", enabled: true},
-                {"name": "Serwery MC", "href": "mc", perm: "", enabled: true},
-                {"name": "Serwery TS3", "href": "ts3", perm: "", enabled: true},
                 //{"name": "Użytkownicy", "href": "users", perm: "", enabled: true},
                 //{"name": "Grupy", "href": "groups", perm: "", enabled: true},
-                {"name": "Licencja", "href": "license", perm: "", enabled: true},
-                {"name": "Informacje", "href": "about", perm: "", enabled: true}
+                {"name": this.$t("about.license"), "href": "license", perm: "", enabled: true},
+                {"name": this.$t("about.panel"), "href": "about", perm: "", enabled: true}
             ]
         }
     },
