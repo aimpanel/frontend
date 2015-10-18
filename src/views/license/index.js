@@ -3,6 +3,7 @@ module.exports = {
     replace: true,
     data: function () {
         return {
+            isLoading: true,
             license: false,
             license_valid: false
         }
@@ -29,6 +30,7 @@ module.exports = {
         getLicense: function () {
             var self = this;
             this.$http.get(window.baseurl + '/api/v1/license', function (data, status) {
+                self.isLoading = false;
                 self.$set("license", data);
                 var moment = require("moment");
                 this.license_valid = moment(this.license.valid_to, moment.ISO_8601).format("DD/MM/YYYY");
