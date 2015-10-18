@@ -8,20 +8,20 @@
                 <div v-if="!isLoading">
                     <table>
                         <tr>
-                            <td>Aktywna</td>
-                            <td v-if="license.valid" class="green-text">Tak</td>
-                            <td v-if="!license.valid" class="red-text">Nie</td>
+                            <td>{{$t("license.active")}}</td>
+                            <td v-if="license.valid" class="green-text">{{$t("license.yes")}}</td>
+                            <td v-if="!license.valid" class="red-text">{{$t("license.no")}}</td>
                         </tr>
                         <tr v-if="license.name">
-                            <td>Dla</td>
+                            <td>{{$t("license.forUser")}}</td>
                             <td>{{license.name}}</td>
                         </tr>
                         <tr v-if="license.name">
-                            <td>Do</td>
+                            <td>{{$t("license.validTo")}}</td>
                             <td>{{license_valid}}</td>
                         </tr>
                         <tr v-if="license.notes">
-                            <td>Opis</td>
+                            <td>{{$t("license.desc")}}</td>
                             <td>{{license.notes}}</td>
                         </tr>
                     </table>

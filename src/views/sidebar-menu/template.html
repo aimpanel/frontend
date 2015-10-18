@@ -1,5 +1,3 @@
-<!--<li><a class="waves-effect waves-green" href="#/">Strona Główna</a></li>-->
 <li v-show="$root.logged && enabled" v-repeat="menu"><a class="waves-effect waves-green" href="#/{{href}}">{{name}}</a></li>
-
-<li><a v-if="$root.logged" v-on="click: $root.doLogout" class="waves-effect waves-green">Wyloguj się</a></li>
-<li v-if="!$root.logged"><a href="#/auth/login" class="waves-effect waves-green">Zaloguj się</a></li>
+<li><a v-if="$root.logged" v-on="click: $root.doLogout" class="waves-effect waves-green">{{$t("auth.logout")}}</a></li>
+<li v-if="!$root.logged"><a href="#/auth/login" class="waves-effect waves-green">{{$t("auth.signIn")}}</a></li>

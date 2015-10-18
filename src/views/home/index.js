@@ -7,8 +7,8 @@ module.exports = {
         }
     },
     ready: function () {
-        this.$root.$set('title', 'Aktualności');
-        $('.copypaste').click(function () {
+        this.$root.$set('title', this.$t('home.news'));
+        $('.copypasta').click(function () {
             var range, selection;
             if (window.getSelection && document.createRange) {
                 selection = window.getSelection();

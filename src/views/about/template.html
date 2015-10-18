@@ -3,27 +3,27 @@
         <div class="col s12">
             <div class="card-panel white z-depth-2">
                 <p>
-                    Aimpanel powstał dzięki wspaniałym projetom osób trzecich, większość jest otwartoźródłowa.
+                    {{ $t("about.thanks") }}
                     <br><br>
-                    Szczególne podziękowania dla:
+                    {{ $t("about.specialThanks") }}
                     <br>
-                    <a href="http://nginx.org/" target="_blank">Nginx</a> - <a class="license" v-on="click: show('nginx')">licencja BSD</a>
+                    <a href="http://nginx.org/" target="_blank">Nginx</a> - <a class="license" v-on="click: show('nginx')">{{ $t("about.license") }} BSD</a>
                     <br>
-                    <a href="http://php.net/license/" target="_blank">PHP</a> - <a class="license" v-on="click: show('php')">licencja PHP v3.01</a>
+                    <a href="http://php.net/license/" target="_blank">PHP</a> - <a class="license" v-on="click: show('php')">{{ $t("about.license") }} PHP v3.01</a>
                     <br>
-                    <a href="https://www.ioncube.com/loaders.php" target="_blank">ionCube Loader</a> - <a class="license" v-on="click: show('ioncube')">licencja własnościowa</a>
+                    <a href="https://www.ioncube.com/loaders.php" target="_blank">ionCube Loader</a> - <a class="license" v-on="click: show('ioncube')">{{ $t("about.proprietaryLicense") }}</a>
                     <br>
-                    <a href="http://lumen.laravel.com/" target="_blank">Lumen</a> - <a href="http://opensource.org/licenses/MIT" target="_blank">licencja MIT</a>
+                    <a href="http://lumen.laravel.com/" target="_blank">Lumen</a> - <a href="http://opensource.org/licenses/MIT" target="_blank">{{ $t("about.license") }} MIT</a>
                     <br>
-                    <a href="https://github.com/firebase/php-jwt" target="_blank">PHP-JWT</a> - <a class="license" v-on="click: show('php-jwt')">licencja BSD3</a>
+                    <a href="https://github.com/firebase/php-jwt" target="_blank">PHP-JWT</a> - <a class="license" v-on="click: show('php-jwt')">{{ $t("about.license") }} BSD3</a>
                     <br>
-                    <a href="https://github.com/vlucas/phpdotenv" target="_blank">PHP dotenv</a> - <a class="license" v-on="click: show('phpdotenv')">licencja BSD3</a>
+                    <a href="https://github.com/vlucas/phpdotenv" target="_blank">PHP dotenv</a> - <a class="license" v-on="click: show('phpdotenv')">{{ $t("about.license") }} BSD3</a>
                     <br>
-                    <a href="https://github.com/pda/pheanstalk" target="_blank">Pheanstalk</a> - <a class="license" v-on="click: show('pheanstalk')">licencja MIT</a>
+                    <a href="https://github.com/pda/pheanstalk" target="_blank">Pheanstalk</a> - <a class="license" v-on="click: show('pheanstalk')">{{ $t("about.license") }} MIT</a>
                     <br>
-                    <a href="https://github.com/sensiolabs/ansi-to-html" target="_blank">ansi-to-html</a> - <a class="license" v-on="click: show('ansi-to-html')">licencja MIT</a>
+                    <a href="https://github.com/sensiolabs/ansi-to-html" target="_blank">ansi-to-html</a> - <a class="license" v-on="click: show('ansi-to-html')">{{ $t("about.license") }} MIT</a>
                     <br>
-                    <a href="https://github.com/guzzle/guzzle" target="_blank">Guzzle</a> - <a class="license" v-on="click: show('guzzle')">licencja MIT</a>
+                    <a href="https://github.com/guzzle/guzzle" target="_blank">Guzzle</a> - <a class="license" v-on="click: show('guzzle')">{{ $t("about.license") }} MIT</a>
                     <br>
                 </p>
             </div>
@@ -33,20 +33,20 @@
 
 <!--<div id="" class="modal">
     <div class="modal-content">
-        <h4>Licencja </h4>
+        <h4>{{ $t("about.license") }} </h4>
         <pre>
 <xmp>
 </xmp>
         </pre>
     </div>
     <div class="modal-footer">
-        <div  class="modal-close modal-action btn-flat">Zamknij</div>
+        <div  class="modal-close modal-action btn-flat">{{ $t("general.close") }}</div>
     </div>
 </div>-->
 
 <div id="php" class="modal">
     <div class="modal-content">
-        <h4>Licencja PHP</h4>
+        <h4>{{ $t("about.license") }} PHP</h4>
         <pre>
 <xmp>
 -------------------------------------------------------------------- 
@@ -121,13 +121,13 @@ PHP includes the Zend Engine, freely available at
                             </pre>
                             </div>
                             <div class="modal-footer">
-                                <div  class="modal-close modal-action btn-flat">Zamknij</div>
+                                <div  class="modal-close modal-action btn-flat">{{ $t("general.close") }}</div>
                             </div>
                             </div>
 
                             <div id="nginx" class="modal">
                                 <div class="modal-content">
-                                    <h4>Licencja Nginx</h4>
+                                    <h4>{{ $t("about.license") }} Nginx</h4>
                                     <pre>
 <xmp>
     /* 
@@ -160,13 +160,13 @@ PHP includes the Zend Engine, freely available at
                                     </pre>
                                 </div>
                                 <div class="modal-footer">
-                                    <div  class="modal-close modal-action btn-flat">Zamknij</div>
+                                    <div  class="modal-close modal-action btn-flat">{{ $t("general.close") }}</div>
                                 </div>
                             </div>
 
                             <div id="ioncube" class="modal">
                                 <div class="modal-content">
-                                    <h4>Licencja ionCube</h4>
+                                    <h4>{{ $t("about.license") }} ionCube</h4>
                                     <pre>
 <xmp>
     LICENCE AGREEMENT FOR THE IONCUBE PHP LOADER, PROVIDED TO ENABLE THE USE
@@ -416,13 +416,13 @@ Copyright (c) 2002-2015 ionCube Ltd.          Last revised 23-April-2015
                                     </pre>
                                 </div>
                                 <div class="modal-footer">
-                                    <div  class="modal-close modal-action btn-flat">Zamknij</div>
+                                    <div  class="modal-close modal-action btn-flat">{{ $t("general.close") }}</div>
                                 </div>
                             </div>
 
                             <div id="php-jwt" class="modal">
                                 <div class="modal-content">
-                                    <h4>Licencja PHP-JWT</h4>
+                                    <h4>{{ $t("about.license") }} PHP-JWT</h4>
                                     <pre>
 <xmp>
     Copyright (c) 2011, Neuman Vong
@@ -459,13 +459,13 @@ OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
                                     </pre>
                                 </div>
                                 <div class="modal-footer">
-                                    <div  class="modal-close modal-action btn-flat">Zamknij</div>
+                                    <div  class="modal-close modal-action btn-flat">{{ $t("general.close") }}</div>
                                 </div>
                             </div>
 
                             <div id="phpdotenv" class="modal">
                                 <div class="modal-content">
-                                    <h4>Licencja PHP dotenv</h4>
+                                    <h4>{{ $t("about.license") }} PHP dotenv</h4>
                                     <pre>
 <xmp>
     The BSD 3-Clause License
@@ -503,13 +503,13 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
                                     </pre>
                                 </div>
                                 <div class="modal-footer">
-                                    <div  class="modal-close modal-action btn-flat">Zamknij</div>
+                                    <div  class="modal-close modal-action btn-flat">{{ $t("general.close") }}</div>
                                 </div>
                             </div>
 
                             <div id="pheanstalk" class="modal">
                                 <div class="modal-content">
-                                    <h4>Licencja Pheanstalk</h4>
+                                    <h4>{{ $t("about.license") }} Pheanstalk</h4>
                                     <pre>
 <xmp>
     The MIT License
@@ -537,14 +537,14 @@ THE SOFTWARE.
                                     </pre>
                                 </div>
                                 <div class="modal-footer">
-                                    <div  class="modal-close modal-action btn-flat">Zamknij</div>
+                                    <div  class="modal-close modal-action btn-flat">{{ $t("general.close") }}</div>
                                 </div>
                             </div>
 
 
                             <div id="ansi-to-html" class="modal">
                                 <div class="modal-content">
-                                    <h4>Licencja ansi-to-html</h4>
+                                    <h4>{{ $t("about.license") }} ansi-to-html</h4>
                                     <pre>
 <xmp>
 Copyright (c) 2013 Fabien Potencier
@@ -570,13 +570,13 @@ THE SOFTWARE.
                                     </pre>
                                 </div>
                                 <div class="modal-footer">
-                                    <div  class="modal-close modal-action btn-flat">Zamknij</div>
+                                    <div  class="modal-close modal-action btn-flat">{{ $t("general.close") }}</div>
                                 </div>
                             </div>
 
                             <div id="guzzle" class="modal">
                                 <div class="modal-content">
-                                    <h4>Licencja Guzzle</h4>
+                                    <h4>{{ $t("about.license") }} Guzzle</h4>
                                     <pre>
 <xmp>
 Copyright (c) 2011-2015 Michael Dowling, https://github.com/mtdowling <mtdowling@gmail.com>
@@ -602,6 +602,6 @@ THE SOFTWARE.
                                     </pre>
                                 </div>
                                 <div class="modal-footer">
-                                    <div  class="modal-close modal-action btn-flat">Zamknij</div>
+                                    <div  class="modal-close modal-action btn-flat">{{ $t("general.close") }}</div>
                                 </div>
                             </div>

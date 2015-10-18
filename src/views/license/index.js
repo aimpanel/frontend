@@ -9,7 +9,7 @@ module.exports = {
         }
     },
     ready: function () {
-        this.$root.$set('title', 'Informacje o licencji');
+        this.$root.$set('title', this.$t("about.license"));
         this.getLicense();
         $('.copypaste').click(function () {
             var range, selection;
