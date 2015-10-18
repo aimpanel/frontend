@@ -5,10 +5,10 @@ module.exports = {
     data: function () {
         return {
             isLoading: true,
-            mc: [],
             servers: false,
             services: [],
             serverToDelete: false,
+            serviceToDelete: false,
             serverInstalling: false
         }
     },
@@ -62,9 +62,6 @@ module.exports = {
                 self.isLoading = false;
             })
         },
-        addServerModal: function () {
-            jQuery('#addServer').openModal();
-        },
         addServer: function () {
             this.serverInstalling = true;
             this.$http.post(window.baseurl + '/api/v1/services/mc', {"id": jQuery('#newServerId').val()},
@@ -81,12 +78,13 @@ module.exports = {
                 jQuery('#newServerValidator').attr("data-error", data.error_msg);
             });
         },
-        deleteServerModal: function (id) {
+        deleteServerModal: function (id, service) {
             this.serverToDelete = id;
+            this.serviceToDelete = service;
             jQuery('#deleteServer').openModal();
         },
         deleteServer: function () {
-            this.$http.delete(window.baseurl + '/api/v1/services/mc/' + this.serverToDelete,
+            this.$http.delete(window.baseurl + '/api/v1/services/' + this.serviceToDelete + '/' + this.serverToDelete,
                     function (data, status) {
                         this.getServers();
                         jQuery('#deleteServer').closeModal();
