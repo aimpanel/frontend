@@ -21,6 +21,13 @@ module.exports = {
             //fonts
             {test: /\.woff(2)?(\?v=[0-9]\.[0-9]\.[0-9])?$/, loader: "url-loader?limit=10000&minetype=application/font-woff"},
             {test: /\.(ttf|eot|svg)(\?v=[0-9]\.[0-9]\.[0-9])?$/, loader: "file-loader"},
+            {
+                test: /\.(jpe?g|png|gif|svg)$/i,
+                loaders: [
+                    'file?hash=sha512&digest=hex&name=[hash].[ext]',
+                    'image-webpack?bypassOnDebug&optimizationLevel=7&interlaced=false'
+                ]
+            }
             //uglify ignore
 //            {
 //                test: /.*\/app\/.*\.js$/,
@@ -41,7 +48,7 @@ module.exports = {
             "window.jQuery": "jquery",
             "root.jQuery": "jquery",
             "Hammer": "hammerjs"
-            //jquery-hammerjs
+                    //jquery-hammerjs
         })
                 //new webpack.optimize.UglifyJsPlugin({
                 //    //say no to yellow terminal after minify
