@@ -14,13 +14,13 @@
         </ul>
     </li>
     <li v-if="routeContains('ts3/')">
-        <a class="dropdown-button hide-on-small-only" data-activates="user-dropdown"><span>Menu serwera</span><i class="mdi-navigation-more-vert right"></i></a>
+        <a class="dropdown-button hide-on-small-only" data-activates="user-dropdown"><span>{{$t("serverMenu.title")}}</span><i class="mdi-navigation-more-vert right"></i></a>
         <a class="dropdown-button hide-on-med-and-up" data-activates="user-dropdown"><i class="mdi-navigation-more-vert"></i></a>
         <ul id="user-dropdown" class="dropdown-content">
-            <li><a href="#/ts3/{{route.params.id}}/console">Konsola</a></li>
-            <li><a href="#/ts3/{{route.params.id}}/stats">Statystyki</a></li>
-            <li><a href="#/ts3/{{route.params.id}}/sftp">SFTP</a></li>
-            <li><a href="#/ts3/{{route.params.id}}/autorestart">Autorestart</a></li>
+            <li><a href="#/ts3/{{route.params.id}}/console">{{$t("serverMenu.console")}}</a></li>
+            <li><a href="#/ts3/{{route.params.id}}/stats">{{$t("serverMenu.stats")}}</a></li>
+            <li><a href="#/ts3/{{route.params.id}}/sftp">{{$t("serverMenu.sftp")}}</a></li>
+            <li><a href="#/ts3/{{route.params.id}}/autorestart">{{$t("serverMenu.autorestart")}}</a></li>
         </ul>
     </li>
 </ul>
