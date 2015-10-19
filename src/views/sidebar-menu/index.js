@@ -1,3 +1,4 @@
+require('./style.css');
 //hack for working menu collapsible
 setTimeout(function () {
     jQuery('.collapsible').collapsible();
@@ -12,5 +13,13 @@ module.exports = {
         return {
             menu: this.$root.menu
         }
+    },
+    ready: function () {
+        jQuery('#slide-out li').on("click", function () {
+            jQuery('#slide-out li').each(function () {
+                jQuery(this).removeClass("active");
+            });
+            jQuery(this).addClass("active");
+        });
     }
 }
