@@ -129,6 +129,9 @@ window.locale.pl = {
             title: "Konsola",
             console: "Konsola",
             log: "Log"
+        },
+        stats: {
+            title: "Statystyki"
         }
     }
 };
