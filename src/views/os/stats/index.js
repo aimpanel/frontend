@@ -32,7 +32,7 @@ module.exports = {
         }
     },
     ready: function () {
-        this.$root.$set('title', 'Statystyki systemu');
+        this.$root.$set('title', this.$t("osStats.stats"));
         this.getRam();
         window.refreshCharts = setInterval(this.getRam, 5000);
 //        var myvalues = [10, 8, 5, 7, 4, 4, 1];
@@ -81,25 +81,25 @@ module.exports = {
                     value: 1,
                     color: "#60BD68",
                     highlight: "#6DCA75",
-                    label: "Wolne"
+                    label: this.$t("osStats.ram.free")
                 },
                 {
                     value: 1,
                     color: "#5DA5DA",
                     highlight: "#6AB2E7",
-                    label: "Bufory"
+                    label: this.$t("osStats.ram.buffer")
                 },
                 {
                     value: 1,
                     color: "#DECF3F",
                     highlight: "#EBDC4C",
-                    label: "Cache"
+                    label: this.$t("osStats.ram.cache")
                 },
                 {
                     value: 1,
                     color: "#F15854",
                     highlight: "#FE6561",
-                    label: "Aplikacje"
+                    label: this.$t("osStats.ram.apps")
                 }
             ];
             var options = {
