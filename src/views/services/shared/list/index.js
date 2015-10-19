@@ -5,6 +5,8 @@ module.exports = {
     data: function () {
         return {
             isLoading: true,
+            serverInstalling: false,
+            serviceToInstall: false,
             servers: false,
             services: [],
             serverToDelete: false,
@@ -15,6 +17,7 @@ module.exports = {
     ready: function () {
         this.$root.$set('title', 'Lista serwerów');
         jQuery('.tooltipped').tooltip({delay: 50});
+        jQuery('select').material_select();
         this.getServers();
         window.interval = setInterval(this.getServers, 5000);
     },
@@ -64,7 +67,7 @@ module.exports = {
         },
         addServer: function () {
             this.serverInstalling = true;
-            this.$http.post(window.baseurl + '/api/v1/services/mc', {"id": jQuery('#newServerId').val()},
+            this.$http.post(window.baseurl + '/api/v1/services/' + this.serviceToInstall, {"id": jQuery('#newServerId').val()},
             function (data, status) {
                 this.serverInstalling = false;
                 this.getServers();

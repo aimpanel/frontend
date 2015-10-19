@@ -36,5 +36,27 @@ window.locale.en = {
         desc: "Description",
         validTo: "Valid to",
         thanks: "Thank you for choosing Aimpanel :)"
+    },
+    servers: {
+        state: 'State',
+        console: "Console",
+        actions: "Actions",
+        remove: "Remove",
+        on: "On",
+        off: "Off",
+        empty: "No servers",
+        emptyMaybeAddNew: "No servers. Maybe it's worth to try add a new? :)",
+        addTooltip: "Protip: in lower right corner there is red plus sign",
+        addServer: "Add server",
+        addModal: {
+            idLabel: "Server ID e.g. 1",
+            clickToAdd: "Add",
+            working: "Working..."
+        },
+        removeModal: {
+            removeServer: "Delete server",
+            areYouSure: "Are you sure? It's going to remove all server files. Files will be gone!",
+            yesDestroy: "Hulk, destroy!"
+        }
     }
 };
