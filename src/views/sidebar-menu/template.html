@@ -1,18 +1,18 @@
-<li v-show="$root.logged && enabled" v-repeat="menu">
-    <i style="float:left" class="black-text fa fa-fw fa-{{icon}}"></i>
-    <a class="waves-effect waves-green" href="#/{{href}}">
+<li class="menuButton" v-show="$root.logged && enabled" v-repeat="menu">
+    <i class="fa fa-fw fa-{{icon}} black-text"></i>
+    <a class="waves-effect waves-light" href="#/{{href}}">
         {{name}}
     </a>
 </li>
-<li v-if="$root.logged">
-    <i style="float:left" class="fa fa-fw fa-sign-out black-text"></i>
-    <a v-on="click: $root.doLogout" class="waves-effect waves-green">
+<li class="menuButton" v-if="$root.logged">
+    <i class="fa fa-fw fa-sign-out black-text"></i>
+    <a class="waves-effect waves-light" v-on="click: $root.doLogout">
         {{$t("auth.logout")}}
     </a>
 </li>
-<li v-if="!$root.logged">
-    <i style="float:left" class="fa fa-sign-in black-text"></i>
-    <a href="#/auth/login" class="waves-effect waves-green">
+<li class="menuButton" v-if="!$root.logged">
+    <i class="fa fa-fw fa-sign-in black-text"></i>
+    <a class="waves-effect waves-light" href="#/auth/login">
         {{$t("auth.signIn")}}
     </a>
 </li>
