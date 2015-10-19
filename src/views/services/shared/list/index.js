@@ -15,7 +15,7 @@ module.exports = {
         }
     },
     ready: function () {
-        this.$root.$set('title', 'Lista serwerów');
+        this.$root.$set('title', this.$t("servers.listOfServers"));
         jQuery('.tooltipped').tooltip({delay: 50});
         jQuery('select').material_select();
         this.getServers();
@@ -72,7 +72,7 @@ module.exports = {
                 this.serverInstalling = false;
                 this.getServers();
                 jQuery('#addServer').closeModal();
-                Materialize.toast('Serwer dodano', 2500);
+                Materialize.toast(this.$t("servers.serverAdded"), 2500);
             }).error(function (data)
             {
                 this.serverInstalling = false;
