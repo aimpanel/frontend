@@ -107,5 +107,13 @@ window.locale.pl = {
                 guest: "tworzenie wirtualnych procesorów na maszynie"
             }
         }
+    },
+    server: {
+        autorestart: {
+            title: "Autorestart",
+            alwaysOn: "Autorestart serwera jest zawsze włączony.",
+            queue: "Panel co pełną minutę sprawdza czy proces serwera jest włączony, jeśli jest wyłączony to dodaje do kolejki zadanie restartu serwera.",
+            estimate: "Wystartowanie serwera po crashu powinno zająć około minuty."
+        }
     }
 };

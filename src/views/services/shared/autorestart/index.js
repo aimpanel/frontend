@@ -10,7 +10,7 @@ module.exports = {
         }
     },
     ready: function () {
-        this.$root.$set('title', 'Autorestart');
+        this.$root.$set('title', this.$t('server.autorestart.title'));
         this.service = this.route.params.service;
         this.id = this.route.params.id;
         jQuery('.tooltipped').tooltip({delay: 50});

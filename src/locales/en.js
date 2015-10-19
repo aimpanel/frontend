@@ -107,5 +107,13 @@ window.locale.en = {
                 guest: "creating vCPU on your machine"
             }
         }
+    },
+    server: {
+        autorestart: {
+            title: "Autorestart",
+            alwaysOn: "Server autorestart is always turned on.",
+            queue: "Aimpanel check every minute if server process is running, if it's not running - restart server job will be added to queue.",
+            estimate: "Restart after crash shoudn't take more than two minutes."
+        }
     }
 };
