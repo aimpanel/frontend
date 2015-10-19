@@ -108,6 +108,15 @@ window.locale.pl = {
             }
         }
     },
+    serverMenu: {
+        title: "Menu serwera",
+        java: "Java",
+        autorestart: "Autorestart",
+        sftp: "SFTP",
+        info: "Informacje",
+        stats: "Statystyki",
+        console: "Konsola i log"
+    },
     server: {
         autorestart: {
             title: "Autorestart",

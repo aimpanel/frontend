@@ -108,6 +108,15 @@ window.locale.en = {
             }
         }
     },
+    serverMenu: {
+        title: "Server menu",
+        java: "Java VM",
+        autorestart: "Autorestart",
+        sftp: "SFTP",
+        info: "Info",
+        stats: "Stats",
+        console: "Console & log"
+    },
     server: {
         autorestart: {
             title: "Autorestart",
