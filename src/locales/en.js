@@ -133,6 +133,25 @@ window.locale.en = {
         stats: {
             title: "Stats"
         },
+        sftp: {
+            title: "SFTP",
+            credentials: "Credentials for SFTP account",
+            host: "Host",
+            username: "Username",
+            port: "Port",
+            password: "Password",
+            secureInfo: "SFTP is recommended and safe way to transfer files between your computer and server.",
+            desc: "SFTP is a network protocol that provides file access, file transfer, and file management over any reliable data stream. It was designed by the Internet Engineering Task Force (IETF) as an extension of the Secure Shell protocol (SSH) version 2.0 to provide secure file transfer capabilities. The IETF Internet Draft states that, even though this protocol is described in the context of the SSH-2 protocol, it could be used in a number of different applications, such as secure file transfer over Transport Layer Security (TLS) and transfer of management information in VPN applications.",
+            descSource: "<a class=\"green-text truncate\" href=\"https://en.wikipedia.org/wiki/SSH_File_Transfer_Protocol\"  target=\"_blank\">https://en.wikipedia.org/wiki/SSH_File_Transfer_Protocol</a>",
+            newPassword: {
+                set: "Set new random password for SFTP account",
+                pressToRandom: "Press button to generate new, secure 16 character password.",
+                noRecovery: "After password is set, there is no way to recover it, you can only set new for security reasons.",
+                clickToChange: "Change password",
+                done: "Done! You can now copy and paste new password to your SFTP client e.g.",
+                newPass: "New password"
+            }
+        },
         mc: {
             info: {
                 title: "Info about server",
