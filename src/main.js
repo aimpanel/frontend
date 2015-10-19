@@ -74,7 +74,7 @@ var root = Vue.extend({
             menu: [
                 //{"name": this.$t("home.news"), "href": "", perm: "", enabled: true},
                 {"name": "Aktualności", "href": "", "icon": "newspaper-o", enabled: true},
-                {"name": "Statystyki", "href": "os/stats", "icon": "bar-chart", enabled: true},
+                {"name": this.$t("osStats.stats"), "href": "os/stats", "icon": "bar-chart", enabled: true},
                 {"name": this.$t("servers.servers"), "href": "servers", "icon": "server", enabled: true},
                 //{"name": "Użytkownicy", "href": "users", perm: "", enabled: true},
                 //{"name": "Grupy", "href": "groups", perm: "", enabled: true},

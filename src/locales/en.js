@@ -62,5 +62,45 @@ window.locale.en = {
             areYouSure: "Are you sure? It's going to remove all server files. Files will be gone!",
             yesDestroy: "Hulk, destroy!"
         }
+    },
+    osStats: {
+        stats: "OS stats",
+        refreshEach: "Chart is refresing each {sec} sec",
+        ramInMb: "RAM in MB",
+        ram: {
+            howTo: "How to understand RAM usage?",
+            apps: "Applications",
+            appsInfo: "memory used by apps, main reason to have plenty of RAM :)",
+            cache: "Cache",
+            cacheInfo: "frequently readed data from disk is storaged in RAM for faster reads.",
+            buffer: "Buffers",
+            bufferInfo: "space where data is added to queue for write to disk, hard disk may be slow if this space is big.",
+            free: "Free",
+            freeInfo: "memory totally 'wasted', Linux kernel converts free space to cache if needed.",
+            cacheBufferInfo: "Cache and buffers may be shrinked to make space for apps if needed.",
+            cacheBufferOsInfo: "OS knows how to set proper cache and buffer sizes, no user intervention is needed."
+        },
+        cpuInPerc: "CPU in %",
+        cpu: {
+            howTo: "What is using my CPU time?",
+            general: {
+                info: "General",
+                usr: "applications in OS e.g. game servers",
+                idle: "not used",
+                nice: "less important stuff"
+            },
+            sys: {
+                info: "System",
+                sys: "system kernel",
+                irq: "drivers",
+                soft: "more drivers stuff",
+                iowait: "waiting for write to disk"
+            },
+            virt: {
+                info: "Virtualization",
+                steal: "other VPS on machine or exceeding your CPU quota",
+                guest: "creating vCPU on your machine"
+            }
+        }
     }
 };

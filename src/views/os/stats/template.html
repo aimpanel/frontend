@@ -4,32 +4,32 @@
             <div class="card-panel white z-depth-2">
                 <div class="row">
                     <div class="col s12 l6 center">
-                        <h5 v-if="!isLoading">RAM w MB</h5>
+                        <h5 v-if="!isLoading">{{$t("osStats.ramInMb")}}</h5>
                         <div v-if="isLoading">
                             <preloader></preloader>
                         </div>
                         <canvas id="ram"></canvas>
                         <!--<div id="cpuSpark"></div>-->
-                        <p>Odświeżanie wykresu co 5sek</p>
+                        <p>{{$t("osStats.refreshEach",{sec:5})}}</p>
                     </div>
                     <div class="col s12 l6">
-                        <h5>Jak rozumieć zużycie RAMu?</h5>
+                        <h5>{{$t("osStats.ram.howTo")}}</h5>
                         <p class="legend">
                             <span style="background-color:#F15854"></span>
-                            <strong>Aplikacje</strong> - pamięć zużyta przez aplikacje aby te mogły działać, jest to główny powód dla posiadania RAMu :)
+                            <strong>{{$t("osStats.ram.apps")}}</strong> - {{$t("osStats.ram.appsInfo")}}
                             <br><br>
                             <span style="background-color:#DECF3F"></span>
-                            <strong>Cache</strong> - często odczytywane dane z dysku są przechowywane w pamięci aby system mógł je szybciej odczytywać.
+                            <strong>{{$t("osStats.ram.cache")}}</strong> - {{$t("osStats.ram.cacheInfo")}}
                             <br><br>
                             <span style="background-color:#5DA5DA"></span>
-                            <strong>Bufory</strong> - obszar do którego zbierane są dane do zapisu na dysk, może być duży jeśli dysk jest zbyt wolny.
+                            <strong>{{$t("osStats.ram.buffer")}}</strong> - {{$t("osStats.ram.bufferInfo")}}
                             <br><br>
                             <span style="background-color:#60BD68"></span>
-                            <strong>Wolne</strong> - pamięć całkowicie nieużywana i gotowa do "zasiedlenia", według jądra Linux jest to zmarnowany RAM, lepiej gdy jest przeznaczony na cache.
+                            <strong>{{$t("osStats.ram.free")}}</strong> - {{$t("osStats.ram.freeInfo")}}
                             <br><br>
-                            Cache i bufory mogą być zwolnione aby zrobić miejsce dla aplikacji. 
+                            {{$t("osStats.ram.cacheBufferInfo")}}
                             <br>
-                            System operacyjny sam dba o odpowiednie wartości pamięci cache oraz buforów. Nie jest wymagana interwencja użytkownika.
+                            {{$t("osStats.ram.cacheBufferOsInfo")}}
                         </p>
                     </div>
                 </div>
@@ -37,52 +37,52 @@
             <div class="card-panel white z-depth-2">
                 <div class="row">
                     <div class="col s12 l6 center">
-                        <h5 v-if="!isLoading">CPU w %</h5>
+                        <h5 v-if="!isLoading">{{$t("osStats.cpuInPerc")}}</h5>
                         <div v-if="isLoading">
                             <preloader></preloader>
                         </div>
                         <canvas id="cpu"></canvas>
-                        <p>Odświeżanie wykresu co 5sek</p>
+                        <p>{{$t("osStats.refreshEach",{sec:5})}}</p>
                     </div>
                     <div class="col s12 l6">
-                        <h5>Co zużywa czas procesora?</h5>
+                        <h5>{{$t("osStats.cpu.howTo")}}</h5>
                         <p class="legend">
-                            Ogólne
+                            {{$t("osStats.cpu.general.info")}}
                             <br>
                             <span style="background-color:#5DA5DA"></span>
-                            <strong>usr</strong> - aplikacje w systemie np. serwery gier
+                            <strong>usr</strong> - {{$t("osStats.cpu.general.usr")}}
                             <br>
                             <span style="background-color:#60BD68"></span>
-                            <strong>idle</strong> - nieużywany
+                            <strong>idle</strong> - {{$t("osStats.cpu.general.idle")}}
                             <br>
                             <span style="background-color:#4D4D4D"></span>
-                            <strong>nice</strong> - mało ważne zadania w systemie
+                            <strong>nice</strong> - {{$t("osStats.cpu.general.nice")}}
                             <br>
                             <br>
 
-                            Systemowe
+                            {{$t("osStats.cpu.sys.info")}}
                             <br>
                             <span style="background-color:#DECF3F"></span>
-                            <strong>sys</strong> - jądro systemu
+                            <strong>sys</strong> - {{$t("osStats.cpu.sys.sys")}}
                             <br>
                             <span style="background-color:#B276B2"></span>
-                            <strong>irq</strong> - sterowniki urządzeń
+                            <strong>irq</strong> - {{$t("osStats.cpu.sys.irq")}}
                             <br>
                             <span style="background-color:#F17CB0"></span>
-                            <strong>soft</strong> - sterowniki urządzeń c.d.
+                            <strong>soft</strong> - {{$t("osStats.cpu.sys.soft")}}
                             <br>
                             <span style="background-color:#F15854"></span>
-                            <strong>iowait</strong> - oczekiwanie zapisu na dysk
+                            <strong>iowait</strong> - {{$t("osStats.cpu.sys.iowait")}}
                             <br>
                             <br>
 
-                            Związane z wirtualizacją
+                            {{$t("osStats.cpu.virt.info")}}
                             <br>
                             <span style="background-color:#FAA43A"></span>
-                            <strong>steal</strong> - inne VPSy na maszynie lub przekraczanie twojego przydziału CPU
+                            <strong>steal</strong> - {{$t("osStats.cpu.virt.steal")}}
                             <br>
                             <span style="background-color:#B2912F"></span>
-                            <strong>guest</strong> - tworzenie wirtualnych procesorów na maszynie
+                            <strong>guest</strong> - {{$t("osStats.cpu.virt.guest")}} 
                         </p>
                     </div>
                 </div>

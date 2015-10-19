@@ -62,5 +62,45 @@ window.locale.pl = {
             areYouSure: "Czy jesteś pewien że chcesz usunąć serwer?<br>Jest to nieodwracalne usunięcie wszystkich plików serwera!",
             yesDestroy: "Tak, zniszcz"
         }
+    },
+    osStats: {
+        stats: "Statystyki systemu",
+        refreshEach: "Odświeżanie wykresu co {sec} sek",
+        ramInMb: "RAM w MB",
+        ram: {
+            howTo: "Jak rozumieć zużycie RAMu?",
+            apps: "Aplikacje",
+            appsInfo: "pamięć zużyta przez aplikacje aby te mogły działać, jest to główny powód dla posiadania RAMu :)",
+            cache: "Cache",
+            cacheInfo: "często odczytywane dane z dysku są przechowywane w pamięci aby system mógł je szybciej odczytywać.",
+            buffer: "Bufory",
+            bufferInfo: "obszar do którego zbierane są dane do zapisu na dysk, może być duży jeśli dysk jest zbyt wolny.",
+            free: "Wolne",
+            freeInfo: "pamięć całkowicie nieużywana i gotowa do \"zasiedlenia\", według jądra Linux jest to zmarnowany RAM, lepiej gdy jest przeznaczony na cache.",
+            cacheBufferInfo: "Cache i bufory mogą być zwolnione aby zrobić miejsce dla aplikacji.",
+            cacheBufferOsInfo: "System operacyjny sam dba o odpowiednie wartości pamięci cache oraz buforów. Nie jest wymagana interwencja użytkownika."
+        },
+        cpuInPerc: "CPU w %",
+        cpu: {
+            howTo: "Co zużywa czas procesora?",
+            general: {
+                info: "Ogólne",
+                usr: "aplikacje w systemie np. serwery gier",
+                idle: "nieużywany",
+                nice: "mało ważne zadania w systemie"
+            },
+            sys: {
+                info: "Systemowe",
+                sys: "jądro systemu",
+                irq: "sterowniki urządzeń",
+                soft: "sterowniki urządzeń c.d.",
+                iowait: "oczekiwanie zapisu na dysk"
+            },
+            virt: {
+                info: "Związane z wirtualizacją",
+                steal: "inne VPSy na maszynie lub przekraczanie twojego przydziału CPU",
+                guest: "tworzenie wirtualnych procesorów na maszynie"
+            }
+        }
     }
 };
