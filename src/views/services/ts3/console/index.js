@@ -12,8 +12,7 @@ module.exports = {
     },
     ready: function () {
         this.id = this.route.params.id;
-        //this.$root.checkPerm('HOST_' + this.hostId + '_MC_' + this.serverSlug + '_CONSOLE');
-        this.$root.$set('title', 'Konsola #' + this.id);
+        this.$root.$set('title', this.$t("server.console.title") + ' #' + this.id);
         jQuery('ul.tabs').tabs();
         jQuery(".dropdown-button").dropdown({
             hover: false,
@@ -21,7 +20,6 @@ module.exports = {
             constrain_width: true,
             alignment: 'right'
         });
-        //this.startIntervalLog();
         this.startIntervalConsole();
     },
     methods: {
@@ -42,7 +40,6 @@ module.exports = {
             this.$http.get(window.baseurl + "/api/v1/services/ts3/" + this.id + "/console", function (data) {
                 jQuery("#console").empty();
                 data.forEach(function (d) {
-                    //console.log(d);
                     jQuery("#console").append(d + '<br>');
                 });
                 var objDiv = document.getElementById("console");
@@ -57,7 +54,7 @@ module.exports = {
         },
         startServer: function () {
             this.$http.get(window.baseurl + "/api/v1/services/ts3/" + this.id + "/start", function (data) {
-                Materialize.toast('Zadanie dodano do kolejki', 3500);
+                Materialize.toast(this.$t("general.taskAddedToQueue"), 3500);
             }).error(function (data)
             {
                 Materialize.toast('<a class="red-text">' + data.error_msg + '</a>', 6000);
@@ -65,12 +62,12 @@ module.exports = {
         },
         stopServer: function () {
             this.$http.get(window.baseurl + "/api/v1/services/ts3/" + this.id + "/stop", function (data) {
-                Materialize.toast('Zadanie dodano do kolejki', 3500);
+                Materialize.toast(this.$t("general.taskAddedToQueue"), 3500);
             });
         },
         restartServer: function () {
             this.$http.get(window.baseurl + "/api/v1/services/ts3/" + this.id + "/restart", function (data) {
-                Materialize.toast('Zadanie dodano do kolejki', 3500);
+                Materialize.toast(this.$t("general.taskAddedToQueue"), 3500);
             }).error(function (data)
             {
                 Materialize.toast('<a class="red-text">' + data.error_msg + '</a>', 6000);

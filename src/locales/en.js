@@ -123,6 +123,11 @@ window.locale.en = {
             alwaysOn: "Server autorestart is always turned on.",
             queue: "Aimpanel check every minute if server process is running, if it's not running - restart server job will be added to queue.",
             estimate: "Restart after crash shoudn't take more than two minutes."
+        },
+        console: {
+            title: "Console",
+            console: "Console",
+            log: "Log"
         }
     }
 };

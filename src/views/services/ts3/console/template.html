@@ -3,28 +3,14 @@
 
         <div class="col s12">
             <ul class="tabs light-green ">
-                <!--<li class="tab col s3" v-on="click: startIntervalLog"><a class="active white-text" href="#logTab">Log</a></li>-->
-                <li class="tab col s3" v-on="click: startIntervalConsole"><a class="white-text" href="#consoleTab">Konsola</a></li>
+                <li class="tab col s3" v-on="click: startIntervalConsole"><a class="white-text" href="#consoleTab">{{$t("server.console.console")}}</a></li>
             </ul>
         </div>
-
-<!--        <div id="logTab" class="col s12">
-            <div class="row">
-                <div id="logContainer" class="col s12 card-panel grey darken-3 z-depth-2 white-text">
-                    <div id="log">Ładowanie...</div>
-                    <div id="logInputContainer" class="white-text">
-                        <div id="logInputField" class="input-field col s12">
-                            <input v-on="keyup:sendCommand | key 'enter'" type="text" name="text" id="commandLog" v-model="command" maxlength="256" autocomplete="off" required>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>-->
-
+        
         <div id="consoleTab" class="col s12">
             <div class="row">
                 <div id="consoleContainer" class="col s12 card-panel grey darken-3 z-depth-2 white-text">
-                    <div id="console">Ładowanie...</div>
+                    <div id="console">{{$t("general.loading")}}</div>
                     <div id="consoleInputContainer" class="white-text">
                         <div id="consoleInputField" class="input-field col s12">
                             <input v-on="keyup:sendCommand | key 'enter'" type="text" name="text" id="commandConsole" v-model="command" maxlength="256" autocomplete="off" required>
