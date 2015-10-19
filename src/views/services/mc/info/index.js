@@ -8,7 +8,7 @@ module.exports = {
         }
     },
     ready: function () {
-        this.$root.$set('title', 'Informacje o serwerze');
+        this.$root.$set('title', this.$t("server.mc.info.title"));
         this.service = this.route.params.service;
         this.id = this.route.params.id;
         jQuery('.tooltipped').tooltip({delay: 50});
