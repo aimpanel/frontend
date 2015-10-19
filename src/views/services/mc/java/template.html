@@ -3,13 +3,11 @@
         <div class="col s12 l6">
             <div class="card-panel white z-depth-2">
                 <p>
-                    JVM (Wirtualna Maszyna Java) potrafi zająć całą dostępną pamięć RAM, dlatego warto z góry przydzielić jej maksymalną pamięć.<br>
-                    Służy do tego parametr -Xmx.<br>
-                    <br>
-                    Przykładowo dla limitu 1024MB RAM należy użyć:<br>
-                    -Xmx1024M
+                    {{{$t("server.mc.java.javaRamHog")}}}
                     <br><br>
-                    Wartość Xmx powinna być mniejsza niż dostępny RAM, gdyż JVM potrafi zająć RAMu więcej niż zostanie przydzielone.
+                    {{{$t("server.mc.java.paramExample")}}}
+                    <br><br>
+                    {{{$t("server.mc.java.javaRamHogWarning")}}}
                 </p>
             </div>
         </div>
@@ -17,22 +15,22 @@
             <div class="card-panel white z-depth-2">
                 <div class="row">
                     <div class="col s12">
-                        <h5>Parametry JVM</h5>
+                        <h5>{{$t("server.mc.java.jvmParams")}}</h5>
                     </div>
                 </div>
                 <div class="row" v-repeat="args">
                     <div class="input-field col s10">
                         <i class="mdi-image-flash-on prefix"></i>
                         <input type="text" v-model="$value" maxlength="30" required>
-                        <label class="active" for="login">Parametr {{$index+1}}</label>
+                        <label class="active" for="login">{{$t("server.mc.java.param")}} {{$index+1}}</label>
                     </div>
                     <div class="col s2">
                         <button v-on="click: delArg($value)" class="btn red btn-del"><i class="fa fa-remove"></i></button>
                     </div>
                 </div>
                 <div class="center-btn">
-                    <button v-on="click: newArg" type="submit" class="waves-effect waves-light btn blue"><i class="fa fa-plus"></i> Dodaj</button>
-                    <button v-on="click: saveArgs" type="submit" class="waves-effect waves-light btn green"><i class="fa fa-check"></i> Zapisz</button>
+                    <button v-on="click: newArg" type="submit" class="waves-effect waves-light btn blue"><i class="fa fa-plus"></i> {{$t("server.mc.java.add")}}</button>
+                    <button v-on="click: saveArgs" type="submit" class="waves-effect waves-light btn green"><i class="fa fa-check"></i> {{$t("server.mc.java.save")}}</button>
                 </div>
                 <br>
             </div>

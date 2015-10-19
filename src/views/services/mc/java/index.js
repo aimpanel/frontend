@@ -6,7 +6,7 @@ module.exports = {
     data: function () {
         return {
             id: false,
-            args:[]
+            args: []
         }
     },
     ready: function () {
@@ -14,7 +14,7 @@ module.exports = {
 //            console.log(localStorage.key(i));
 //            console.log(localStorage.getItem(localStorage.key(i)));
 //        }
-        this.$root.$set('title', 'Java');
+        this.$root.$set('title', this.$t("server.mc.java.title"));
         this.service = this.route.params.service;
         this.id = this.route.params.id;
         jQuery('.tooltipped').tooltip({delay: 50});
@@ -41,7 +41,7 @@ module.exports = {
                     {"params": this.args},
             function (data, status) {
                 this.listArgs();
-                Materialize.toast('Parametry zapisano', 2500);
+                Materialize.toast(this.$t("server.mc.java.paramsSaved"), 2500);
             }).error(function (data, status) {
                 this.$root.checkSession(data, status);
             });
