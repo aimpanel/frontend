@@ -3,29 +3,29 @@
         <div class="card-panel col s12 l6 z-depth-2 white">
             <table v-if="serverProperties">
                 <tr>
-                    <td>Port gry (TCP)</td>
+                    <td>{{$t("server.mc.info.portGame")}} (TCP)</td>
                     <td>{{serverProperties["server-port"]}}</td>
                 </tr>
                 <tr>
-                    <td>Port query (UDP)</td>
+                    <td>{{$t("server.mc.info.portQuery")}} (UDP)</td>
                     <td>{{serverProperties["query.port"]}}</td>
                 </tr>
                 <tr>
-                    <td>Port RCON (TCP)</td>
+                    <td>{{$t("server.mc.info.portRcon")}} (TCP)</td>
                     <td>{{serverProperties["rcon.port"]}}</td>
                 </tr>
                 <tr>
-                    <td>Hasło RCON</td>
+                    <td>{{$t("server.mc.info.passwordRcon")}}</td>
                     <td>{{serverProperties["rcon.password"]}}</td>
                 </tr>
                 <tr>
-                    <td>Tryb online</td>
-                    <td class="green-text" v-if="serverProperties['online-mode']">Włączony</td>
-                    <td class="red-text" v-if="!serverProperties['online-mode']">Wyłączony</td>
+                    <td>{{$t("server.mc.info.onlineMode")}}</td>
+                    <td class="green-text" v-if="serverProperties['online-mode']">{{$t("server.mc.info.on")}}</td>
+                    <td class="red-text" v-if="!serverProperties['online-mode']">{{$t("server.mc.info.off")}}</td>
                 </tr>
             </table>
             <p v-if="!serverProperties">
-                Nie znaleziono pliku server.properties
+                {{$t("server.mc.info.configNotFound")}}
             </p>
         </div>
     </div>

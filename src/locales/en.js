@@ -131,6 +131,19 @@ window.locale.en = {
         },
         stats: {
             title: "Stats"
+        },
+        mc: {
+            info: {
+                title: "Info about server",
+                portGame: "Game port",
+                portQuery: "Query port",
+                portRcon: "RCON Port ",
+                passwordRcon: "RCON password",
+                onlineMode: "Online mode",
+                on: "On",
+                off: "Off",
+                configNotFound: "File server.properties not found"
+            }
         }
     }
 };

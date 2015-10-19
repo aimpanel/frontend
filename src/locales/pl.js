@@ -132,6 +132,19 @@ window.locale.pl = {
         },
         stats: {
             title: "Statystyki"
+        },
+        mc: {
+            info: {
+                title: "Informacje o serwerze",
+                portGame: "Port gry",
+                portQuery: "Port query",
+                portRcon: "Port RCON",
+                passwordRcon: "Hasło RCON",
+                onlineMode: "Tryb online",
+                on: "Włączony",
+                off: "Wyłączony",
+                configNotFound: "Nie znaleziono pliku server.properties"
+            }
         }
     }
 };
