@@ -133,6 +133,25 @@ window.locale.pl = {
         stats: {
             title: "Statystyki"
         },
+        sftp: {
+            title: "SFTP",
+            credentials: "Dane do konta SFTP",
+            host: "Adres",
+            username: "Login",
+            port: "Port",
+            password: "Hasło",
+            secureInfo: "SFTP to zalecany i bezpieczny sposób aby przesyłać pliki na serwer.",
+            desc: "SFTP (ang. SSH File Transfer Protocol) – protokół komunikacyjny typu klient-serwer, który umożliwia przesyłanie plików poprzez sieć TCP/IP. Przesyłając plik przy użyciu protokołu FTP uzyskujemy dobre przepływności, ale nie zyskujemy bezpieczeństwa – nasze hasła i dane nie są szyfrowane podczas przysyłania, co potencjalnie stwarza zagrożenie ich kradzieży. Znaczną poprawę bezpieczeństwa przynosi protokół SFTP, który nie wymaga obecności serwera FTP, a przesyłane dane są szyfrowane z wykorzystaniem klucza szyfrującego. SFTP nie powinien być mylony z protokołem FTPS, który jest rozszerzeniem protokołu FTP.",
+            descSource: "<a class=\"green-text truncate\" href=\"https://pl.wikipedia.org/wiki/SSH_File_Transfer_Protocol\"  target=\"_blank\">https://pl.wikipedia.org/wiki/SSH_File_Transfer_Protocol</a>",
+            newPassword: {
+                set: "Ustaw nowe losowe hasło do konta SFTP",
+                pressToRandom: "Wciśnięcie przycisku wygeneruje nowe bezpieczne 16 znakowe hasło.",
+                noRecovery: "Po ustawieniu hasła ze względów bezpieczeństwa nie można go już odczytać, można za to utworzyć nowe.",
+                clickToChange: "Zmień hasło",
+                done: "Gotowe! Poniżej twoje nowe hasło, możesz je wkleić do klienta SFTP np.",
+                newPass: "Nowe hasło"
+            }
+        },
         mc: {
             info: {
                 title: "Informacje o serwerze",

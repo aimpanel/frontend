@@ -11,7 +11,7 @@ module.exports = {
         }
     },
     ready: function () {
-        this.$root.$set('title', 'SFTP');
+        this.$root.$set('title', this.$t("server.sftp.title"));
         this.service = this.route.params.service;
         if (this.service === "ts3")
         {
