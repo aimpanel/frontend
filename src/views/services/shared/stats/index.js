@@ -88,7 +88,7 @@ module.exports = {
     ready: function () {
         this.id = this.route.params.id;
         this.service = this.route.params.service;
-        this.$root.$set('title', 'Statystyki');
+        this.$root.$set('title', this.$t("server.stats.title"));
         this.CpuChart();
         this.RamChart();
         jQuery('ul.tabs').tabs();

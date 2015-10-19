@@ -128,6 +128,9 @@ window.locale.en = {
             title: "Console",
             console: "Console",
             log: "Log"
+        },
+        stats: {
+            title: "Stats"
         }
     }
 };
