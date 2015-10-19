@@ -163,6 +163,17 @@ window.locale.en = {
                 on: "On",
                 off: "Off",
                 configNotFound: "File server.properties not found"
+            },
+            java: {
+                title: "JVM",
+                paramsSaved: "Parameters saved",
+                javaRamHog: "JVM (Java Virtual Machine) can take all available RAM, so it's good to set limit for it.<br>Parameter for this is -Xmx.",
+                paramExample: "For 1024MB RAM limit use:<br>-Xmx1024M",
+                javaRamHogWarning: "Xmx value should be less than available RAM because JVM can take more than you set.",
+                jvmParams: "JVM parameters",
+                param: "Parameter",
+                add: "Add",
+                save: "Save"
             }
         }
     }

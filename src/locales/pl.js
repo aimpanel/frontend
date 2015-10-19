@@ -163,6 +163,17 @@ window.locale.pl = {
                 on: "Włączony",
                 off: "Wyłączony",
                 configNotFound: "Nie znaleziono pliku server.properties"
+            },
+            java: {
+                title: "JVM",
+                paramsSaved: "Parametry zapisano",
+                javaRamHog: "JVM (Wirtualna Maszyna Java) potrafi zająć całą dostępną pamięć RAM, dlatego warto z góry przydzielić jej maksymalną pamięć.<br>Służy do tego parametr -Xmx.",
+                paramExample: " Przykładowo dla limitu 1024MB RAM należy użyć:<br>-Xmx1024M",
+                javaRamHogWarning: "Wartość Xmx powinna być mniejsza niż dostępny RAM, gdyż JVM potrafi zająć RAMu więcej niż zostanie przydzielone.",
+                jvmParams: "Parametry JVM",
+                param: "Parametr",
+                add: "Dodaj",
+                save: "Zapisz"
             }
         }
     }
