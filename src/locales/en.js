@@ -6,7 +6,12 @@ window.locale.en = {
         loading: "Loading"
     },
     home: {
-        "news": "News"
+        "news": "News",
+        "helpHeader": "Feedback? Feature request? Bugs?",
+        "helpDesc": "Write on our forum",
+        "manualDesc": "Manual is available at ",
+        "updateHeader": "How to upgrade Aimpanel to latest version?",
+        "updateDesc": "Just execute following command upgrading your system on root user:"
     },
     auth: {
         "enterLoginAndPassword": "Enter username and password",

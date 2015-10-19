@@ -2,15 +2,16 @@
     <div class="row">
         <div class="col s12">
             <div class="card-panel white z-depth-2">
-                <h5>Masz uwagi? Potrzebujesz pomocy?</h5>
+                <h5>{{$t("home.helpHeader")}}</h5>
                 <p>
-                    Jeśli napotkasz jakieś trudności lub chcsz podzielić się swoją opinię napisz na forum <a class="green-text" target="_blank" href="http://forum.aimpanel.pro">http://forum.aimpanel.pro</a> :)
+                    {{$t("home.helpDesc")}} <a class="green-text" target="_blank" href="http://forum.aimpanel.pro">http://forum.aimpanel.pro</a> :)
                     <br>
-                    Instrukcja obsługi jest dostępna pod adresem <a class="green-text" target="_blank" href="http://aimpanel.pro/pl/dokumentacja/">http://aimpanel.pro/pl/dokumentacja/</a>
+                    {{$t("home.manualDesc")}}
+                    <a class="green-text" target="_blank" href="http://aimpanel.pro/en/docs/">http://aimpanel.pro/docs</a>
                 </p>
-                <h5>Jak zaktualizować panel do najnowszej wersji?</h5>
+                <h5>{{$t("home.updateHeader")}}</h5>
                 <p>
-                    Wystarczy przez SSH wykonać aktualizację systemu na koncie root przez komendę:
+                    {{$t("home.updateDesc")}}
                 </p>
                 <blockquote class="copypasta">
                     apt-get update && apt-get dist-upgrade -y
