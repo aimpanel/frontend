@@ -3,7 +3,8 @@ window.locale.en = {
         notfound: "Error 404 - Page not found",
         notfoundNote: "Instead have a cat gif",
         close: "Close",
-        loading: "Loading"
+        loading: "Loading",
+        taskAddedToQueue: "Zadanie dodane do kolejki"
     },
     home: {
         "news": "News",
