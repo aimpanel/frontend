@@ -4,7 +4,7 @@ window.locale.en = {
         notfoundNote: "Instead have a cat gif",
         close: "Close",
         loading: "Loading",
-        taskAddedToQueue: "Zadanie dodane do kolejki"
+        taskAddedToQueue: "Task added to queue"
     },
     home: {
         "news": "News",
