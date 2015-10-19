@@ -8,7 +8,7 @@ module.exports = {
     },
     ready: function () {
         this.id = this.route.params.id;
-        this.$root.$set('title', 'Konsola #' + this.id);
+        this.$root.$set('title', this.$t("server.console.title") + ' #' + this.id);
         jQuery('ul.tabs').tabs();
         jQuery(".dropdown-button").dropdown({
             hover: false,
@@ -49,7 +49,7 @@ module.exports = {
         },
         startServer: function () {
             this.$http.get(window.baseurl + "/api/v1/services/mc/" + this.id + "/start", function (data) {
-                Materialize.toast('Zadanie dodano do kolejki', 3500);
+                Materialize.toast(this.$t("general.taskAddedToQueue"), 3500);
             }).error(function (data)
             {
                 Materialize.toast('<a class="red-text">' + data.error_msg + '</a>', 6000);
@@ -57,12 +57,12 @@ module.exports = {
         },
         stopServer: function () {
             this.$http.get(window.baseurl + "/api/v1/services/mc/" + this.id + "/stop", function (data) {
-                Materialize.toast('Zadanie dodano do kolejki', 3500);
+                Materialize.toast(this.$t("general.taskAddedToQueue"), 3500);
             });
         },
         restartServer: function () {
             this.$http.get(window.baseurl + "/api/v1/services/mc/" + this.id + "/restart", function (data) {
-                Materialize.toast('Zadanie dodano do kolejki', 3500);
+                Materialize.toast(this.$t("general.taskAddedToQueue"), 3500);
             }).error(function (data)
             {
                 Materialize.toast('<a class="red-text">' + data.error_msg + '</a>', 6000);

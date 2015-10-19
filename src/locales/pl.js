@@ -3,7 +3,8 @@ window.locale.pl = {
         notfound: "Błąd 404 - Nie znaleziono strony",
         notfoundNote: "Dajemy Ci za to gifa z kotem",
         close: "Zamknij",
-        loading: "Ładowanie"
+        loading: "Ładowanie",
+        taskAddedToQueue: "Zadanie dodane do kolejki"
     },
     home: {
         "news": "Aktualności",
@@ -123,6 +124,11 @@ window.locale.pl = {
             alwaysOn: "Autorestart serwera jest zawsze włączony.",
             queue: "Panel co pełną minutę sprawdza czy proces serwera jest włączony, jeśli jest wyłączony to dodaje do kolejki zadanie restartu serwera.",
             estimate: "Wystartowanie serwera po crashu powinno zająć około minuty."
+        },
+        console: {
+            title: "Konsola",
+            console: "Konsola",
+            log: "Log"
         }
     }
 };
