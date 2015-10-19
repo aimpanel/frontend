@@ -10,17 +10,17 @@
                         <thead>
                             <tr>
                                 <th data-field="id">ID</th>
-                                <th>Stan</th>
-                                <th>Konsola</th>
-                                <th data-field="actions">Akcje</th>
-                                <th>Usuń</th>
+                                <th>{{$t("servers.state")}}</th>
+                                <th>{{$t("servers.console")}}</th>
+                                <th data-field="actions">{{$t("servers.actions")}}</th>
+                                <th>{{$t("servers.remove")}}</th>
                             </tr>
                         </thead>
                         <tbody>
                             <tr v-repeat="services">
                                 <td>{{serv.toUpperCase()}} {{id}}</td>
-                                <td v-if="state=='RUNNING'" class="green-text">Włączony</td>
-                                <td v-if="state=='STOPPED'" class="red-text">Wyłączony</td>
+                                <td v-if="state=='RUNNING'" class="green-text">{{$t("servers.on")}}</td>
+                                <td v-if="state=='STOPPED'" class="red-text">{{$t("servers.off")}}</td>
                                 <td>
                                     <a href="#/{{serv}}/{{id}}/console" class="btn btn-pad black"><i class="fa fa-terminal"></i></a>
                                 </td>
@@ -35,13 +35,13 @@
                                 </td>
                             </tr>
                             <tr v-show="empty">
-                                <td>Brak serwerów</td>
+                                <td>{{$t("servers.empty")}}</td>
                             </tr>
                         </tbody>
                     </table>
                 </div>
-                <div v-show="services.length == 0 && !isLoading" class="tooltipped" data-position="bottom" data-delay="50" data-tooltip="Protip: w prawym dolnym rogu znajduje się plusik">
-                    Brak serwerów. Może warto dodać nowy? :)
+                <div v-show="services.length == 0 && !isLoading" class="tooltipped" data-position="bottom" data-delay="50" v-attr="data-tooltip:$t('servers.addTooltip')">
+                    {{$t("servers.emptyMaybeAddNew")}}
                 </div>
             </div>
         </div>
@@ -56,15 +56,38 @@
 
 <div id="addServer" class="modal">
     <div class="modal-content">
-        <h4>Dodaj serwer</h4>
+        <h4>{{$t("servers.addServer")}}</h4>
         <div>
             <div class="row">
                 <form class="col s12">
                     <div class="row">
-                        <div class="input-field col s6">
+                        <div v-if="!serverInstalling" class="input-field col s6">
                             <i class="material-icons prefix">info_outline</i>
                             <input id="newServerId" type="text" class="validate">
-                            <label id="newServerValidator" for="newServerId">Identyfikator serwera np. 1</label>
+                            <label id="newServerValidator" for="newServerId">{{$t("servers.addModal.idLabel")}}</label>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div v-if="!serverInstalling" class="col s6">
+                            <div class="row">
+                                <div class="col s1">
+                                    <i class="fa fa-2x fa-cogs"></i>
+                                </div>
+                                <div class="col s10">
+                                    <!--<label>Browser Select</label>-->
+                                    <select v-model="serviceToInstall" class="browser-default">
+                                        <option value="" disabled selected>Typ serwera</option>
+                                        <option value="mc">Minecraft</option>
+                                        <option value="ts3">TeamSpeak 3</option>
+                                        <option value="ts3mb">TeamSpeak 3 Musicbot</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row" v-if="serverInstalling" >
+                        <div class="col s12">
+                            <preloader></preloader>
                         </div>
                     </div>
                 </form>
@@ -72,20 +95,19 @@
         </div>
     </div>
     <div class="modal-footer">
-        <div v-if="!serverInstalling" v-on="click: addServer" class="white-text modal-action green waves-effect waves-green btn-flat">Dodaj</div>
-        <div v-if="serverInstalling" class="modal-action waves-effect waves-green btn-flat">Pracuję...</div>
+        <div v-if="!serverInstalling" v-on="click: addServer" class="white-text modal-action green waves-effect waves-green btn-flat">{{$t("servers.addModal.clickToAdd")}}</div>
+        <div v-if="serverInstalling" class="modal-action waves-effect waves-green btn-flat">{{$t("servers.addModal.working")}}</div>
     </div>
 </div>
 
 <div id="deleteServer" class="modal">
     <div class="modal-content">
-        <h4>Usuń serwer</h4>
+        <h4>{{$t("servers.removeModal.removeServer")}}</h4>
         <p>
-            Czy jesteś pewien że chcesz usunąć serwer?<br>
-            Jest to nieodwracalne usunięcie wszystkich plików serwera!
+            {{$t("servers.removeModal.areYouSure")}}
         </p>
     </div>
     <div class="modal-footer">
-        <div v-on="click: deleteServer" class="red white-text modal-action btn-flat">Tak, zniszcz</div>
+        <div v-on="click: deleteServer" class="red white-text modal-action btn-flat">{{$t("servers.removeModal.yesDestroy")}}</div>
     </div>
 </div>

@@ -26,16 +26,10 @@ module.exports = {
         component: 'shared_stats'
     },
     /* TeamSpeak 3 service */
-    '/ts3/': {
-        component: 'ts3_list'
-    },
     'ts3/:id/console': {
         component: 'ts3_console'
     },
     /* Minecraft service */
-    '/mc/': {
-        component: 'mc_list'
-    },
     'mc/:id/console': {
         component: 'mc_console'
     },

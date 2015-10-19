@@ -36,5 +36,27 @@ window.locale.pl = {
         desc: "Opis",
         validTo: "Ważna do",
         thanks: "Dziękujemy za używanie Aimpanel :)"
+    },
+    servers: {
+        state: 'Stan',
+        console: "Konsola",
+        actions: "Akcje",
+        remove: "Usuń",
+        on: "Włączony",
+        off: "Wyłączony",
+        empty: "Brak serwerów",
+        emptyMaybeAddNew: "Brak serwerów. Może warto dodać nowy? :)",
+        addTooltip: "Protip: w prawym dolnym rogu znajduje się plusik",
+        addServer: "Dodaj serwer",
+        addModal: {
+            idLabel: "Identyfikator serwera np. 1",
+            clickToAdd: "Dodaj",
+            working: "Pracuję..."
+        },
+        removeModal: {
+            removeServer: "Usuń serwer",
+            areYouSure: "Czy jesteś pewien że chcesz usunąć serwer?<br>Jest to nieodwracalne usunięcie wszystkich plików serwera!",
+            yesDestroy: "Tak, zniszcz"
+        }
     }
 };
