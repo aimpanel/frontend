@@ -6,7 +6,12 @@ window.locale.pl = {
         loading: "Ładowanie"
     },
     home: {
-        "news": "Aktualności"
+        "news": "Aktualności",
+        "helpHeader": "Masz uwagi? Potrzebujesz pomocy?",
+        "helpDesc": "Jeśli napotkasz jakieś trudności lub chcesz podzielić się swoją opinię napisz na forum",
+        "manualDesc": "Instrukcja obsługi jest dostępna pod adresem",
+        "updateHeader": "Jak zaktualizować panel do najnowszej wersji?",
+        "updateDesc": "Wystarczy przez SSH wykonać aktualizację systemu na koncie root przez komendę:"
     },
     auth: {
         "enterLoginAndPassword": "Wpisz login i hasło",
