@@ -3,11 +3,11 @@
         <div class="col s12 l6">
             <div class="card-panel white z-depth-2">
                 <p>
-                    Autorestart serwera jest zawsze włączony.
+                    {{$t("server.autorestart.alwaysOn")}}
                     <br><br>
-                    Panel co pełną minutę sprawdza czy proces serwera jest włączony, jeśli jest wyłączony to dodaje do kolejki zadanie restartu serwera.
-                    <br>
-                    Wystartowanie serwera po crashu powinno zająć około minuty.
+                    {{$t("server.autorestart.queue")}}
+                    <br><br>
+                    {{$t("server.autorestart.estimate")}}
                 </p>
             </div>
         </div>
