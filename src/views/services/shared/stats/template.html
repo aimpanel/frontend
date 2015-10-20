@@ -3,13 +3,19 @@
         <div class="col s12">
             <h3 class="white-text thin-text">CPU <small>%</small></h3>
             <div class="card-panel white z-depth-2">
-                <div id="cpuChart">
+                <div v-if="isCpuLoading">
+                    <preloader></preloader>
+                </div>
+                <div v-if="!isCpuLoading" id="cpuChart">
                     <svg></svg>
                 </div>
             </div>
             <h3 class="white-text thin-text">RAM <small>MB</small></h3>
             <div class="card-panel white z-depth-2">
-                <div id="ramChart">
+                <div v-if="isRamLoading">
+                    <preloader></preloader>
+                </div>
+                <div v-if="!isRamLoading" id="ramChart">
                     <svg></svg>
                 </div>
             </div>

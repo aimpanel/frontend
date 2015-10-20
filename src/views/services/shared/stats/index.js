@@ -4,6 +4,8 @@ module.exports = {
     template: require('./template.html'),
     data: function () {
         return {
+            isRamLoading: true,
+            isCpuLoading: true
         }
     },
     methods: {
@@ -11,6 +13,7 @@ module.exports = {
         CpuChart: function ()
         {
             this.$http.get(window.baseurl + "/api/v1/services/" + this.service + "/" + this.id + "/chart/cpu", function (data) {
+                this.isCpuLoading = false;
                 var d3 = require('d3');
                 var nvd3 = require('nvd3');
                 require('nvd3/build/nv.d3.css');
@@ -49,6 +52,7 @@ module.exports = {
         RamChart: function ()
         {
             this.$http.get(window.baseurl + "/api/v1/services/" + this.service + "/" + this.id + "/chart/ram", function (data) {
+                this.isRamLoading = false;
                 var d3 = require('d3');
                 var nvd3 = require('nvd3');
                 require('nvd3/build/nv.d3.css');
