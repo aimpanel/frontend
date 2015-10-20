@@ -6,6 +6,7 @@ module.exports = {
     data: function () {
         return {
             id: false,
+            isLoading: true,
             args: []
         }
     },
@@ -30,6 +31,7 @@ module.exports = {
         listArgs: function () {
             var self = this;
             this.$http.get(window.baseurl + '/api/v1/services/mc/' + this.id + '/java/parameters', function (data, status) {
+                this.isLoading = false;
                 self.$set("args", data);
             }).error(function (data, status) {
                 this.$root.checkSession(data, status);
