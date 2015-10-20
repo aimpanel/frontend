@@ -4,7 +4,8 @@ module.exports = {
     data: function () {
         return {
             id: false,
-            serverProperties: false
+            serverProperties: false,
+            isLoading: true
         }
     },
     ready: function () {
@@ -24,6 +25,7 @@ module.exports = {
         getServerProperties: function () {
             var self = this;
             this.$http.get(window.baseurl + '/api/v1/services/mc/' + this.id + '/server.properties', function (data, status) {
+                this.isLoading = false;
                 self.$set("serverProperties", data);
             }).error(function (data, status) {
                 this.$root.checkSession(data, status);

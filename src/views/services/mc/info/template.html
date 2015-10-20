@@ -1,7 +1,10 @@
 <div class="col s12">
     <div class="row">
         <div class="card-panel col s12 l6 z-depth-2 white">
-            <table v-if="serverProperties">
+            <div v-if="isLoading">
+                <preloader></preloader>
+            </div>
+            <table v-if="!isLoading && serverProperties">
                 <tr>
                     <td>{{$t("server.mc.info.portGame")}} (TCP)</td>
                     <td>{{serverProperties["server-port"]}}</td>
@@ -24,7 +27,7 @@
                     <td class="red-text" v-if="!serverProperties['online-mode']">{{$t("server.mc.info.off")}}</td>
                 </tr>
             </table>
-            <p v-if="!serverProperties">
+            <p v-if="!isLoading && !serverProperties">
                 {{$t("server.mc.info.configNotFound")}}
             </p>
         </div>
