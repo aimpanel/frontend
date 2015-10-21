@@ -4,7 +4,7 @@ module.exports = {
     replace: true,
     data: function () {
         return {
-            service: 'ts3',
+            service: '',
             hostId: '',
             serverSlug: '',
             consoleKey: ''
@@ -12,6 +12,7 @@ module.exports = {
     },
     ready: function () {
         this.id = this.route.params.id;
+        this.service = this.route.params.service;
         this.$root.$set('title', this.$t("server.console.title") + ' #' + this.id);
         jQuery('ul.tabs').tabs();
         jQuery(".dropdown-button").dropdown({
@@ -23,21 +24,9 @@ module.exports = {
         this.startIntervalConsole();
     },
     methods: {
-        runLog: function ()
-        {
-            this.$http.get(window.baseurl + "/api/v1/services/ts3/" + this.id + "/log", function (data) {
-                jQuery("#log").empty();
-                data.forEach(function (d) {
-                    //console.log(d);
-                    jQuery("#log").append(d + '<br>');
-                });
-                var objDiv = document.getElementById("log");
-                objDiv.scrollTop = objDiv.scrollHeight;
-            });
-        },
         runConsole: function ()
         {
-            this.$http.get(window.baseurl + "/api/v1/services/ts3/" + this.id + "/console", function (data) {
+            this.$http.get(window.baseurl + "/api/v1/services/" + this.service + "/" + this.id + "/console", function (data) {
                 jQuery("#console").empty();
                 data.forEach(function (d) {
                     jQuery("#console").append(d + '<br>');
@@ -47,30 +36,28 @@ module.exports = {
             });
         },
         sendCommand: function (e) {
-            this.$http.post(window.baseurl + "/api/v1/services/ts3/" + this.id + "/cmd", {cmd: this.command}, function (data) {
+            this.$http.post(window.baseurl + "/api/v1/services/" + this.service + "/" + this.id + "/cmd", {cmd: this.command}, function (data) {
                 this.command = '';
                 this.runLog();
             });
         },
-        startServer: function () {
-            this.$http.get(window.baseurl + "/api/v1/services/ts3/" + this.id + "/start", function (data) {
-                Materialize.toast(this.$t("general.taskAddedToQueue"), 3500);
-            }).error(function (data)
-            {
-                Materialize.toast('<a class="red-text">' + data.error_msg + '</a>', 6000);
-            });
-        },
-        stopServer: function () {
-            this.$http.get(window.baseurl + "/api/v1/services/ts3/" + this.id + "/stop", function (data) {
-                Materialize.toast(this.$t("general.taskAddedToQueue"), 3500);
-            });
-        },
-        restartServer: function () {
-            this.$http.get(window.baseurl + "/api/v1/services/ts3/" + this.id + "/restart", function (data) {
-                Materialize.toast(this.$t("general.taskAddedToQueue"), 3500);
-            }).error(function (data)
-            {
-                Materialize.toast('<a class="red-text">' + data.error_msg + '</a>', 6000);
+        apiAction: function (action)
+        {
+            var id = this.id;
+            var service = this.service;
+            var this2 = this;
+            this[id + service + "working"] = true;
+            var api = require('../../../../api/services.js');
+            api.action(this, id, service, action, function (data, err, thi) {
+                thi[id + service + "working"] = false;
+                if (!err)
+                {
+                    Materialize.toast(this2.$t("general.taskAddedToQueue"), 3500);
+                } else
+                {
+                    Materialize.toast('<a class="red-text">' + data.error_msg + '</a>', 6000);
+                }
+
             });
         },
         startIntervalLog: function () {
