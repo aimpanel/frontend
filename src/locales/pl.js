@@ -57,6 +57,7 @@ window.locale.pl = {
         addTooltip: "Protip: w prawym dolnym rogu znajduje się plusik",
         addServer: "Dodaj serwer",
         serverAdded: "Serwer dodano",
+        serverRemoved: "Server removed",
         addModal: {
             idLabel: "Identyfikator serwera np. 1",
             clickToAdd: "Dodaj",

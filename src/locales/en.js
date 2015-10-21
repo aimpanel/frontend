@@ -57,6 +57,7 @@ window.locale.en = {
         addTooltip: "Protip: in lower right corner there is red plus sign",
         addServer: "Add server",
         serverAdded: "Server added",
+        serverRemoved: "Server removed",
         addModal: {
             idLabel: "Server ID e.g. 1",
             clickToAdd: "Add",
@@ -65,7 +66,7 @@ window.locale.en = {
         },
         removeModal: {
             removeServer: "Delete server",
-            areYouSure: "Are you sure? It's going to remove all server files. Files will be gone!",
+            areYouSure: "Are you sure? It's going to remove all server files. Files will be gone forever!",
             yesDestroy: "Hulk, destroy!"
         }
     },
@@ -78,9 +79,9 @@ window.locale.en = {
             apps: "Applications",
             appsInfo: "memory used by apps, main reason to have plenty of RAM :)",
             cache: "Cache",
-            cacheInfo: "frequently readed data from disk is storaged in RAM for faster reads.",
+            cacheInfo: "frequently read data from disk, storaged in RAM for faster reads.",
             buffer: "Buffers",
-            bufferInfo: "space where data is added to queue for write to disk, hard disk may be slow if this space is big.",
+            bufferInfo: "space where data is added to queue for write, hard disk may be slow if this space is big.",
             free: "Free",
             freeInfo: "memory totally 'wasted', Linux kernel converts free space to cache if needed.",
             cacheBufferInfo: "Cache and buffers may be shrinked to make space for apps if needed.",
@@ -122,7 +123,7 @@ window.locale.en = {
         autorestart: {
             title: "Autorestart",
             alwaysOn: "Server autorestart is always turned on.",
-            queue: "Aimpanel check every minute if server process is running, if it's not running - restart server job will be added to queue.",
+            queue: "Aimpanel check every minute if server process is running, if it's not running - 'restart' action will be taken.",
             estimate: "Restart after crash shoudn't take more than two minutes."
         },
         console: {
