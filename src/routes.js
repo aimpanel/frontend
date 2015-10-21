@@ -15,20 +15,6 @@ module.exports = {
     '/servers/': {
         component: 'server_list'
     },
-    /* Shared */
-    ':service/:id/sftp': {
-        component: 'shared_sftp'
-    },
-    ':service/:id/autorestart': {
-        component: 'shared_autorestart'
-    },
-    ':service/:id/stats': {
-        component: 'shared_stats'
-    },
-    /* TeamSpeak 3 service */
-    'ts3/:id/console': {
-        component: 'ts3_console'
-    },
     /* Minecraft service */
     'mc/:id/console': {
         component: 'mc_console'
@@ -41,6 +27,19 @@ module.exports = {
     },
     'mc/:id/files': {
         component: 'mc_files'
+    },
+    /* Shared */
+    ':service/:id/console': {
+        component: 'shared_console'
+    },
+    ':service/:id/sftp': {
+        component: 'shared_sftp'
+    },
+    ':service/:id/autorestart': {
+        component: 'shared_autorestart'
+    },
+    ':service/:id/stats': {
+        component: 'shared_stats'
     },
     /* Auth */
     '/auth/login': {

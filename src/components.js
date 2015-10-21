@@ -30,10 +30,10 @@ module.exports = {
     'shared_stats': function (resolve) {
         require(['./views/services/shared/stats'], resolve)
     },
-    /* Services */
-    'ts3_console': function (resolve) {
-        require(['./views/services/ts3/console'], resolve)
+    'shared_console': function (resolve) {
+        require(['./views/services/shared/console'], resolve)
     },
+    /* Services */
     //
     'mc_console': function (resolve) {
         require(['./views/services/mc/console'], resolve)
