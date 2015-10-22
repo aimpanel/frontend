@@ -4,7 +4,9 @@ window.locale.pl = {
         notfoundNote: "Dajemy Ci za to gifa z kotem",
         close: "Zamknij",
         loading: "Ładowanie",
-        taskAddedToQueue: "Zadanie dodane do kolejki"
+        taskAddedToQueue: "Zadanie dodane do kolejki",
+        remember: "Pamiętaj!",
+        desc: "Opis"
     },
     home: {
         "news": "Aktualności",
@@ -117,7 +119,8 @@ window.locale.pl = {
         sftp: "SFTP",
         info: "Informacje",
         stats: "Statystyki",
-        console: "Konsola i log"
+        console: "Konsola i log",
+        params: "Parametry"
     },
     server: {
         autorestart: {
@@ -151,6 +154,21 @@ window.locale.pl = {
                 clickToChange: "Zmień hasło",
                 done: "Gotowe! Poniżej twoje nowe hasło, możesz je wkleić do klienta SFTP np.",
                 newPass: "Nowe hasło"
+            }
+        },
+        params: {
+            generic: {
+                param: "Parametr",
+                params: "Parametry",
+                help: "Pomoc z parametrami",
+                change: "Zmień pogrubiony tekst na swoje ustawienia."
+            },
+            ts3mb: {
+                email: "Twój email zarejestrowany na",
+                webPort: "Port web interfejsu WWW",
+                adminPass: "Hasło admina web interfejsu",
+                userPass: "Hasło użytkownika web interfejsu (ograniczony dostęp)",
+                noQuery: "Wyłącz funkcję czatu na TS3 (zalecane na start)"
             }
         },
         mc: {

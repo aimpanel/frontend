@@ -32,6 +32,9 @@ module.exports = {
     ':service/:id/console': {
         component: 'shared_console'
     },
+    ':service/:id/params': {
+        component: 'shared_params'
+    },
     ':service/:id/sftp': {
         component: 'shared_sftp'
     },
