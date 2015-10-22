@@ -24,7 +24,8 @@ window.locale.en = {
         "signInToExistingAccount": "Login to existing account",
         "yourUsername": "Your username",
         "yourPassword": "Your password",
-        "loggingIn": " Logging in..."
+        "loggingIn": " Logging in...",
+        "sessionExpired": "Session expired, sign in again"
     },
     about: {
         panel: "About panel",

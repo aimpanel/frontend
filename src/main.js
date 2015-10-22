@@ -14,11 +14,20 @@ setTimeout(function () {
     jQuery(".dropdown-button").dropdown({hover: false, belowOrigin: true, constrain_width: false, alignment: 'right'});
 }, 1);
 
+var browserLanguage = require('in-browser-language');
+var pickLanguage = browserLanguage.pick(['en', 'pl'], 'en');
+
 //detect if browser is native android browser
 var ua = navigator.userAgent;
 var is_native_android = ((ua.indexOf('Mozilla/5.0') > -1 && ua.indexOf('Android ') > -1 && ua.indexOf('AppleWebKit') > -1) && (ua.indexOf('Version') > -1));
 if (is_native_android) {
-    alert('Twoja przeglądarka jest przestarzała, niektóre elementy mogą nie działać poprawnie')
+    if (pickLanguage === "pl")
+    {
+        alert('Your browser is not supported, some element may not work, try using Chrome or Firefox');
+    } else
+    {
+        alert("Twoja przeglądarka jest niewspierana, niektóre elementy mogą nie działać poprawnie, użyj Chrome'a lub Firefoxa'a");
+    }
 }
 
 //=== VUE ===
@@ -50,8 +59,6 @@ window.locale = {en: {}, pl: {}};
 require('./locales/en.js');
 require('./locales/pl.js');
 
-var browserLanguage = require('in-browser-language');
-var pickLanguage = browserLanguage.pick(['en', 'pl'], 'en');
 Vue.use(i18n, {
     lang: pickLanguage,
     locales: window.locale
@@ -108,7 +115,7 @@ var root = Vue.extend({
         checkSession: function (data, status) {
             if (status == 401)
             {
-                Materialize.toast('Sesja przedawniona, należy zalogować się ponownie', 4000);
+                Materialize.toast(this.$t("auth.sessionExpired"), 4000);
                 this.doLogout();
             }
         },
@@ -139,7 +146,7 @@ var root = Vue.extend({
             //
             return false//
             //
-            Materialize.toast('Brak uprawnień do wyświetlenia tej strony', 4000)
+            //Materialize.toast('Brak uprawnień do wyświetlenia tej strony', 4000)
             router.replace('/')
         }
     },

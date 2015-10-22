@@ -24,7 +24,8 @@ window.locale.pl = {
         "signInToExistingAccount": "Zaloguj się do istniejącego konta",
         "yourUsername": "Twoja nazwa użytkownika",
         "yourPassword": "Twoje hasło",
-        "loggingIn": " Logowanie..."
+        "loggingIn": " Logowanie...",
+        "sessionExpired": "Sesja przedawniona, zaloguj się ponownie"
     },
     about: {
         panel: "O panelu",
