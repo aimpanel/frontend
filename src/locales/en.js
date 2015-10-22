@@ -135,7 +135,11 @@ window.locale.en = {
             log: "Log"
         },
         stats: {
-            title: "Stats"
+            title: "Stats",
+            timespan: "Timespan",
+            day1: "Last 24h",
+            day7: "Last 7 days",
+            day30: "Last 30 days"
         },
         sftp: {
             title: "SFTP",
