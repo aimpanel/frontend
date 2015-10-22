@@ -31,7 +31,11 @@ window.locale.en = {
         thanks: "Aimpanel exists thanks to wonderful projects, almost all of them are open source.",
         specialThanks: "Special thanks",
         license: "License",
-        proprietaryLicense: "Proprietary license"
+        proprietaryLicense: "Proprietary license",
+        composerPacks: "Composer PHP packages used by Aimpanel backend",
+        version: "Version",
+        project: "Projects",
+        link: "Link"
     },
     security: {
         unauthorized: "You are not authorized to display this page"

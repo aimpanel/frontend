@@ -31,7 +31,11 @@ window.locale.pl = {
         thanks: "Aimpanel powstał dzięki wspaniałym projetom osób trzecich, większość jest otwartoźródłowa.",
         specialThanks: "Szczególne podziękowania",
         license: "Licencja",
-        proprietaryLicense: "licencja własnościowa"
+        proprietaryLicense: "licencja własnościowa",
+        composerPacks: "Paczki PHP używane przez Aimpanel backend z Composer'a",
+        version: "Wersja",
+        project: "Projekt",
+        link: "Link"
     },
     security: {
         unauthorized: "Brak uprawnień do wyświetlenia tej strony"
