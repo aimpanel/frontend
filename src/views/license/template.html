@@ -26,16 +26,16 @@
                         </tr>
                     </table>
                     <div v-if="!license.valid">
-                        <h5>Jak zaktualizować licencję?</h5>
-                        Potrzebujesz klucza produktu który jest podobny jest w formacie:
+                        <h5>{{$t("license.howToUpdate")}}</h5>
+                        {{$t("license.howToUpdateDesc")}}
                         <br>
                         XXXX-XXXX-XXXX-XXXX
                         <br><br>
-                        Następnie wykonaj komendę spod konta root przez SSH:
+                        {{$t("license.helpCmd")}}
                         <blockquote class="copypaste">
-                            aimpanel key set twoj_klucz
+                            aimpanel key set {{$t("license.yourKey")}}
                         </blockquote>
-                        przykład:
+                        {{$t("license.example")}}
                         <blockquote>
                             aimpanel key set 46FP-1WHD-EX45-NZPE
                         </blockquote>

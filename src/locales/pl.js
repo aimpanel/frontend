@@ -48,7 +48,12 @@ window.locale.pl = {
         forUser: "Dla",
         desc: "Opis",
         validTo: "Ważna do",
-        thanks: "Dziękujemy za używanie Aimpanel :)"
+        thanks: "Dziękujemy za używanie Aimpanel :)",
+        howToUpdate: "Jak zaktualizować licencję?",
+        howToUpdateDesc: "Potrzebujesz klucza produktu który jest podobny jest w formacie:",
+        helpCmd: "Następnie wykonaj komendę spod konta root przez SSH:",
+        yourKey: "twoj_klucz",
+        example: "example:"
     },
     servers: {
         servers: "Serwery",
