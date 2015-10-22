@@ -29,7 +29,7 @@ window.locale.pl = {
     about: {
         panel: "O panelu",
         thanks: "Aimpanel powstał dzięki wspaniałym projetom osób trzecich, większość jest otwartoźródłowa.",
-        specialThanks: "Szczególne podziękowania dla:",
+        specialThanks: "Szczególne podziękowania",
         license: "Licencja",
         proprietaryLicense: "licencja własnościowa"
     },

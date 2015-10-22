@@ -29,7 +29,7 @@ window.locale.en = {
     about: {
         panel: "About panel",
         thanks: "Aimpanel exists thanks to wonderful projects, almost all of them are open source.",
-        specialThanks: "Special thanks for:",
+        specialThanks: "Special thanks",
         license: "License",
         proprietaryLicense: "Proprietary license"
     },
