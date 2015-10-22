@@ -48,7 +48,12 @@ window.locale.en = {
         forUser: "For",
         desc: "Description",
         validTo: "Valid to",
-        thanks: "Thank you for choosing Aimpanel :)"
+        thanks: "Thank you for choosing Aimpanel :)",
+        howToUpdate: "How to update license?",
+        howToUpdateDesc: "You will need key in format:",
+        helpCmd: "Next, execute following command from SSH on root account:",
+        yourKey: "your_key",
+        example: "example:"
     },
     servers: {
         servers: "Servers",
