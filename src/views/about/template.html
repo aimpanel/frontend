@@ -14,12 +14,12 @@
                     <br>
                     <a class="green-text" href="http://nginx.org/" target="_blank">Nginx</a> - <a class="green-text license" v-on="click: show('nginx')">{{ $t("about.license") }} BSD</a>
                     <br>
-                     <a class="green-text" href="https://influxdb.com/" target="_blank">InfluxDB</a> - <a class="green-text license" v-on="click: show('influxdb')">{{ $t("about.license") }} MIT</a>
+                    <a class="green-text" href="https://influxdb.com/" target="_blank">InfluxDB</a> - <a class="green-text license" v-on="click: show('influxdb')">{{ $t("about.license") }} MIT</a>
                     <br>
                     <a class="green-text" href="https://github.com/pda/pheanstalk" target="_blank">Pheanstalk</a> - <a class="green-text license" v-on="click: show('pheanstalk')">{{ $t("about.license") }} MIT</a>
                     <br>
                 </p>
-                <h5>Composer PHP packages used by Aimpanel backend</h5>
+                <h5>{{$t("about.composerPacks")}}</h5>
                 <div v-if="isLoading">
                     <preloader></preloader>
                 </div>
@@ -27,10 +27,10 @@
                     <table v-show="licenses.length > 0" class="white striped responsive-table">
                         <thead>
                             <tr>
-                                <th>Project</th>
-                                <th>Version</th>
-                                <th>License</th>
-                                <th>Link</th>
+                                <th>{{$t("about.project")}}</th>
+                                <th>{{$t("about.version")}}</th>
+                                <th>{{$t("about.license")}}</th>
+                                <th>{{$t("about.link")}}</th>
                             </tr>
                         </thead>
                         <tbody>
