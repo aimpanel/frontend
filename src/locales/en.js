@@ -4,7 +4,9 @@ window.locale.en = {
         notfoundNote: "Instead have a cat gif",
         close: "Close",
         loading: "Loading",
-        taskAddedToQueue: "Task added to queue"
+        taskAddedToQueue: "Task added to queue",
+        remember: "Remember!",
+        desc: "Description"
     },
     home: {
         "news": "News",
@@ -117,7 +119,8 @@ window.locale.en = {
         sftp: "SFTP",
         info: "Info",
         stats: "Stats",
-        console: "Console & log"
+        console: "Console & log",
+        params: "Parameters"
     },
     server: {
         autorestart: {
@@ -151,6 +154,21 @@ window.locale.en = {
                 clickToChange: "Change password",
                 done: "Done! You can now copy and paste new password to your SFTP client e.g.",
                 newPass: "New password"
+            }
+        },
+        params: {
+            generic: {
+                param: "Parameters",
+                params: "Parameters",
+                help: "Help with parameters",
+                change: "Change bold text with your setting."
+            },
+            ts3mb: {
+                email: "Your email registered at",
+                webPort: "Web interface port",
+                adminPass: "Web interface admin password",
+                userPass: "Web interface user password",
+                noQuery: "Turn off bot chat function (recommended)"
             }
         },
         mc: {

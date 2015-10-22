@@ -33,6 +33,9 @@ module.exports = {
     'shared_console': function (resolve) {
         require(['./views/services/shared/console'], resolve)
     },
+    'shared_params': function (resolve) {
+        require(['./views/services/shared/params'], resolve)
+    },
     /* Services */
     //
     'mc_console': function (resolve) {
