@@ -5,6 +5,9 @@ set -e
 #mod env
 echo 'window.baseurl = "";' > src/config.js
 
+#licenses list
+#license-checker --json --out assets/licenses.json
+
 #clean
 rm -rf build
 rm -rf output
