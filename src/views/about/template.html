@@ -2,30 +2,48 @@
     <div class="row">
         <div class="col s12">
             <div class="card-panel white z-depth-2">
+                <h5>{{ $t("about.specialThanks") }}</h5>
                 <p>
-                    {{ $t("about.thanks") }}
-                    <br><br>
-                    {{ $t("about.specialThanks") }}
+                    {{$t("about.thanks")}}
                     <br>
-                    <a href="http://nginx.org/" target="_blank">Nginx</a> - <a class="license" v-on="click: show('nginx')">{{ $t("about.license") }} BSD</a>
+                    <a class="green-text" href="http://php.net/license/" target="_blank">PHP</a> - <a class="green-text license" v-on="click: show('php')">{{ $t("about.license") }} PHP v3.01</a>
                     <br>
-                    <a href="http://php.net/license/" target="_blank">PHP</a> - <a class="license" v-on="click: show('php')">{{ $t("about.license") }} PHP v3.01</a>
+                    <a class="green-text" href="http://lumen.laravel.com/" target="_blank">Lumen</a> - <a class="green-text" href="http://opensource.org/licenses/MIT" target="_blank">{{ $t("about.license") }} MIT</a>
                     <br>
-                    <a href="https://www.ioncube.com/loaders.php" target="_blank">ionCube Loader</a> - <a class="license" v-on="click: show('ioncube')">{{ $t("about.proprietaryLicense") }}</a>
+                    <a class="green-text" href="https://www.ioncube.com/loaders.php" target="_blank">ionCube Loader</a> - <a class="green-text license" v-on="click: show('ioncube')">{{ $t("about.proprietaryLicense") }}</a>
                     <br>
-                    <a href="http://lumen.laravel.com/" target="_blank">Lumen</a> - <a href="http://opensource.org/licenses/MIT" target="_blank">{{ $t("about.license") }} MIT</a>
+                    <a class="green-text" href="http://nginx.org/" target="_blank">Nginx</a> - <a class="green-text license" v-on="click: show('nginx')">{{ $t("about.license") }} BSD</a>
                     <br>
-                    <a href="https://github.com/firebase/php-jwt" target="_blank">PHP-JWT</a> - <a class="license" v-on="click: show('php-jwt')">{{ $t("about.license") }} BSD3</a>
-                    <br>
-                    <a href="https://github.com/vlucas/phpdotenv" target="_blank">PHP dotenv</a> - <a class="license" v-on="click: show('phpdotenv')">{{ $t("about.license") }} BSD3</a>
-                    <br>
-                    <a href="https://github.com/pda/pheanstalk" target="_blank">Pheanstalk</a> - <a class="license" v-on="click: show('pheanstalk')">{{ $t("about.license") }} MIT</a>
-                    <br>
-                    <a href="https://github.com/sensiolabs/ansi-to-html" target="_blank">ansi-to-html</a> - <a class="license" v-on="click: show('ansi-to-html')">{{ $t("about.license") }} MIT</a>
-                    <br>
-                    <a href="https://github.com/guzzle/guzzle" target="_blank">Guzzle</a> - <a class="license" v-on="click: show('guzzle')">{{ $t("about.license") }} MIT</a>
+                    <a class="green-text" href="https://github.com/pda/pheanstalk" target="_blank">Pheanstalk</a> - <a class="green-text license" v-on="click: show('pheanstalk')">{{ $t("about.license") }} MIT</a>
                     <br>
                 </p>
+                <h5>Composer PHP packages used by Aimpanel backend</h5>
+                <div v-if="isLoading">
+                    <preloader></preloader>
+                </div>
+                <div v-if="!isLoading"> 
+                    <table v-show="licenses.length > 0" class="white striped responsive-table">
+                        <thead>
+                            <tr>
+                                <th>Project</th>
+                                <th>Version</th>
+                                <th>License</th>
+                                <th>Link</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr v-repeat="licenses">
+                                <td>{{name}}</td>
+                                <td>{{version}}</td>
+                                <td>{{license}}</td>
+                                <td><a class="green-text" target="_blank" href="{{link}}">{{link}}</a></td>
+                            </tr>
+                            <tr v-show="empty">
+                                <td>{{$t("servers.empty")}}</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
             </div>
         </div>
     </div>
@@ -420,93 +438,6 @@ Copyright (c) 2002-2015 ionCube Ltd.          Last revised 23-April-2015
                                 </div>
                             </div>
 
-                            <div id="php-jwt" class="modal">
-                                <div class="modal-content">
-                                    <h4>{{ $t("about.license") }} PHP-JWT</h4>
-                                    <pre>
-<xmp>
-    Copyright (c) 2011, Neuman Vong
-
-All rights reserved.
-
-Redistribution and use in source and binary forms, with or without
-modification, are permitted provided that the following conditions are met:
-
-    * Redistributions of source code must retain the above copyright
-      notice, this list of conditions and the following disclaimer.
-
-    * Redistributions in binary form must reproduce the above
-      copyright notice, this list of conditions and the following
-      disclaimer in the documentation and/or other materials provided
-      with the distribution.
-
-    * Neither the name of Neuman Vong nor the names of other
-      contributors may be used to endorse or promote products derived
-      from this software without specific prior written permission.
-
-THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS
-"AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT
-LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR
-A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT
-OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL,
-SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT
-LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE,
-DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY
-THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
-(INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
-OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
-</xmp>
-                                    </pre>
-                                </div>
-                                <div class="modal-footer">
-                                    <div  class="modal-close modal-action btn-flat">{{ $t("general.close") }}</div>
-                                </div>
-                            </div>
-
-                            <div id="phpdotenv" class="modal">
-                                <div class="modal-content">
-                                    <h4>{{ $t("about.license") }} PHP dotenv</h4>
-                                    <pre>
-<xmp>
-    The BSD 3-Clause License
-http://opensource.org/licenses/BSD-3-Clause
-
-Copyright (c) 2013, Vance Lucas
-All rights reserved.
-
-Redistribution and use in source and binary forms, with or without
-modification, are permitted provided that the following conditions are
-met:
-
- * Redistributions of source code must retain the above copyright
-   notice,
-this list of conditions and the following disclaimer.
- * Redistributions in binary form must reproduce the above copyright
-notice, this list of conditions and the following disclaimer in the
-documentation and/or other materials provided with the distribution.
- * Neither the name of the Vance Lucas nor the names of its contributors
-may be used to endorse or promote products derived from this software
-without specific prior written permission.
-
-THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS
-IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED
-TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A
-PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT
-HOLDER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL,
-SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED
-TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR
-PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF
-LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING
-NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
-SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
-</xmp>
-                                    </pre>
-                                </div>
-                                <div class="modal-footer">
-                                    <div  class="modal-close modal-action btn-flat">{{ $t("general.close") }}</div>
-                                </div>
-                            </div>
-
                             <div id="pheanstalk" class="modal">
                                 <div class="modal-content">
                                     <h4>{{ $t("about.license") }} Pheanstalk</h4>
@@ -558,38 +489,6 @@ to do so, subject to the following conditions:
 
 The above copyright notice and this permission notice shall be included in all
 copies or substantial portions of the Software.
-
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-THE SOFTWARE.
-</xmp>
-                                    </pre>
-                                </div>
-                                <div class="modal-footer">
-                                    <div  class="modal-close modal-action btn-flat">{{ $t("general.close") }}</div>
-                                </div>
-                            </div>
-
-                            <div id="guzzle" class="modal">
-                                <div class="modal-content">
-                                    <h4>{{ $t("about.license") }} Guzzle</h4>
-                                    <pre>
-<xmp>
-Copyright (c) 2011-2015 Michael Dowling, https://github.com/mtdowling <mtdowling@gmail.com>
-
-Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files (the "Software"), to deal
-in the Software without restriction, including without limitation the rights
-to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-copies of the Software, and to permit persons to whom the Software is
-furnished to do so, subject to the following conditions:
-
-The above copyright notice and this permission notice shall be included in
-all copies or substantial portions of the Software.
 
 THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
 IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
