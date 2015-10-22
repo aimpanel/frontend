@@ -46,7 +46,7 @@ window.locale.pl = {
         thanks: "Dziękujemy za używanie Aimpanel :)"
     },
     servers: {
-        servers: "Servers",
+        servers: "Serwery",
         listOfServers: "Lista serwerów",
         state: "Stan",
         console: "Konsola",
@@ -135,7 +135,11 @@ window.locale.pl = {
             log: "Log"
         },
         stats: {
-            title: "Statystyki"
+            title: "Statystyki",
+            timespan: "Przedział czasu",
+            day1: "Ostatnie 24h",
+            day7: "Ostatnie 7 dni",
+            day30: "Ostatnie 30 dni"
         },
         sftp: {
             title: "SFTP",
