@@ -4,6 +4,10 @@ module.exports = {
             callback(data, false, thi);
         }).error(function (data, err)
         {
+            if (err)
+            {
+                thi[id + service + "working"] = false;
+            }
             callback(data, err);
         });
     },

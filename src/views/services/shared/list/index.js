@@ -102,7 +102,12 @@ module.exports = {
             this.resetInterval();
             var api = require('../../../../api/services.js');
             api.action(this, id, service, action, function (data, err, thi) {
-                thi[id + service + "working"] = false;
+                try
+                {
+                    thi[id + service + "working"] = false;
+                } catch (ez)
+                {
+                }
                 if (!err)
                 {
                     Materialize.toast(this2.$t("general.taskAddedToQueue"), 3500);
