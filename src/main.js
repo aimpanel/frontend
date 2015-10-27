@@ -4,7 +4,7 @@ require('./main.css');
 //for hiding sidenav after click
 require("font-awesome-webpack");
 //require("../node_modules/materialize-css/dist/css/materialize.css")
-require("../node_modules/materialize-css/dist/js/materialize.js")
+require("../node_modules/materialize-css/dist/js/materialize.js");
 require("../assets/date.format.js")
 
 window.version = "0.90.2";
@@ -23,10 +23,10 @@ var is_native_android = ((ua.indexOf('Mozilla/5.0') > -1 && ua.indexOf('Android 
 if (is_native_android) {
     if (pickLanguage === "pl")
     {
-        alert('Your browser is not supported, some element may not work, try using Chrome or Firefox');
+        alert("Twoja przeglądarka jest niewspierana, niektóre elementy mogą nie działać poprawnie, użyj Chrome'a lub Firefoxa'a");
     } else
     {
-        alert("Twoja przeglądarka jest niewspierana, niektóre elementy mogą nie działać poprawnie, użyj Chrome'a lub Firefoxa'a");
+        alert('Your browser is not supported, some element may not work, try using Chrome or Firefox');
     }
 }
 
@@ -82,8 +82,8 @@ var root = Vue.extend({
                 {"name": this.$t("home.news"), "href": "", "icon": "newspaper-o", enabled: true},
                 {"name": this.$t("osStats.stats"), "href": "os/stats", "icon": "bar-chart", enabled: true},
                 {"name": this.$t("servers.servers"), "href": "servers", "icon": "server", enabled: true},
-                //{"name": "Użytkownicy", "href": "users", perm: "", enabled: true},
-                //{"name": "Grupy", "href": "groups", perm: "", enabled: true},
+                //{"name": "Users", "href": "users", perm: "", enabled: true},
+                //{"name": "Groups", "href": "groups", perm: "", enabled: true},
                 {"name": this.$t("about.license"), "href": "license", "icon": "key", enabled: true},
                 {"name": this.$t("about.panel"), "href": "about", "icon": "info", enabled: true}
             ]

@@ -32,10 +32,10 @@ fpm -s dir -t deb \
  --version $1 \
  --name "aimpanel-frontend" \
  --description "Easy to use control panel for game servers - frontend" \
- --url "https://lvlup.pro" \
+ --url "http://aimpanel.pro" \
  --vendor "LVL UP" \
  -m "Michał Frąckiewicz <michal@lvlup.pro>" \
- --license "All rights reserved" \
+ --license "MIT" \
  --after-install afterinstall \
  -d aimpanel-nginx \
  usr

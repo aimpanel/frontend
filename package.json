@@ -1,6 +1,6 @@
 {
   "name": "aimpanel-frontend",
-  "version": "0.90.0",
+  "version": "0.90.2",
   "description": "Frontend for Aimpanel",
   "main": "src/main.js",
   "dependencies": {
@@ -49,6 +49,6 @@
     "build": "webpack --progress --optimize-minimize --optimize-occurence-order"
   },
   "author": "Michał Frąckiewicz",
-  "license": "All rights reserved",
+  "license": "MIT",
   "homepage": "http://aimpanel.pro"
 }
