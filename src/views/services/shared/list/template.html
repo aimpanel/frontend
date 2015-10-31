@@ -60,7 +60,7 @@
         <div>
             <div class="row" v-if="serverInstallingError">
                 <div class="col s10 red-text">
-                    <i style="margin-right:15px" class="fa fa-2x fa-exclamation-triangle red-text"></i><span>{{serverInstallingErrorMsg}}</span>
+                    <i style="margin-right:10px" class="fa fa-2x fa-exclamation-triangle red-text"></i><span>{{serverInstallingErrorMsg}}</span>
                 </div>
             </div>
             <div class="row">
@@ -87,6 +87,14 @@
                                     </select>
                                 </div>
                             </div>
+                        </div>
+                    </div>
+                    <div class="row" v-if="serviceToInstall=='ts3mb'">
+                        <div class="col s10">
+                            <i style="margin-right:10px" class="fa fa-2x fa-exclamation-triangle orange-text"></i>
+                            <span>
+                                {{$t("servers.addModal.ts3CostWarningPreLink")}}<a class="green-text" target="_blank" href="http://ts3musicbot.net/">ts3musicbot.net</a>{{$t("servers.addModal.ts3CostWarningPostLink")}}
+                            </span>
                         </div>
                     </div>
                     <div class="row" v-if="serverInstalling" >

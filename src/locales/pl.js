@@ -74,7 +74,9 @@ window.locale.pl = {
             idLabel: "Identyfikator serwera np. 1",
             clickToAdd: "Dodaj",
             working: "Pracuję...",
-            serverType: "Typ serwera"
+            serverType: "Typ serwera",
+            ts3CostWarningPreLink: "Aby TS3MusicBot zadziałał potrzebna jest licencja z ",
+            ts3CostWarningPostLink: " kosztująca €2.50 na miesiąc"
         },
         removeModal: {
             removeServer: "Usuń serwer",

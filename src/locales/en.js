@@ -74,7 +74,9 @@ window.locale.en = {
             idLabel: "Server ID e.g. 1",
             clickToAdd: "Add",
             working: "Working...",
-            serverType: "Type of server"
+            serverType: "Type of server",
+            ts3CostWarningPreLink: "TS3MusicBot needs €2.50/month subscription available @ ",
+            ts3CostWarningPostLink: " "
         },
         removeModal: {
             removeServer: "Delete server",
