@@ -11,7 +11,8 @@ module.exports = {
             services: [],
             serverToDelete: false,
             serviceToDelete: false,
-            serverInstalling: false
+            serverInstallingError: false,
+            serverInstallingErrorMsg: false
         }
     },
     ready: function () {
@@ -66,6 +67,7 @@ module.exports = {
             })
         },
         addServer: function () {
+            this.serverInstallingError = false;
             this.serverInstalling = true;
             this.$http.post(window.baseurl + '/api/v1/services/' + this.serviceToInstall, {"id": jQuery('#newServerId').val()},
             function (data, status) {
@@ -75,10 +77,9 @@ module.exports = {
                 Materialize.toast(this.$t("servers.serverAdded"), 2500);
             }).error(function (data)
             {
+                this.serverInstallingError = true;
+                this.serverInstallingErrorMsg = data.error_msg;
                 this.serverInstalling = false;
-                jQuery('#newServerId').removeClass('valid');
-                jQuery('#newServerId').addClass('invalid');
-                jQuery('#newServerValidator').attr("data-error", data.error_msg);
             });
         },
         deleteServerModal: function (id, service) {
