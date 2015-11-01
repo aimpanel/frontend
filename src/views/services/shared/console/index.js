@@ -38,7 +38,7 @@ module.exports = {
         sendCommand: function (e) {
             this.$http.post(window.baseurl + "/api/v1/services/" + this.service + "/" + this.id + "/cmd", {cmd: this.command}, function (data) {
                 this.command = '';
-                this.runLog();
+                this.runConsole();
             });
         },
         apiAction: function (action)
@@ -69,7 +69,7 @@ module.exports = {
         startIntervalConsole: function () {
             this.runConsole();
             clearInterval(window.consoleInterval);
-            window.consoleInterval = setInterval(this.runConsole, 4000);
+            window.consoleInterval = setInterval(this.runConsole, 1800);
             clearInterval(window.logInterval);
         }
     },

@@ -77,7 +77,7 @@ module.exports = {
         startIntervalConsole: function () {
             this.runConsole();
             clearInterval(window.consoleInterval);
-            window.consoleInterval = setInterval(this.runConsole, 4000);
+            window.consoleInterval = setInterval(this.runConsole, 1800);
             clearInterval(window.logInterval);
         }
     },
