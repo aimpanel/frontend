@@ -38,7 +38,7 @@ module.exports = {
             var async = require("async");
             var self = this;
             var servicez = [];
-            var serviceList = ["mc", "ts3", "ts3mb"];
+            var serviceList = ["mc", "ts3", "ts3mb", "csgo"];
             var configs = {};
 
             async.forEachOf(serviceList, function (service, key, callback) {
