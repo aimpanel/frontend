@@ -7,7 +7,7 @@ require("font-awesome-webpack");
 require("../node_modules/materialize-css/dist/js/materialize.js");
 require("../assets/date.format.js")
 
-window.version = "0.90.3";
+window.version = "0.91";
 
 //customize right top dropdown
 setTimeout(function () {
