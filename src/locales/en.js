@@ -76,7 +76,8 @@ window.locale.en = {
             working: "Working...",
             serverType: "Type of server",
             ts3CostWarningPreLink: "TS3MusicBot needs €2.50/month subscription available @ ",
-            ts3CostWarningPostLink: " "
+            ts3CostWarningPostLink: " ",
+            csgoManualInstall: 'You need to run one command from SSH to install server files after this step <a class="green-text" target="_blank" href="http://aimpanel.pro/en/docs/game-servers/">More info</a>'
         },
         removeModal: {
             removeServer: "Delete server",

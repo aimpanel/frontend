@@ -76,7 +76,8 @@ window.locale.pl = {
             working: "Pracuję...",
             serverType: "Typ serwera",
             ts3CostWarningPreLink: "Aby TS3MusicBot zadziałał potrzebna jest licencja z ",
-            ts3CostWarningPostLink: " kosztująca €2.50 na miesiąc"
+            ts3CostWarningPostLink: " kosztująca €2.50 na miesiąc",
+            csgoManualInstall: 'Po dodaniu serwera należy uruchomić jedną komendę w SSH aby zainstalować pliki serwera <a class="green-text" target="_blank" href="http://aimpanel.pro/pl/dokumentacja/serwery-gier/">Instrukcja</a>'
         },
         removeModal: {
             removeServer: "Usuń serwer",

@@ -84,6 +84,7 @@
                                         <option value="mc">Minecraft</option>
                                         <option value="ts3">TeamSpeak 3</option>
                                         <option value="ts3mb">TeamSpeak 3 Musicbot</option>
+                                        <option value="csgo">Counter-Strike: Global Offensive</option>
                                     </select>
                                 </div>
                             </div>
@@ -94,6 +95,14 @@
                             <i style="margin-right:10px" class="fa fa-2x fa-exclamation-triangle orange-text"></i>
                             <span>
                                 {{$t("servers.addModal.ts3CostWarningPreLink")}}<a class="green-text" target="_blank" href="http://ts3musicbot.net/">ts3musicbot.net</a>{{$t("servers.addModal.ts3CostWarningPostLink")}}
+                            </span>
+                        </div>
+                    </div>
+                    <div class="row" v-if="serviceToInstall=='csgo'">
+                        <div class="col s10">
+                            <i style="margin-right:10px" class="fa fa-2x fa-exclamation-triangle orange-text"></i>
+                            <span>
+                                {{{$t("servers.addModal.csgoManualInstall")}}}
                             </span>
                         </div>
                     </div>
