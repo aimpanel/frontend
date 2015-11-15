@@ -129,8 +129,9 @@ window.locale.pl = {
         title: "Zadania",
         empty: "Brak zadań",
         id: "ID",
-        last_modified: "Ostatnia modyfikacja",
-        state: "Stan"
+        lastModified: "Ostatnia modyfikacja",
+        state: "Stan",
+        progressBar: "Pasek postępu"
     },
     serverMenu: {
         title: "Menu serwera",

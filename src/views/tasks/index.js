@@ -12,7 +12,7 @@ module.exports = {
     ready: function () {
         this.$root.$set('title', this.$t("tasks.title"));
         this.getTasks();
-        window.interval = setInterval(this.getTasks, 2000);
+        window.interval = setInterval(this.getTasks, 1000);
         //this.getLog("5647eb64c9eb7");
     },
     methods: {
@@ -29,6 +29,12 @@ module.exports = {
                 this.taskLog = data;
                 jQuery('#taskLog').openModal();
             });
+        },
+        ifResultOk: function (val) {
+            if (val == "ok")
+            {
+                return true;
+            }
         }
     },
     filters: {

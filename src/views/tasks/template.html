@@ -14,13 +14,23 @@
                             <tr>
                                 <th>{{$t("tasks.id")}}</th>
                                 <th>{{$t("tasks.state")}}</th>
-                                <th>{{$t("tasks.last_modified")}}</th>
+                                <th>%</th>
+                                <th>{{$t("tasks.progressBar")}}</th>
+                                <th>{{$t("tasks.lastModified")}}</th>
                             </tr>
                         </thead>
                         <tbody>
                             <tr v-repeat="tasks">
                                 <td class="taskLink green-text" v-on="click: getLog(id)">{{id}}</td>
-                                <td>{{state}}</td>
+                                <td>{{state}} <span v-if="result" v-class="green-text: ifResultOk(result)">- {{result | uppercase}}</span></td>
+                                <td>
+                                    {{progress}}%
+                                </td>
+                                <td>
+                                    <div class="progress">
+                                        <div class="determinate" v-style="width: progress+'%'"></div>
+                                    </div>
+                                </td>
                                 <td>{{last_update | formatDate}}</td>
                             </tr>
                         </tbody>

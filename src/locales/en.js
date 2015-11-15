@@ -129,8 +129,9 @@ window.locale.en = {
         title: "Tasks",
         empty: "No tasks yet",
         id: "ID",
-        last_modified: "Last Modified",
-        state: "State"
+        lastModified: "Last Modified",
+        state: "State",
+        progressBar: "Progress bar"
     },
     serverMenu: {
         title: "Server menu",
