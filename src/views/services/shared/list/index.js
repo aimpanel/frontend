@@ -20,7 +20,7 @@ module.exports = {
         jQuery('.tooltipped').tooltip({delay: 50});
         jQuery('select').material_select();
         this.getServers();
-        window.interval = setInterval(this.getServers, 5000);
+        window.interval = setInterval(this.getServers, 6000);
     },
     methods: {
         ifWorking: function (id, service)
@@ -32,13 +32,13 @@ module.exports = {
         resetInterval: function ()
         {
             clearInterval(window.interval);
-            window.interval = setInterval(this.getServers, 5000);
+            window.interval = setInterval(this.getServers, 6000);
         },
         getServers: function () {
             var async = require("async");
             var self = this;
             var servicez = [];
-            var serviceList = ["mc", "ts3", "ts3mb", "csgo"];
+            var serviceList = ["mc", "ts3", "ts3mb", "csgo","ottd"];
             var configs = {};
 
             async.forEachOf(serviceList, function (service, key, callback) {

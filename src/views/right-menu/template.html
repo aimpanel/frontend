@@ -44,4 +44,15 @@
             <li><a href="#/csgo/{{route.params.id}}/autorestart">{{$t("serverMenu.autorestart")}}</a></li>
         </ul>
     </li>
+    <li v-if="routeContains('ottd/')">
+        <a class="dropdown-button hide-on-small-only" data-activates="user-dropdown"><span>{{$t("serverMenu.title")}}</span><i class="mdi-navigation-more-vert right"></i></a>
+        <a class="dropdown-button hide-on-med-and-up" data-activates="user-dropdown"><i class="mdi-navigation-more-vert"></i></a>
+        <ul id="user-dropdown" class="dropdown-content">
+            <li><a href="#/ottd/{{route.params.id}}/console">{{$t("serverMenu.console")}}</a></li>
+            <li><a href="#/ottd/{{route.params.id}}/stats">{{$t("serverMenu.stats")}}</a></li>
+            <li><a href="#/ottd/{{route.params.id}}/sftp">{{$t("serverMenu.sftp")}}</a></li>
+            <li><a href="#/ottd/{{route.params.id}}/autorestart">{{$t("serverMenu.autorestart")}}</a></li>
+            <!--<li><a href="#/ottd/{{route.params.id}}/params">{{$t("serverMenu.params")}}</a></li>-->
+        </ul>
+    </li>
 </ul>
