@@ -125,6 +125,13 @@ window.locale.pl = {
             }
         }
     },
+    tasks: {
+        title: "Zadania",
+        empty: "Brak zadań",
+        id: "ID",
+        last_modified: "Ostatnia modyfikacja",
+        state: "Stan"
+    },
     serverMenu: {
         title: "Menu serwera",
         java: "Java",

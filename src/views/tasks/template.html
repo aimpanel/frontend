@@ -1,0 +1,44 @@
+<div class="col s12">
+    <div class="row">
+        <div class="col s12">
+            <div class="card-panel white z-depth-2">
+                <div v-if="isLoading">
+                    <preloader></preloader>
+                </div>
+                <div v-if="!isLoading"> 
+                    <div v-show="!tasks">
+                        {{$t("tasks.empty")}}
+                    </div>
+                    <table v-show="tasks" class="white striped responsive-table">
+                        <thead>
+                            <tr>
+                                <th>{{$t("tasks.id")}}</th>
+                                <th>{{$t("tasks.state")}}</th>
+                                <th>{{$t("tasks.last_modified")}}</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr v-repeat="tasks">
+                                <td class="taskLink green-text" v-on="click: getLog(id)">{{id}}</td>
+                                <td>{{state}}</td>
+                                <td>{{last_update | formatDate}}</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal Structure -->
+<div id="taskLog" class="modal">
+    <div class="modal-content">
+        <h4>Log</h4>
+        <pre v-text="taskLog">
+        </pre>
+    </div>
+    <div class="modal-footer">
+        <div class="modal-action modal-close waves-effect waves-green btn-flat">Close</div>
+    </div>
+</div>

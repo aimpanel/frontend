@@ -12,6 +12,9 @@ module.exports = {
     '/os/stats': {
         component: 'os_stats'
     },
+    '/tasks': {
+        component: 'tasks'
+    },
     '/servers/': {
         component: 'server_list'
     },

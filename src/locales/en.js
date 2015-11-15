@@ -125,6 +125,13 @@ window.locale.en = {
             }
         }
     },
+    tasks: {
+        title: "Tasks",
+        empty: "No tasks yet",
+        id: "ID",
+        last_modified: "Last Modified",
+        state: "State"
+    },
     serverMenu: {
         title: "Server menu",
         java: "Java VM",

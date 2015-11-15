@@ -82,6 +82,7 @@ var root = Vue.extend({
                 {"name": this.$t("home.news"), "href": "", "icon": "newspaper-o", enabled: true},
                 {"name": this.$t("osStats.stats"), "href": "os/stats", "icon": "bar-chart", enabled: true},
                 {"name": this.$t("servers.servers"), "href": "servers", "icon": "server", enabled: true},
+                {"name": this.$t("tasks.title"), "href": "tasks", "icon": "tasks", enabled: true},
                 //{"name": "Users", "href": "users", perm: "", enabled: true},
                 //{"name": "Groups", "href": "groups", perm: "", enabled: true},
                 {"name": this.$t("about.license"), "href": "license", "icon": "key", enabled: true},

@@ -17,6 +17,10 @@ module.exports = {
     'os_stats': function (resolve) {
         require(['./views/os/stats'], resolve)
     },
+     /* Tasks list */
+    'tasks': function (resolve) {
+        require(['./views/tasks'], resolve)
+    },
     /* Shared */
     'server_list': function (resolve) {
         require(['./views/services/shared/list'], resolve)
