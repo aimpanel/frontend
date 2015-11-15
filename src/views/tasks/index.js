@@ -40,7 +40,7 @@ module.exports = {
     filters: {
         formatDate: function (value) {
             var moment = require("moment");
-            return moment(value, moment.ISO_8601).format("HH:MM:ss DD/MM/YYYY");
+            return moment(value, moment.ISO_8601).format("HH:mm:ss DD/MM/YYYY");
         }
     },
     beforeDestroy: function () {
