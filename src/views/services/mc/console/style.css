@@ -12,6 +12,10 @@
     font-size: 12px;
     margin-bottom:0px;
 }
+#console_placeholder
+{
+    display: none;
+}
 #logInputcontainer,#consoleInputContainer
 {
     margin-top:0px
