@@ -22,6 +22,10 @@ module.exports = {
         runLog: function ()
         {
             this.$http.get(window.baseurl + "/api/v1/services/mc/" + this.id + "/log", function (data) {
+                data.forEach(function (d) {
+                    jQuery("#log_placeholder").append(d + '<br>');
+                });
+                if(jQuery("#log_placeholder").html() == jQuery("#log").html()) return;
                 jQuery("#log").empty();
                 data.forEach(function (d) {
                     jQuery("#log").append(d + '<br>');
