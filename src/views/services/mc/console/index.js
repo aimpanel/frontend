@@ -33,6 +33,10 @@ module.exports = {
         runConsole: function ()
         {
             this.$http.get(window.baseurl + "/api/v1/services/mc/" + this.id + "/console", function (data) {
+                data.forEach(function (d) {
+                    jQuery("#console_placeholder").append(d + '<br>');
+                });
+                if(jQuery("#console_placeholder").html() == jQuery("#console").html()) return;
                 jQuery("#console").empty();
                 data.forEach(function (d) {
                     jQuery("#console").append(d + '<br>');
